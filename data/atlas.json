@@ -32,7 +32,12 @@
     "financiero",
     "bcu"
    ],
-   "agesic": "pbi"
+   "agesic": "pbi",
+   "refs": [
+    "UY-008",
+    "UY-016",
+    "UY-014"
+   ]
   },
   "T02": {
    "area": "A1",
@@ -51,7 +56,12 @@
     "gasto público",
     "dgi"
    ],
-   "agesic": "finanzas públicas"
+   "agesic": "finanzas públicas",
+   "refs": [
+    "UY-004",
+    "UY-135",
+    "UY-027"
+   ]
   },
   "T03": {
    "area": "A1",
@@ -69,7 +79,13 @@
     "destinos",
     "balanza comercial"
    ],
-   "agesic": "exportaciones"
+   "agesic": "exportaciones",
+   "refs": [
+    "UY-029",
+    "UY-015",
+    "UY-002",
+    "UY-006"
+   ]
   },
   "T04": {
    "area": "A1",
@@ -92,7 +108,13 @@
     "tierras",
     "censo agropecuario"
    ],
-   "agesic": "agro"
+   "agesic": "agro",
+   "refs": [
+    "UY-005",
+    "UY-001",
+    "UY-026",
+    "UY-031"
+   ]
   },
   "T05": {
    "area": "A1",
@@ -106,7 +128,11 @@
     "industrial",
     "fábricas"
    ],
-   "agesic": "industria"
+   "agesic": "industria",
+   "refs": [
+    "UY-022",
+    "UY-018"
+   ]
   },
   "T06": {
    "area": "A1",
@@ -121,7 +147,11 @@
     "gasto turístico",
     "hotelería"
    ],
-   "agesic": "turismo"
+   "agesic": "turismo",
+   "refs": [
+    "UY-025",
+    "UY-024"
+   ]
   },
   "T07": {
    "area": "A1",
@@ -140,7 +170,11 @@
     "microfinanzas",
     "registro de empresas"
    ],
-   "agesic": "empresas"
+   "agesic": "empresas",
+   "refs": [
+    "UY-017",
+    "UY-138"
+   ]
   },
   "T08": {
    "area": "A1",
@@ -157,7 +191,12 @@
     "obras públicas",
     "transporte de carga"
    ],
-   "agesic": "logística"
+   "agesic": "logística",
+   "refs": [
+    "UY-003",
+    "UY-009",
+    "UY-090"
+   ]
   },
   "T09": {
    "area": "A1",
@@ -175,7 +214,12 @@
     "compraventas",
     "inmuebles"
    ],
-   "agesic": "precios"
+   "agesic": "precios",
+   "refs": [
+    "UY-030",
+    "UY-011",
+    "UY-138"
+   ]
   },
   "T10": {
    "area": "A5",
@@ -193,7 +237,11 @@
     "brecha digital",
     "gobierno digital"
    ],
-   "agesic": "telecomunicaciones"
+   "agesic": "telecomunicaciones",
+   "refs": [
+    "UY-168",
+    "UY-007"
+   ]
   },
   "T11": {
    "area": "A5",
@@ -216,7 +264,11 @@
     "inteligencia artificial",
     "ia"
    ],
-   "agesic": "cti"
+   "agesic": "cti",
+   "refs": [
+    "UY-121",
+    "UY-122"
+   ]
   },
   "T12": {
    "area": "A5",
@@ -231,7 +283,10 @@
     "dnpi",
     "diseños industriales"
    ],
-   "agesic": "patentes"
+   "agesic": "patentes",
+   "refs": [
+    "UY-170"
+   ]
   },
   "T13": {
    "area": "A5",
@@ -246,7 +301,11 @@
     "servicios tecnológicos",
     "talento digital"
    ],
-   "agesic": "software"
+   "agesic": "software",
+   "refs": [
+    "UY-023",
+    "UY-171"
+   ]
   },
   "T14": {
    "area": "A2",
@@ -266,7 +325,13 @@
     "ech",
     "encuesta continua de hogares"
    ],
-   "agesic": "empleo"
+   "agesic": "empleo",
+   "refs": [
+    "UY-043",
+    "UY-052",
+    "UY-171",
+    "UY-172"
+   ]
   },
   "T15": {
    "area": "A2",
@@ -280,7 +345,11 @@
     "siniestralidad laboral",
     "enfermedades profesionales"
    ],
-   "agesic": "accidentes de trabajo"
+   "agesic": "accidentes de trabajo",
+   "refs": [
+    "UY-041",
+    "UY-035"
+   ]
   },
   "T16": {
    "area": "A2",
@@ -296,7 +365,12 @@
     "bps",
     "previsión social"
    ],
-   "agesic": "seguridad social"
+   "agesic": "seguridad social",
+   "refs": [
+    "UY-043",
+    "UY-052",
+    "UY-054"
+   ]
   },
   "T17": {
    "area": "A2",
@@ -312,7 +386,12 @@
     "vulnerabilidad",
     "políticas sociales"
    ],
-   "agesic": "pobreza"
+   "agesic": "pobreza",
+   "refs": [
+    "UY-060",
+    "UY-136",
+    "UY-037"
+   ]
   },
   "T18": {
    "area": "A2",
@@ -327,7 +406,11 @@
     "transferencias",
     "asistencia social"
    ],
-   "agesic": "protección social"
+   "agesic": "protección social",
+   "refs": [
+    "UY-039",
+    "UY-060"
+   ]
   },
   "T19": {
    "area": "A2",
@@ -342,7 +425,10 @@
     "asistentes personales",
     "trabajo no remunerado"
    ],
-   "agesic": "cuidados"
+   "agesic": "cuidados",
+   "refs": [
+    "UY-169"
+   ]
   },
   "T20": {
    "area": "A2",
@@ -359,7 +445,12 @@
     "obesidad",
     "derecho a la alimentación"
    ],
-   "agesic": "alimentación"
+   "agesic": "alimentación",
+   "refs": [
+    "UY-051",
+    "UY-057",
+    "UY-056"
+   ]
   },
   "T21": {
    "area": "A2",
@@ -373,7 +464,11 @@
     "recalificación",
     "competencias laborales"
    ],
-   "agesic": "formación profesional"
+   "agesic": "formación profesional",
+   "refs": [
+    "UY-034",
+    "UY-118"
+   ]
   },
   "T22": {
    "area": "A3",
@@ -391,7 +486,12 @@
     "snis",
     "cobertura de salud"
    ],
-   "agesic": "salud"
+   "agesic": "salud",
+   "refs": [
+    "UY-058",
+    "UY-064",
+    "UY-033"
+   ]
   },
   "T23": {
    "area": "A3",
@@ -405,7 +505,10 @@
     "anticoncepción",
     "embarazo adolescente"
    ],
-   "agesic": "salud sexual"
+   "agesic": "salud sexual",
+   "refs": [
+    "UY-059"
+   ]
   },
   "T24": {
    "area": "A3",
@@ -421,7 +524,11 @@
     "consumo problemático",
     "adicciones"
    ],
-   "agesic": "drogas"
+   "agesic": "drogas",
+   "refs": [
+    "UY-061",
+    "UY-042"
+   ]
   },
   "T25": {
    "area": "A3",
@@ -442,7 +549,12 @@
     "envejecimiento poblacional",
     "proyecciones de población"
    ],
-   "agesic": "población"
+   "agesic": "población",
+   "refs": [
+    "UY-126",
+    "UY-036",
+    "UY-137"
+   ]
   },
   "T26": {
    "area": "A3",
@@ -459,7 +571,11 @@
     "diáspora",
     "frontera"
    ],
-   "agesic": "migración"
+   "agesic": "migración",
+   "refs": [
+    "UY-049",
+    "UY-048"
+   ]
   },
   "T27": {
    "area": "A4",
@@ -480,7 +596,12 @@
     "anep",
     "ceibal"
    ],
-   "agesic": "educación"
+   "agesic": "educación",
+   "refs": [
+    "UY-113",
+    "UY-117",
+    "UY-111"
+   ]
   },
   "T28": {
    "area": "A4",
@@ -495,7 +616,11 @@
     "formación técnica",
     "educación y trabajo"
    ],
-   "agesic": "educación técnica"
+   "agesic": "educación técnica",
+   "refs": [
+    "UY-114",
+    "UY-118"
+   ]
   },
   "T29": {
    "area": "A4",
@@ -511,7 +636,11 @@
     "docentes universitarios",
     "terciaria"
    ],
-   "agesic": "universidad"
+   "agesic": "universidad",
+   "refs": [
+    "UY-110",
+    "UY-112"
+   ]
   },
   "T30": {
    "area": "A4",
@@ -527,7 +656,10 @@
     "espectáculos",
     "equipamientos culturales"
    ],
-   "agesic": "cultura"
+   "agesic": "cultura",
+   "refs": [
+    "UY-044"
+   ]
   },
   "T31": {
    "area": "A4",
@@ -540,7 +672,10 @@
     "plazas de deportes",
     "espacios deportivos"
    ],
-   "agesic": "deporte"
+   "agesic": "deporte",
+   "refs": [
+    "UY-107"
+   ]
   },
   "T32": {
    "area": "A6",
@@ -558,7 +693,12 @@
     "cobertura del suelo",
     "uso del suelo"
    ],
-   "agesic": "ambiente"
+   "agesic": "ambiente",
+   "refs": [
+    "UY-078",
+    "UY-072",
+    "UY-075"
+   ]
   },
   "T33": {
    "area": "A6",
@@ -577,7 +717,12 @@
     "calidad de agua",
     "dinagua"
    ],
-   "agesic": "agua"
+   "agesic": "agua",
+   "refs": [
+    "UY-081",
+    "UY-068",
+    "UY-087"
+   ]
   },
   "T34": {
    "area": "A6",
@@ -594,7 +739,12 @@
     "generación eléctrica",
     "eficiencia energética"
    ],
-   "agesic": "energía"
+   "agesic": "energía",
+   "refs": [
+    "UY-066",
+    "UY-074",
+    "UY-085"
+   ]
   },
   "T35": {
    "area": "A6",
@@ -613,7 +763,12 @@
     "ndc",
     "adaptación"
    ],
-   "agesic": "clima"
+   "agesic": "clima",
+   "refs": [
+    "UY-073",
+    "UY-083",
+    "UY-070"
+   ]
   },
   "T36": {
    "area": "A6",
@@ -628,7 +783,11 @@
     "envases",
     "valorización"
    ],
-   "agesic": "residuos"
+   "agesic": "residuos",
+   "refs": [
+    "UY-080",
+    "UY-086"
+   ]
   },
   "T37": {
    "area": "A6",
@@ -643,7 +802,11 @@
     "recursos naturales",
     "subsuelo"
    ],
-   "agesic": "suelos"
+   "agesic": "suelos",
+   "refs": [
+    "UY-032",
+    "UY-108"
+   ]
   },
   "T38": {
    "area": "A6",
@@ -658,7 +821,10 @@
     "sinae",
     "afectaciones"
    ],
-   "agesic": "riesgos"
+   "agesic": "riesgos",
+   "refs": [
+    "UY-076"
+   ]
   },
   "T39": {
    "area": "A7",
@@ -675,7 +841,12 @@
     "urbanismo",
     "planificación territorial"
    ],
-   "agesic": "territorio"
+   "agesic": "territorio",
+   "refs": [
+    "UY-101",
+    "UY-100",
+    "UY-089"
+   ]
   },
   "T40": {
    "area": "A7",
@@ -690,7 +861,12 @@
     "tenencia",
     "hogares"
    ],
-   "agesic": "vivienda"
+   "agesic": "vivienda",
+   "refs": [
+    "UY-100",
+    "UY-096",
+    "UY-126"
+   ]
   },
   "T41": {
    "area": "A7",
@@ -709,7 +885,12 @@
     "geoportal",
     "topografía"
    ],
-   "agesic": "cartografía"
+   "agesic": "cartografía",
+   "refs": [
+    "UY-109",
+    "UY-091",
+    "UY-106"
+   ]
   },
   "T42": {
    "area": "A7",
@@ -726,7 +907,11 @@
     "seguridad vial",
     "unasev"
    ],
-   "agesic": "movilidad"
+   "agesic": "movilidad",
+   "refs": [
+    "UY-142",
+    "UY-097"
+   ]
   },
   "T43": {
    "area": "A8",
@@ -743,7 +928,12 @@
     "empleo público",
     "presupuesto municipal"
    ],
-   "agesic": "gestión pública"
+   "agesic": "gestión pública",
+   "refs": [
+    "UY-131",
+    "UY-132",
+    "UY-135"
+   ]
   },
   "T44": {
    "area": "A8",
@@ -759,7 +949,12 @@
     "participación ciudadana",
     "atención ciudadana"
    ],
-   "agesic": "gobierno abierto"
+   "agesic": "gobierno abierto",
+   "refs": [
+    "UY-125",
+    "UY-123",
+    "UY-130"
+   ]
   },
   "T45": {
    "area": "A8",
@@ -774,7 +969,10 @@
     "corte electoral",
     "plebiscito"
    ],
-   "agesic": "elecciones"
+   "agesic": "elecciones",
+   "refs": [
+    "UY-128"
+   ]
   },
   "T46": {
    "area": "A8",
@@ -791,7 +989,11 @@
     "denuncias",
     "violencia"
    ],
-   "agesic": "seguridad"
+   "agesic": "seguridad",
+   "refs": [
+    "UY-145",
+    "UY-055"
+   ]
   },
   "T47": {
    "area": "A8",
@@ -808,7 +1010,12 @@
     "penitenciario",
     "sentencias"
    ],
-   "agesic": "justicia"
+   "agesic": "justicia",
+   "refs": [
+    "UY-144",
+    "UY-140",
+    "UY-139"
+   ]
   },
   "T48": {
    "area": "A8",
@@ -823,7 +1030,12 @@
     "legislación",
     "derechos"
    ],
-   "agesic": "derechos humanos"
+   "agesic": "derechos humanos",
+   "refs": [
+    "UY-040",
+    "UY-143",
+    "UY-141"
+   ]
   },
   "T49": {
    "area": "A8",
@@ -839,7 +1051,11 @@
     "agenda 2030",
     "desarrollo sostenible"
    ],
-   "agesic": "estadísticas oficiales"
+   "agesic": "estadísticas oficiales",
+   "refs": [
+    "UY-136",
+    "UY-134"
+   ]
   },
   "T50": {
    "area": "A6",
@@ -916,6 +1132,11 @@
     "feminismo",
     "paridad",
     "varones"
+   ],
+   "refs": [
+    "UY-065",
+    "UY-055",
+    "UY-045"
    ]
   },
   "E02": {
@@ -929,6 +1150,11 @@
     "adolescencia",
     "adolescentes",
     "primera infancia"
+   ],
+   "refs": [
+    "UY-047",
+    "UY-037",
+    "UY-039"
    ]
   },
   "E03": {
@@ -949,6 +1175,10 @@
     "adultos mayores",
     "envejecimiento",
     "tercera edad"
+   ],
+   "refs": [
+    "UY-054",
+    "UY-062"
    ]
   },
   "E05": {
@@ -959,6 +1189,9 @@
     "personas con discapacidad",
     "accesibilidad",
     "inclusión"
+   ],
+   "refs": [
+    "UY-063"
    ]
   },
   "E06": {
@@ -968,6 +1201,10 @@
     "migración",
     "migrantes",
     "población migrante"
+   ],
+   "refs": [
+    "UY-049",
+    "UY-048"
    ]
   },
   "E07": {
@@ -987,6 +1224,10 @@
     "derechos",
     "enfoque de derechos",
     "derechos humanos"
+   ],
+   "refs": [
+    "UY-040",
+    "UY-143"
    ]
   },
   "E09": {
@@ -999,6 +1240,11 @@
     "frontera",
     "subnacional",
     "regional"
+   ],
+   "refs": [
+    "UY-101",
+    "UY-089",
+    "UY-095"
    ]
   }
  },
@@ -1067,7 +1313,9 @@
    "rel": "",
    "notas": "Repositorio de estudios; no equivale a un tablero en tiempo real.",
    "fuentes": "https://www.gub.uy/ministerio-ganaderia-agricultura-pesca/opypa",
-   "etiquetas": "agro; economía; políticas; sectores"
+   "etiquetas": "agro; economía; políticas; sectores",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-002",
@@ -1096,7 +1344,9 @@
    "rel": "",
    "notas": "Combina informes recurrentes y aplicaciones interactivas.",
    "fuentes": "https://www.uruguayxxi.gub.uy/es/centro-informacion/",
-   "etiquetas": "exportaciones; inversión; sectores; comercio-exterior"
+   "etiquetas": "exportaciones; inversión; sectores; comercio-exterior",
+   "gran": "Portal general",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-003",
@@ -1125,7 +1375,9 @@
    "rel": "",
    "notas": "El Sistema de Información Logística alimenta estudios; no se confirmó acceso público integral a su base.",
    "fuentes": "https://www.inalog.org.uy/centro-de-informacion/",
-   "etiquetas": "logística; puertos; cargas; comercio-exterior"
+   "etiquetas": "logística; puertos; cargas; comercio-exterior",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-004",
@@ -1154,7 +1406,9 @@
    "rel": "",
    "notas": "Las series tienen calendarios propios.",
    "fuentes": "https://www.gub.uy/ministerio-economia-finanzas/datos-y-estadisticas/datos\nhttps://www.gub.uy/ministerio-economia-finanzas/",
-   "etiquetas": "finanzas-públicas; macroeconomía; deuda"
+   "etiquetas": "finanzas-públicas; macroeconomía; deuda",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-005",
@@ -1181,7 +1435,9 @@
    "rel": "",
    "notas": "Fecha indicada: publicación sobre arrendamientos 2025.",
    "fuentes": "https://www.gub.uy/ministerio-ganaderia-agricultura-pesca/diea",
-   "etiquetas": "agro; tierras; censo-agropecuario; producción"
+   "etiquetas": "agro; tierras; censo-agropecuario; producción",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-006",
@@ -1208,7 +1464,9 @@
    "rel": "",
    "notas": "Conjuntos y períodos heterogéneos.",
    "fuentes": "https://www.aduanas.gub.uy/innovaportal/v/4239/4/innova.front/estadisticas.html",
-   "etiquetas": "aduanas; comercio-exterior; encomiendas; incautaciones"
+   "etiquetas": "aduanas; comercio-exterior; encomiendas; incautaciones",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-007",
@@ -1235,7 +1493,9 @@
    "rel": "",
    "notas": "Fecha de publicación del informe con datos a diciembre de 2025.",
    "fuentes": "https://www.gub.uy/unidad-reguladora-servicios-comunicaciones/tematica/servicios-telecomunicaciones",
-   "etiquetas": "telecomunicaciones; conectividad; mercados; digital"
+   "etiquetas": "telecomunicaciones; conectividad; mercados; digital",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-008",
@@ -1264,7 +1524,9 @@
    "rel": "",
    "notas": "El período indicado corresponde a una serie, no a todas.",
    "fuentes": "https://www.bcu.gub.uy/Estadisticas-e-Indicadores/Paginas/default.aspx",
-   "etiquetas": "macroeconomía; cuentas-nacionales; finanzas; sector-externo"
+   "etiquetas": "macroeconomía; cuentas-nacionales; finanzas; sector-externo",
+   "gran": "Portal general",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-009",
@@ -1293,7 +1555,9 @@
    "rel": "",
    "notas": "Alcance del enlace: Unidad de Gestión de Tráfico de Montevideo.",
    "fuentes": "https://anp.com.uy/index.php/es/inicio/puertos/comerciales/montevideo/estadisticas/estadistica-por-mes-unidad-gestion-de-trafico",
-   "etiquetas": "puertos; logística; cargas; transporte"
+   "etiquetas": "puertos; logística; cargas; transporte",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-010",
@@ -1322,7 +1586,9 @@
    "rel": "",
    "notas": "Años disponibles mediante selección; último año no comprobado.",
    "fuentes": "https://inavi.com.uy/estadisticas/",
-   "etiquetas": "vitivinicultura; producción; ventas; exportaciones"
+   "etiquetas": "vitivinicultura; producción; ventas; exportaciones",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-011",
@@ -1351,7 +1617,9 @@
    "rel": "",
    "notas": "Período confirmado solo para los índices encontrados.",
    "fuentes": "https://sitio.ccu.com.uy/estudios-economicos/\nhttps://sitio.ccu.com.uy/estudios-economicos/precios-indicadores-financieros-y-de-interes/indicadores-de-precios/",
-   "etiquetas": "construcción; empleo; precios; inmuebles"
+   "etiquetas": "construcción; empleo; precios; inmuebles",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-012",
@@ -1380,7 +1648,9 @@
    "rel": "",
    "notas": "Lanzamiento del explorador en agosto de 2026; incluye series desde 1975.",
    "fuentes": "https://www.gub.uy/ministerio-ganaderia-agricultura-pesca/pagina-embebida/datos-forestales\nhttps://www.gub.uy/ministerio-ganaderia-agricultura-pesca/noticias/explorador-interactivo-forestal",
-   "etiquetas": "forestación; superficie; producción; exportaciones"
+   "etiquetas": "forestación; superficie; producción; exportaciones",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-013",
@@ -1409,7 +1679,9 @@
    "rel": "",
    "notas": "Acceso desde la portada institucional; cada serie tiene su propio corte.",
    "fuentes": "https://www.inale.org/",
-   "etiquetas": "lechería; precios; remisión; exportaciones"
+   "etiquetas": "lechería; precios; remisión; exportaciones",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-014",
@@ -1439,7 +1711,9 @@
    "rel": "",
    "notas": "Fecha de publicación del monitor; último período de cada serie no auditado.",
    "fuentes": "https://www.ucu.edu.uy/Institucionales/MONITOR-DE-COYUNTURA-uc1457",
-   "etiquetas": "macroeconomía; actividad; empleo; precios"
+   "etiquetas": "macroeconomía; actividad; empleo; precios",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-015",
@@ -1468,7 +1742,9 @@
    "rel": "Centro de Información — Uruguay XXI",
    "notas": "Se localizó edición de abril de 2026; no se trasladó esa fecha al período de todos los datos.",
    "fuentes": "https://www.uruguayxxi.gub.uy/es/centro-informacion/inversor/informes/informes-de-mensual/",
-   "etiquetas": "inversión-extranjera; empresas; sector-externo"
+   "etiquetas": "inversión-extranjera; empresas; sector-externo",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-016",
@@ -1498,7 +1774,9 @@
    "rel": "Centro de Información — Uruguay XXI",
    "notas": "Consultar fecha de cada indicador.",
    "fuentes": "https://www.uruguayxxi.gub.uy/es/centro-informacion/monitor-macroeconomico/",
-   "etiquetas": "macroeconomía; actividad; precios; empleo"
+   "etiquetas": "macroeconomía; actividad; precios; empleo",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-017",
@@ -1529,7 +1807,9 @@
    "rel": "",
    "notas": "Las series anuales tienen distintos rezagos: empresas y ventas 2024; empleo 2025.",
    "fuentes": "https://monitor.ande.org.uy/home.aspx",
-   "etiquetas": "mipymes; empresas; empleo; género; microfinanzas"
+   "etiquetas": "mipymes; empresas; empleo; género; microfinanzas",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-018",
@@ -1559,7 +1839,9 @@
    "rel": "",
    "notas": "Incluye distintas frecuencias según producto.",
    "fuentes": "https://www.ciu.com.uy/monitoreo-industrial/",
-   "etiquetas": "industria; precios; empleo; expectativas; comercio-exterior"
+   "etiquetas": "industria; precios; empleo; expectativas; comercio-exterior",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-019",
@@ -1586,7 +1868,9 @@
    "rel": "",
    "notas": "Fuente sectorial e interinstitucional.",
    "fuentes": "https://oleaginosos.org.uy/observatorio",
-   "etiquetas": "agricultura; oleaginosos; soja; zafras"
+   "etiquetas": "agricultura; oleaginosos; soja; zafras",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-020",
@@ -1617,7 +1901,9 @@
    "rel": "",
    "notas": "Última edición no comprobada.",
    "fuentes": "https://www.ucu.edu.uy/Institucionales/OBSERVATORIO-ECONOMICO-DE-SALTO-uc2511",
-   "etiquetas": "frontera; precios; comercio; economía-regional"
+   "etiquetas": "frontera; precios; comercio; economía-regional",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-021",
@@ -1646,7 +1932,9 @@
    "rel": "",
    "notas": "Entrada por boletines de UAM; fecha del último boletín no comprobada.",
    "fuentes": "https://uam.com.uy/boletin-de-precios-mayoristas/",
-   "etiquetas": "horticultura; fruticultura; precios; mercados"
+   "etiquetas": "horticultura; fruticultura; precios; mercados",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-022",
@@ -1675,7 +1963,9 @@
    "rel": "",
    "notas": "Contenido indexado; el tablero dinámico no pudo auditarse íntegramente.",
    "fuentes": "https://observatorio.miem.gub.uy/obs/",
-   "etiquetas": "industria; producción; empleo; inversión"
+   "etiquetas": "industria; producción; empleo; inversión",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-023",
@@ -1706,7 +1996,9 @@
    "rel": "",
    "notas": "No confundir el año de publicación con el período de la encuesta.",
    "fuentes": "https://observatorioti.cuti.org.uy/",
-   "etiquetas": "tecnologías-digitales; software; empleo; exportaciones"
+   "etiquetas": "tecnologías-digitales; software; empleo; exportaciones",
+   "gran": "Portal general",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-024",
@@ -1735,7 +2027,9 @@
    "rel": "Montevidata",
    "notas": "Se accede desde Montevidata al sitio Descubrí Montevideo.",
    "fuentes": "https://www.descubrimontevideo.uy/macrodatos/",
-   "etiquetas": "montevideo; turismo; visitantes; gasto"
+   "etiquetas": "montevideo; turismo; visitantes; gasto",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-025",
@@ -1762,7 +2056,9 @@
    "rel": "",
    "notas": "El período corresponde al informe localizado; otros paneles pueden tener distinto corte.",
    "fuentes": "https://turismo.gub.uy/observatorio/index.html\nhttps://www.gub.uy/ministerio-turismo/tematica/observatorios-turisticos",
-   "etiquetas": "turismo; visitantes; gasto; cruceros"
+   "etiquetas": "turismo; visitantes; gasto; cruceros",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-026",
@@ -1792,7 +2088,9 @@
    "rel": "",
    "notas": "Los indicadores semanales pueden ser más recientes que el anuario.",
    "fuentes": "https://www.inac.uy/innovaportal/v/26276/37/innova.bs/publicaciones-informes-y-series",
-   "etiquetas": "ganadería; carne; faena; exportaciones; precios"
+   "etiquetas": "ganadería; carne; faena; exportaciones; precios",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-027",
@@ -1819,7 +2117,9 @@
    "rel": "",
    "notas": "Fecha de actualización de la página consultada.",
    "fuentes": "https://www.gub.uy/direccion-general-impositiva/datos-y-estadisticas/estadisticas/recaudacion-anual-mensual-impuesto",
-   "etiquetas": "tributación; recaudación; finanzas-públicas"
+   "etiquetas": "tributación; recaudación; finanzas-públicas",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-028",
@@ -1846,7 +2146,9 @@
    "rel": "",
    "notas": "El acceso observado solicita registro.",
    "fuentes": "https://www.mgap.gub.uy/SeriesHistoricas/hshistoricas.aspx",
-   "etiquetas": "agro; series-históricas; producción"
+   "etiquetas": "agro; series-históricas; producción",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-029",
@@ -1873,7 +2175,9 @@
    "rel": "Centro de Información — Uruguay XXI",
    "notas": "Último período disponible no comprobado.",
    "fuentes": "https://herramientas.uruguayxxi.gub.uy/sistema_de_estadistica/",
-   "etiquetas": "exportaciones; importaciones; productos; destinos"
+   "etiquetas": "exportaciones; importaciones; productos; destinos",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-030",
@@ -1900,7 +2204,9 @@
    "rel": "",
    "notas": "Actualización por producto y establecimiento; último corte no comprobado.",
    "fuentes": "https://www.precios.uy/",
-   "etiquetas": "precios; consumo; comercio"
+   "etiquetas": "precios; consumo; comercio",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-031",
@@ -1931,7 +2237,9 @@
    "rel": "",
    "notas": "Enlace del directorio oficial IDE; carga del destino no confirmada.",
    "fuentes": "https://www.gub.uy/infraestructura-datos-espaciales/nodos-ideuy",
-   "etiquetas": "agro; geodatos; clima; suelos"
+   "etiquetas": "agro; geodatos; clima; suelos",
+   "gran": "Portal general",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-032",
@@ -1961,7 +2269,9 @@
    "rel": "",
    "notas": "La vigencia varía por capa cartográfica.",
    "fuentes": "https://dgrn.mgap.gub.uy/js/visores/dgrn/",
-   "etiquetas": "suelos; coneat; agro; geodatos"
+   "etiquetas": "suelos; coneat; agro; geodatos",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-033",
@@ -1988,7 +2298,9 @@
    "rel": "",
    "notas": "Catálogo fuente actualizado en abril de 2025; esa fecha no acredita el corte actual del sitio.",
    "fuentes": "https://github.com/datauy/atuservicio\nhttps://catalogodatos.gub.uy/dataset/msp-a-tu-servicio",
-   "etiquetas": "salud; prestadores; calidad; usuarios"
+   "etiquetas": "salud; prestadores; calidad; usuarios",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-034",
@@ -2018,7 +2330,9 @@
    "rel": "Catálogo Nacional de Datos Abiertos",
    "notas": "Se confirmó la incorporación al catálogo nacional y once conjuntos publicados; fecha por conjunto.",
    "fuentes": "https://www.inefop.uy/post/inefop-se-integra-al-cat%C3%A1logo-nacional-de-datos-abiertos-y-avanza-en-apertura-de-datos",
-   "etiquetas": "formación-profesional; empleo; gestión; datos-abiertos"
+   "etiquetas": "formación-profesional; empleo; gestión; datos-abiertos",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-035",
@@ -2047,7 +2361,9 @@
    "rel": "",
    "notas": "Períodos diferentes según informe.",
    "fuentes": "https://www.gub.uy/ministerio-trabajo-seguridad-social/unidad-estadistica-mtss\nhttps://www.gub.uy/ministerio-trabajo-seguridad-social/datos-y-estadisticas/estadisticas",
-   "etiquetas": "empleo; salarios; relaciones-laborales; accidentes"
+   "etiquetas": "empleo; salarios; relaciones-laborales; accidentes",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-036",
@@ -2076,7 +2392,9 @@
    "rel": "",
    "notas": "Último período disponible no comprobado en este relevamiento.",
    "fuentes": "https://www.gub.uy/ministerio-salud-publica/datos-y-estadisticas/estadisticas/estadisticas-vitales",
-   "etiquetas": "salud; natalidad; mortalidad; demografía"
+   "etiquetas": "salud; natalidad; mortalidad; demografía",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-037",
@@ -2109,7 +2427,9 @@
    "rel": "",
    "notas": "Período indicado para un estudio; otras publicaciones usan Censo 2023 y encuestas distintas.",
    "fuentes": "https://www.unicef.org/uruguay/infancia-en-datos",
-   "etiquetas": "infancia; adolescencia; pobreza; salud; educación"
+   "etiquetas": "infancia; adolescencia; pobreza; salud; educación",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-038",
@@ -2138,7 +2458,9 @@
    "rel": "",
    "notas": "Acceso institucional a recursos e información del área.",
    "fuentes": "https://www.gub.uy/ministerio-salud-publica/personal-salud",
-   "etiquetas": "salud; recursos-humanos; empleo; profesionales"
+   "etiquetas": "salud; recursos-humanos; empleo; profesionales",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-039",
@@ -2167,7 +2489,9 @@
    "rel": "",
    "notas": "Enlace a la colección anual 2025.",
    "fuentes": "https://www.inau.gub.uy/documentos/ano-2025",
-   "etiquetas": "infancia; adolescencia; protección; servicios"
+   "etiquetas": "infancia; adolescencia; protección; servicios",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-040",
@@ -2201,7 +2525,9 @@
    "rel": "",
    "notas": "Fechas y cobertura varían por dimensión.",
    "fuentes": "https://www.gub.uy/institucion-nacional-derechos-humanos-uruguay/tematica/estudios?page=0",
-   "etiquetas": "derechos-humanos; ambiente; vivienda; salud; educación"
+   "etiquetas": "derechos-humanos; ambiente; vivienda; salud; educación",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-041",
@@ -2228,7 +2554,9 @@
    "rel": "",
    "notas": "Último período del monitor no comprobado; no extrapolar fechas de otras estadísticas del hospital.",
    "fuentes": "https://hospital.bse.com.uy/portal-hospital/monitor-de-accidentes-de-trabajo",
-   "etiquetas": "salud-laboral; accidentes; empleo; prevención"
+   "etiquetas": "salud-laboral; accidentes; empleo; prevención",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-042",
@@ -2255,7 +2583,9 @@
    "rel": "",
    "notas": "El informe 2026 se encuentra también en noticias; la colección principal destaca el cierre 2025.",
    "fuentes": "https://ircca.gub.uy/recursos-de-informacion/informes-del-mercado-regulado/\nhttps://ircca.gub.uy/informe-del-mercado-de-cannabis-de-uso-adulto-en-uruguay-datos-actualizados-al-primer-cuatrimestre-de-2026-enero-a-abril/",
-   "etiquetas": "cannabis; mercado-regulado; salud; producción"
+   "etiquetas": "cannabis; mercado-regulado; salud; producción",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-043",
@@ -2268,7 +2598,9 @@
    "desc": "Indicadores y series administrativas de prestaciones, beneficiarios y cotizantes.",
    "url": "https://observatorio.bps.gub.uy/#/",
    "tema": "T16",
-   "temas_sec": [],
+   "temas_sec": [
+    "T14"
+   ],
    "enfoques": [],
    "area": "Trabajo y protección social",
    "ods": 1,
@@ -2282,7 +2614,9 @@
    "rel": "",
    "notas": "Fecha tomada de la entrada estadística oficial; aplicación dinámica no auditada íntegramente.",
    "fuentes": "https://www.bps.gub.uy/bps/observatorio/estadisticas.jsp",
-   "etiquetas": "seguridad-social; jubilaciones; cotizantes; prestaciones"
+   "etiquetas": "seguridad-social; jubilaciones; cotizantes; prestaciones",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-044",
@@ -2311,7 +2645,9 @@
    "rel": "Montevidata",
    "notas": "Fecha variable por tablero.",
    "fuentes": "https://montevidata.montevideo.gub.uy/cultura",
-   "etiquetas": "montevideo; cultura; participación; equipamientos"
+   "etiquetas": "montevideo; cultura; participación; equipamientos",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-045",
@@ -2340,7 +2676,9 @@
    "rel": "",
    "notas": "Incluye estudios y memoria institucional; fecha de datos variable.",
    "fuentes": "https://udelar.edu.uy/observatorio-genero\nhttps://udelar.edu.uy/observatorio-genero",
-   "etiquetas": "género; universidad; igualdad; instituciones"
+   "etiquetas": "género; universidad; igualdad; instituciones",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-046",
@@ -2370,9 +2708,11 @@
    "periodo": "",
    "pub": "",
    "rel": "Montevidata",
-   "notas": "Fecha variable por programa.",
+   "notas": "Fecha variable por programa. La página de Igualdad de Género es un índice de programas; los datos podrían estar en subpáginas.",
    "fuentes": "https://montevidata.montevideo.gub.uy/igualdad-de-genero",
-   "etiquetas": "montevideo; género; violencia; autonomía"
+   "etiquetas": "montevideo; género; violencia; autonomía",
+   "gran": "Específico",
+   "contenido": "A revisar"
   },
   {
    "id": "UY-047",
@@ -2405,7 +2745,9 @@
    "rel": "",
    "notas": "Datos e indicadores localizados; la página Nosotros no identifica instituciones responsables. Se requiere corroborar su adscripción.",
    "fuentes": "https://oia.org.uy/",
-   "etiquetas": "infancia; adolescencia; derechos; políticas-sociales"
+   "etiquetas": "infancia; adolescencia; derechos; políticas-sociales",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-048",
@@ -2435,7 +2777,9 @@
    "rel": "",
    "notas": "No se comprobó un último corte estadístico.",
    "fuentes": "https://www.rivera.gub.uy/social/observatorio/",
-   "etiquetas": "migración; frontera; integración; derechos"
+   "etiquetas": "migración; frontera; integración; derechos",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-049",
@@ -2467,7 +2811,9 @@
    "rel": "",
    "notas": "Acceso directo a registros administrativos.",
    "fuentes": "https://omif.cienciassociales.edu.uy/registros-administrativos/",
-   "etiquetas": "migración; familias; infancia; demografía"
+   "etiquetas": "migración; familias; infancia; demografía",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-050",
@@ -2494,9 +2840,11 @@
    "periodo": "",
    "pub": "",
    "rel": "Montevidata",
-   "notas": "Fecha variable por indicador.",
+   "notas": "Fecha variable por indicador. La página de Salud es un índice de programas; los datos podrían estar en subpáginas.",
    "fuentes": "https://montevidata.montevideo.gub.uy/salud",
-   "etiquetas": "montevideo; salud; policlínicas; cobertura"
+   "etiquetas": "montevideo; salud; policlínicas; cobertura",
+   "gran": "Específico",
+   "contenido": "A revisar"
   },
   {
    "id": "UY-051",
@@ -2525,7 +2873,9 @@
    "rel": "",
    "notas": "Período del cuarto informe localizado.",
    "fuentes": "https://www.gub.uy/ministerio-desarrollo-social/obsan",
-   "etiquetas": "alimentación; nutrición; pobreza; seguridad-alimentaria"
+   "etiquetas": "alimentación; nutrición; pobreza; seguridad-alimentaria",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-052",
@@ -2554,38 +2904,9 @@
    "rel": "",
    "notas": "Monitor publicado en septiembre de 2026; comprobar el corte de cada serie.",
    "fuentes": "https://www.observatorioseguridadsocial.org.uy/?b=0290270917702\nhttps://www.observatorioseguridadsocial.org.uy/index.php/institucional",
-   "etiquetas": "seguridad-social; jubilaciones; mercado-laboral"
-  },
-  {
-   "id": "UY-053",
-   "nombre": "Observatorio de Trabajo de Montevideo",
-   "inst": "Intendencia de Montevideo",
-   "ambito": "Departamental",
-   "nat": "Gobierno departamental",
-   "tipo": "Módulo",
-   "alcance": "Montevideo",
-   "desc": "Seguimiento de formación, empleo protegido e iniciativas de inclusión laboral.",
-   "url": "https://montevidata.montevideo.gub.uy/trabajo",
-   "tema": "T14",
-   "temas_sec": [
-    "T21"
-   ],
-   "enfoques": [
-    "E09"
-   ],
-   "area": "Trabajo y protección social",
-   "ods": 8,
-   "nivel": 3,
-   "descarga": "Por verificar",
-   "api": "Por verificar",
-   "des_terr": "Sí",
-   "des_sexo": "Por verificar",
-   "periodo": "",
-   "pub": "",
-   "rel": "Montevidata",
-   "notas": "Fecha variable por programa.",
-   "fuentes": "https://montevidata.montevideo.gub.uy/trabajo",
-   "etiquetas": "montevideo; empleo; capacitación; inclusión"
+   "etiquetas": "seguridad-social; jubilaciones; mercado-laboral",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-054",
@@ -2616,7 +2937,9 @@
    "rel": "BPS",
    "notas": "Incluye proyecciones hasta 2070: ese horizonte no es un dato observado reciente.",
    "fuentes": "https://observatorio.bps.gub.uy/ovess/",
-   "etiquetas": "envejecimiento; demografía; personas-mayores; seguridad-social"
+   "etiquetas": "envejecimiento; demografía; personas-mayores; seguridad-social",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-055",
@@ -2647,7 +2970,9 @@
    "rel": "",
    "notas": "Se localizó una publicación de abril de 2026; no se asigna ese año a todos los datos.",
    "fuentes": "https://www.gub.uy/ministerio-desarrollo-social/observatorio/violencia-genero\nhttps://www.gub.uy/ministerio-desarrollo-social/sites/ministerio-desarrollo-social/files/documentos/publicaciones/Indicadores%20femicidios%20_%20OVBG%20abril%202026.pdf",
-   "etiquetas": "género; violencia; derechos; seguridad"
+   "etiquetas": "género; violencia; derechos; seguridad",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-056",
@@ -2678,7 +3003,9 @@
    "rel": "",
    "notas": "Predominan estudios y documentos, no un tablero estadístico permanente.",
    "fuentes": "https://www.fder.edu.uy/oda",
-   "etiquetas": "alimentación; derechos; políticas; investigación"
+   "etiquetas": "alimentación; derechos; políticas; investigación",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-057",
@@ -2707,7 +3034,9 @@
    "rel": "",
    "notas": "Nodo académico diferenciado del de Facultad de Derecho.",
    "fuentes": "https://www.nutricion.edu.uy/?page_id=6614",
-   "etiquetas": "alimentación; nutrición; derechos; investigación"
+   "etiquetas": "alimentación; nutrición; derechos; investigación",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-058",
@@ -2734,7 +3063,9 @@
    "rel": "",
    "notas": "Fuente no estatal; responsable institucional específico pendiente de corroboración.",
    "fuentes": "https://observatoriosalud.org.uy/seccion/datos",
-   "etiquetas": "salud; financiamiento; prestadores; afiliación"
+   "etiquetas": "salud; financiamiento; prestadores; afiliación",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-059",
@@ -2766,7 +3097,9 @@
    "rel": "",
    "notas": "Predominan estudios e informes; no todas las salidas son datos descargables.",
    "fuentes": "https://www.mysu.org.uy/que-hacemos/observatorio/",
-   "etiquetas": "género; salud-sexual; derechos; salud-reproductiva"
+   "etiquetas": "género; salud-sexual; derechos; salud-reproductiva",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-060",
@@ -2795,7 +3128,9 @@
    "rel": "",
    "notas": "2023 es un corte comprobado en indicadores, no una fecha global del portal.",
    "fuentes": "https://www.gub.uy/ministerio-desarrollo-social/observatorio",
-   "etiquetas": "pobreza; desigualdad; hogares; políticas-sociales"
+   "etiquetas": "pobreza; desigualdad; hogares; políticas-sociales",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-061",
@@ -2824,7 +3159,9 @@
    "rel": "",
    "notas": "Períodos distintos por estudio.",
    "fuentes": "https://www.gub.uy/junta-nacional-drogas/observatorio-uruguayo-de-drogas",
-   "etiquetas": "drogas; consumos; salud; políticas"
+   "etiquetas": "drogas; consumos; salud; políticas",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-062",
@@ -2856,7 +3193,9 @@
    "rel": "",
    "notas": "Parte del contenido corresponde a estudios históricos; último corte estadístico no comprobado.",
    "fuentes": "https://observatorioenvejecimiento.psico.edu.uy/",
-   "etiquetas": "envejecimiento; personas-mayores; demografía; derechos"
+   "etiquetas": "envejecimiento; personas-mayores; demografía; derechos",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-063",
@@ -2887,7 +3226,9 @@
    "rel": "",
    "notas": "Portal internacional con sección Uruguay; las definiciones de discapacidad requieren atención al comparar fuentes.",
    "fuentes": "https://www.odismet.org/uruguay/banco-de-datos/datos-sociodemograficos",
-   "etiquetas": "discapacidad; empleo; inclusión; demografía"
+   "etiquetas": "discapacidad; empleo; inclusión; demografía",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-064",
@@ -2914,7 +3255,9 @@
    "rel": "",
    "notas": "Informes publicados en 2026 con datos de 2025.",
    "fuentes": "https://www.gub.uy/ministerio-salud-publica/tematica/indicadores-desempeno-asistencial",
-   "etiquetas": "salud; prestadores; asistencia; gestión"
+   "etiquetas": "salud; prestadores; asistencia; gestión",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-065",
@@ -2946,7 +3289,9 @@
    "rel": "",
    "notas": "Último período no comprobado.",
    "fuentes": "https://www.gub.uy/ministerio-desarrollo-social/sig",
-   "etiquetas": "género; autonomía; trabajo; desigualdad"
+   "etiquetas": "género; autonomía; trabajo; desigualdad",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-066",
@@ -2975,7 +3320,9 @@
    "rel": "",
    "notas": "Fecha de la noticia oficial sobre el BEN 2025, presentado el 30/07/2026.",
    "fuentes": "https://www.gub.uy/ministerio-industria-energia-mineria/ben\nhttps://www.gub.uy/ministerio-industria-energia-mineria/comunicacion/noticias/consumo-electricidad-transporte-supero-primera-vez-del-conjunto-industrias",
-   "etiquetas": "energía; consumo; oferta; renovables; emisiones"
+   "etiquetas": "energía; consumo; oferta; renovables; emisiones",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-067",
@@ -3004,7 +3351,9 @@
    "rel": "",
    "notas": "Actualización independiente por conjunto.",
    "fuentes": "https://www.gub.uy/unidad-reguladora-servicios-energia-agua/datos-y-estadisticas/datos-abiertos",
-   "etiquetas": "energía; agua; combustibles; tarifas; regulación"
+   "etiquetas": "energía; agua; combustibles; tarifas; regulación",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-068",
@@ -3031,7 +3380,9 @@
    "rel": "DINAGUA",
    "notas": "No se verificó que ese anuario represente el último dato de todas las series.",
    "fuentes": "https://www.ambiente.gub.uy/informacion_hidrica/datos_abiertos.php",
-   "etiquetas": "agua; estaciones; series-históricas; datos-abiertos"
+   "etiquetas": "agua; estaciones; series-históricas; datos-abiertos",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-069",
@@ -3060,7 +3411,9 @@
    "rel": "Observatorio Ambiental Nacional — OAN",
    "notas": "Vigencia según capa.",
    "fuentes": "https://www.ambiente.gub.uy/oan/geoportal/",
-   "etiquetas": "ambiente; geodatos; territorio; ecosistemas"
+   "etiquetas": "ambiente; geodatos; territorio; ecosistemas",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-070",
@@ -3089,7 +3442,9 @@
    "rel": "",
    "notas": "Frecuencia distinta según producto.",
    "fuentes": "https://www.inia.uy/gras/Clima\nhttps://inia.uy/gras/Clima/Estaciones-on-line",
-   "etiquetas": "clima; agro; estaciones; precipitación"
+   "etiquetas": "clima; agro; estaciones; precipitación",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-071",
@@ -3119,7 +3474,9 @@
    "rel": "",
    "notas": "Último corte no comprobado.",
    "fuentes": "https://www.inia.uy/gras/Monitoreo-Ambiental",
-   "etiquetas": "agro; sequía; vegetación; balance-hídrico"
+   "etiquetas": "agro; sequía; vegetación; balance-hídrico",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-072",
@@ -3146,7 +3503,9 @@
    "rel": "Observatorio Ambiental Nacional — OAN",
    "notas": "El año depende de cada indicador.",
    "fuentes": "https://www.ambiente.gub.uy/oan/indicadores/",
-   "etiquetas": "ambiente; indicadores; ecosistemas; presiones"
+   "etiquetas": "ambiente; indicadores; ecosistemas; presiones",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-073",
@@ -3173,7 +3532,9 @@
    "rel": "",
    "notas": "La fecha de observación no se aplica a todas las series históricas.",
    "fuentes": "https://www.inumet.gub.uy/",
-   "etiquetas": "meteorología; clima; precipitación; temperatura"
+   "etiquetas": "meteorología; clima; precipitación; temperatura",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-074",
@@ -3200,7 +3561,9 @@
    "rel": "",
    "notas": "Panel con actualización operativa; último sello temporal no comprobado.",
    "fuentes": "https://adme.uy/controlpanel.php\nhttps://www.adme.com.uy/datosabiertos.html",
-   "etiquetas": "electricidad; generación; demanda; mercado-eléctrico"
+   "etiquetas": "electricidad; generación; demanda; mercado-eléctrico",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-075",
@@ -3230,7 +3593,9 @@
    "rel": "",
    "notas": "Colección verificada hasta 2024; colaboración académica y de sociedad civil.",
    "fuentes": "https://uruguay.mapbiomas.org/\nhttps://uruguay.mapbiomas.org/colecciones-mapbiomas/",
-   "etiquetas": "cobertura-suelo; uso-suelo; ecosistemas; teledetección"
+   "etiquetas": "cobertura-suelo; uso-suelo; ecosistemas; teledetección",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-076",
@@ -3257,7 +3622,9 @@
    "rel": "",
    "notas": "Ficha pública; acceso a todos los componentes y bases no confirmado.",
    "fuentes": "https://www.gub.uy/sistema-nacional-emergencias/politicas-y-gestion/monitor-integral-riesgos-afectaciones",
-   "etiquetas": "riesgos; emergencias; afectaciones; territorio"
+   "etiquetas": "riesgos; emergencias; afectaciones; territorio",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-077",
@@ -3287,9 +3654,11 @@
    "periodo": "",
    "pub": "",
    "rel": "Montevidata",
-   "notas": "Fecha variable por tablero.",
+   "notas": "Fecha variable por tablero. La página Ambiental es un índice de programas; algunas subpáginas (calidad del aire, cursos de agua) podrían tener datos.",
    "fuentes": "https://montevidata.montevideo.gub.uy/ambiental",
-   "etiquetas": "montevideo; ambiente; agua; aire; residuos"
+   "etiquetas": "montevideo; ambiente; agua; aire; residuos",
+   "gran": "Específico",
+   "contenido": "A revisar"
   },
   {
    "id": "UY-078",
@@ -3320,7 +3689,9 @@
    "rel": "",
    "notas": "Acceso confirmado por ficha oficial; no se auditó cada tablero dinámico.",
    "fuentes": "https://www.gub.uy/ministerio-ambiente/tramites-y-servicios/servicios/observatorio-ambiental-nacional",
-   "etiquetas": "ambiente; agua; aire; biodiversidad; residuos"
+   "etiquetas": "ambiente; agua; aire; biodiversidad; residuos",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-079",
@@ -3349,7 +3720,9 @@
    "rel": "",
    "notas": "Se incluye como observatorio académico; disponibilidad de una base numérica permanente no confirmada.",
    "fuentes": "https://www.ucu.edu.uy/Institucionales/Observatorio-de-Energia-y-Desarrollo-Sustentable-uc839",
-   "etiquetas": "energía; sostenibilidad; transición; investigación"
+   "etiquetas": "energía; sostenibilidad; transición; investigación",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-080",
@@ -3376,7 +3749,9 @@
    "rel": "",
    "notas": "Último año de datos no comprobado.",
    "fuentes": "https://cempre.org.uy/observatorio-de-reciclaje-del-uruguay-cempre/",
-   "etiquetas": "reciclaje; residuos; economía-circular"
+   "etiquetas": "reciclaje; residuos; economía-circular",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-081",
@@ -3405,7 +3780,9 @@
    "rel": "",
    "notas": "Enlace a la ficha oficial con acceso al observatorio.",
    "fuentes": "https://www.gub.uy/ministerio-ambiente/tramites-y-servicios/servicios/observatorio-hidrologico-nacional",
-   "etiquetas": "agua; hidrología; sequía; inundaciones"
+   "etiquetas": "agua; hidrología; sequía; inundaciones",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-082",
@@ -3436,7 +3813,9 @@
    "rel": "",
    "notas": "Complementa los productos de GRAS; fechas por capa.",
    "fuentes": "https://inia.uy/gras-sigras-web",
-   "etiquetas": "agro; geodatos; suelos; clima"
+   "etiquetas": "agro; geodatos; suelos; clima",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-083",
@@ -3463,7 +3842,9 @@
    "rel": "",
    "notas": "Entrada mediante ficha del Catálogo Nacional de Datos Abiertos.",
    "fuentes": "https://catalogodatos.gub.uy/showcase/visualizador-de-objetivos-y-medidas-de-mitigacion-y-adaptacion-ante-el-cambio-climatico",
-   "etiquetas": "cambio-climático; emisiones; ndc; compromisos"
+   "etiquetas": "cambio-climático; emisiones; ndc; compromisos",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-084",
@@ -3493,7 +3874,9 @@
    "rel": "",
    "notas": "Período variable según capa.",
    "fuentes": "https://www.ambiente.gub.uy/visualizador/index.php?vis=cambio-climatico",
-   "etiquetas": "cambio-climático; adaptación; riesgo; geodatos"
+   "etiquetas": "cambio-climático; adaptación; riesgo; geodatos",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-085",
@@ -3520,7 +3903,9 @@
    "rel": "Balance Energético Nacional — BEN",
    "notas": "Verificar el año seleccionado; no se auditó la actualización de cada gráfico.",
    "fuentes": "https://visualizadorben.miem.gub.uy/visualizador/api/repos/%3Apublic%3Aorganismos%3Amiem%3Amiem_ben.wcdf/generatedContent",
-   "etiquetas": "energía; series-históricas; consumo; oferta"
+   "etiquetas": "energía; series-históricas; consumo; oferta",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-086",
@@ -3549,7 +3934,9 @@
    "rel": "CEMPRE",
    "notas": "Acceso mediante página institucional de presentación.",
    "fuentes": "https://cempre.org.uy/v-e-r-visualizador-estrategico-de-residuos-3/",
-   "etiquetas": "residuos; geodatos; reciclaje; economía-circular"
+   "etiquetas": "residuos; geodatos; reciclaje; economía-circular",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-087",
@@ -3579,7 +3966,9 @@
    "rel": "",
    "notas": "Herramientas de DINAGUA; pueden compartir datos con el observatorio.",
    "fuentes": "https://www.ambiente.gub.uy/informacion_hidrica/",
-   "etiquetas": "agua; usos; inundaciones; geodatos"
+   "etiquetas": "agua; usos; inundaciones; geodatos",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-088",
@@ -3606,7 +3995,9 @@
    "rel": "Balance Energético Nacional — BEN",
    "notas": "Comparte el sistema de información del BEN.",
    "fuentes": "https://visualpeb.miem.gub.uy/visualPEB/ben",
-   "etiquetas": "energía; balance; flujos; matriz"
+   "etiquetas": "energía; balance; flujos; matriz",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-089",
@@ -3635,7 +4026,9 @@
    "rel": "Observatorio Territorio Uruguay — OTU",
    "notas": "Vigencia por indicador; no se verificó un último corte global.",
    "fuentes": "https://otu.opp.gub.uy/",
-   "etiquetas": "territorio; indicadores; departamentos; municipios"
+   "etiquetas": "territorio; indicadores; departamentos; municipios",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-090",
@@ -3664,7 +4057,9 @@
    "rel": "",
    "notas": "Vigencia por capa.",
    "fuentes": "https://geoportal.mtop.gub.uy/",
-   "etiquetas": "infraestructura; transporte; rutas; geodatos"
+   "etiquetas": "infraestructura; transporte; rutas; geodatos",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-091",
@@ -3691,7 +4086,9 @@
    "rel": "",
    "notas": "Vigencia y escala dependen del producto.",
    "fuentes": "https://igm.gub.uy/geoportal/listado-servicios/",
-   "etiquetas": "cartografía; geodesia; geodatos; topografía"
+   "etiquetas": "cartografía; geodesia; geodatos; topografía",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-092",
@@ -3722,7 +4119,9 @@
    "rel": "",
    "notas": "Vigencia por capa.",
    "fuentes": "https://gis.rivera.gub.uy/",
-   "etiquetas": "rivera; geodatos; territorio; infraestructura"
+   "etiquetas": "rivera; geodatos; territorio; infraestructura",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-093",
@@ -3749,7 +4148,9 @@
    "rel": "",
    "notas": "La vigencia corresponde a cada instrumento.",
    "fuentes": "https://geoportal.mvot.gub.uy/sitio/portal/inot",
-   "etiquetas": "ordenamiento-territorial; normativa; instrumentos"
+   "etiquetas": "ordenamiento-territorial; normativa; instrumentos",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-094",
@@ -3780,7 +4181,9 @@
    "rel": "Observatorio Territorio Uruguay — OTU",
    "notas": "URL aportada y contrastada con la estructura institucional; carga no confirmada.",
    "fuentes": "https://opp.gub.uy/es/observatorio-territorio-uruguay",
-   "etiquetas": "territorio; inversión; proyectos; desarrollo-local"
+   "etiquetas": "territorio; inversión; proyectos; desarrollo-local",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-095",
@@ -3811,7 +4214,9 @@
    "rel": "",
    "notas": "Los módulos temáticos siguientes se identifican por separado, sin contarlos como nuevos portales matriz.",
    "fuentes": "https://montevidata.montevideo.gub.uy/",
-   "etiquetas": "montevideo; indicadores; gestión; datos-abiertos"
+   "etiquetas": "montevideo; indicadores; gestión; datos-abiertos",
+   "gran": "Portal general",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-096",
@@ -3840,7 +4245,9 @@
    "rel": "Montevidata",
    "notas": "Fecha de actualización del conjunto de intervenciones; no necesariamente de todas las capas.",
    "fuentes": "https://ckan.montevideo.gub.uy/dataset/asentamientos-en-montevideo\nhttps://catalogodatos.gub.uy/dataset/principales-intervenciones-en-asentamientos-en-montevideo",
-   "etiquetas": "montevideo; asentamientos; vivienda; hábitat"
+   "etiquetas": "montevideo; asentamientos; vivienda; hábitat",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-097",
@@ -3869,7 +4276,9 @@
    "rel": "Montevidata",
    "notas": "Fecha variable por tablero.",
    "fuentes": "https://montevidata.montevideo.gub.uy/movilidad",
-   "etiquetas": "montevideo; movilidad; transporte; tránsito"
+   "etiquetas": "montevideo; movilidad; transporte; tránsito",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-098",
@@ -3900,7 +4309,9 @@
    "rel": "Montevidata",
    "notas": "2030 es horizonte de metas, no el último año observado.",
    "fuentes": "https://montevidata.montevideo.gub.uy/objetivos-de-desarrollo-sostenible",
-   "etiquetas": "montevideo; ods; sostenibilidad; indicadores"
+   "etiquetas": "montevideo; ods; sostenibilidad; indicadores",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-099",
@@ -3931,7 +4342,9 @@
    "rel": "Montevidata",
    "notas": "Período comprobado en el módulo de vivienda y hogares.",
    "fuentes": "https://montevidata.montevideo.gub.uy/territorial\nhttps://montevidata.montevideo.gub.uy/territorial/vivienda-y-hogares",
-   "etiquetas": "montevideo; territorio; vivienda; hogares"
+   "etiquetas": "montevideo; territorio; vivienda; hogares",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-100",
@@ -3961,7 +4374,9 @@
    "rel": "",
    "notas": "Pertenece al ecosistema de información territorial del MVOT.",
    "fuentes": "https://sit.mvot.gub.uy/observatorio/indicadores\nhttps://www.gub.uy/ministerio-vivienda-ordenamiento-territorial/tramites-y-servicios/servicios/observatorio-territorial",
-   "etiquetas": "territorio; indicadores; vivienda; población"
+   "etiquetas": "territorio; indicadores; vivienda; población",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-101",
@@ -3992,7 +4407,9 @@
    "rel": "",
    "notas": "Portal matriz; los dos recursos siguientes son módulos, no portales independientes.",
    "fuentes": "https://otu.opp.gub.uy/",
-   "etiquetas": "territorio; desarrollo-local; indicadores; finanzas-subnacionales"
+   "etiquetas": "territorio; desarrollo-local; indicadores; finanzas-subnacionales",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-102",
@@ -4023,7 +4440,9 @@
    "rel": "",
    "notas": "Entrada institucional al sistema.",
    "fuentes": "https://maldonado.gub.uy/sistema-informacion-geografica",
-   "etiquetas": "maldonado; geodatos; urbanismo; territorio"
+   "etiquetas": "maldonado; geodatos; urbanismo; territorio",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-103",
@@ -4054,7 +4473,9 @@
    "rel": "",
    "notas": "Enlace confirmado en el directorio oficial de nodos IDE.",
    "fuentes": "https://www.gub.uy/infraestructura-datos-espaciales/nodos-ideuy",
-   "etiquetas": "montevideo; geodatos; cartografía; urbanismo"
+   "etiquetas": "montevideo; geodatos; cartografía; urbanismo",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-104",
@@ -4083,7 +4504,9 @@
    "rel": "",
    "notas": "Fechas diferentes por capa.",
    "fuentes": "https://geoportal.mvot.gub.uy/sitio/portal/sit",
-   "etiquetas": "ordenamiento-territorial; geodatos; urbanismo"
+   "etiquetas": "ordenamiento-territorial; geodatos; urbanismo",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-105",
@@ -4114,7 +4537,9 @@
    "rel": "",
    "notas": "Se incluye la entrada institucional para evitar enlaces internos cambiantes.",
    "fuentes": "https://www.imcanelones.gub.uy/conozca/departamento/sistema-de-informacion-territorial",
-   "etiquetas": "canelones; ordenamiento; catastro; geodatos"
+   "etiquetas": "canelones; ordenamiento; catastro; geodatos",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-106",
@@ -4143,7 +4568,9 @@
    "rel": "",
    "notas": "Enlace confirmado en IDE; carga del visor no confirmada durante el relevamiento.",
    "fuentes": "https://www.gub.uy/infraestructura-datos-espaciales/nodos-ideuy",
-   "etiquetas": "catastro; padrones; inmuebles; geodatos"
+   "etiquetas": "catastro; padrones; inmuebles; geodatos",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-107",
@@ -4172,7 +4599,9 @@
    "rel": "",
    "notas": "Producto del Observatorio Nacional del Deporte; entrada institucional al visor.",
    "fuentes": "https://www.gub.uy/secretaria-nacional-deporte/comunicacion/noticias/concluyo-primera-etapa-georreferenciacion-espacios-deportivos-snd",
-   "etiquetas": "deporte; infraestructura; plazas; geodatos"
+   "etiquetas": "deporte; infraestructura; plazas; geodatos",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-108",
@@ -4201,7 +4630,9 @@
    "rel": "",
    "notas": "Información productiva y territorial; fecha por capa.",
    "fuentes": "https://visualizadorgeominero.dinamige.gub.uy/DINAMIGE_mvc2/",
-   "etiquetas": "geología; minería; recursos; geodatos"
+   "etiquetas": "geología; minería; recursos; geodatos",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-109",
@@ -4228,7 +4659,9 @@
    "rel": "",
    "notas": "No existe una fecha única para todas las capas.",
    "fuentes": "https://visualizador.ide.uy/ideuy/core/load_public_project/ideuy/",
-   "etiquetas": "geodatos; cartografía; infraestructura; territorio"
+   "etiquetas": "geodatos; cartografía; infraestructura; territorio",
+   "gran": "Portal general",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-110",
@@ -4255,7 +4688,9 @@
    "rel": "",
    "notas": "Enlace institucional a la publicación y su serie.",
    "fuentes": "https://udelar.edu.uy/noticias/se-publicaron-las-estadisticas-basicas-2024-de-la-universidad-de-la-republica\nhttps://planeamiento.udelar.edu.uy/portal/publicaciones/estadisticas-basicas/%20%C2%A0",
-   "etiquetas": "universidad; estudiantes; docentes; egresos"
+   "etiquetas": "universidad; estudiantes; docentes; egresos",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-111",
@@ -4285,7 +4720,9 @@
    "rel": "",
    "notas": "Última edición no comprobada.",
    "fuentes": "https://www.gub.uy/ministerio-educacion-cultura/estadistica",
-   "etiquetas": "educación; matrícula; egresos; gasto"
+   "etiquetas": "educación; matrícula; egresos; gasto",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-112",
@@ -4312,7 +4749,9 @@
    "rel": "",
    "notas": "Información del formulario continuo de estudiantes.",
    "fuentes": "https://planeamiento.udelar.edu.uy/portal/forma-estudiantes/",
-   "etiquetas": "universidad; estudiantes; perfiles; encuestas"
+   "etiquetas": "universidad; estudiantes; perfiles; encuestas",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-113",
@@ -4339,7 +4778,9 @@
    "rel": "",
    "notas": "Las metas 2025–2029/2030 no son años de observación estadística.",
    "fuentes": "https://mirador.ineed.edu.uy/",
-   "etiquetas": "educación; equidad; logros; metas"
+   "etiquetas": "educación; equidad; logros; metas",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-114",
@@ -4366,7 +4807,9 @@
    "rel": "ANEP",
    "notas": "La edición anunciada para el 7/10/2026 aún es futura al corte del relevamiento.",
    "fuentes": "https://www.utu.edu.uy/utu-presento-el-monitor-educativo-2025-en-educacion-media-y-superior/\nhttps://www.utu.edu.uy/utu-presento-el-monitor-educativo-2025-en-educacion-media-y-superior/",
-   "etiquetas": "educación; técnica; utu; matrícula; resultados"
+   "etiquetas": "educación; técnica; utu; matrícula; resultados",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-115",
@@ -4393,7 +4836,9 @@
    "rel": "ANEP",
    "notas": "Puede haber una edición posterior no comprobada.",
    "fuentes": "https://www.anep.edu.uy/monitor/servlet/portada\nhttps://www.anep.edu.uy/monitorRepo/Documentos2024/situacion.pdf",
-   "etiquetas": "educación; primaria; matrícula; asistencia; resultados"
+   "etiquetas": "educación; primaria; matrícula; asistencia; resultados",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-116",
@@ -4420,7 +4865,9 @@
    "rel": "ANEP",
    "notas": "Edición presentada en septiembre de 2026; enlace institucional de acceso.",
    "fuentes": "https://dges.edu.uy/comunicacion/agenda/secundaria-presenta-monitor-educativo-liceal\nhttps://dges.edu.uy/comunicacion/noticias/se-presento-monitor-educativo-liceal-2026\nhttps://www.dges.edu.uy/comunicacion/noticias/se-presento-monitor-educativo-liceal-2026",
-   "etiquetas": "educación; secundaria; matrícula; resultados"
+   "etiquetas": "educación; secundaria; matrícula; resultados",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-117",
@@ -4447,7 +4894,9 @@
    "rel": "",
    "notas": "No se verificó un año único para todos los niveles.",
    "fuentes": "https://observatorio.anep.edu.uy/",
-   "etiquetas": "educación; matrícula; trayectorias; resultados"
+   "etiquetas": "educación; matrícula; trayectorias; resultados",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-118",
@@ -4476,7 +4925,9 @@
    "rel": "",
    "notas": "Predominan informes y estudios.",
    "fuentes": "https://planeamientoeducativo.utu.edu.uy/investigacion/observatorio",
-   "etiquetas": "educación; empleo; formación-técnica; trayectorias"
+   "etiquetas": "educación; empleo; formación-técnica; trayectorias",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-119",
@@ -4503,7 +4954,9 @@
    "rel": "",
    "notas": "Es una puerta de entrada; los monitores se individualizan como recursos vinculados.",
    "fuentes": "https://obsymon.anep.edu.uy/inicio",
-   "etiquetas": "educación; monitores; enseñanza"
+   "etiquetas": "educación; monitores; enseñanza",
+   "gran": "Portal general",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-120",
@@ -4534,7 +4987,9 @@
    "rel": "",
    "notas": "Vigencia distinta según capa; el sitio incluye funciones con autenticación.",
    "fuentes": "https://sig.anep.edu.uy/siganep",
-   "etiquetas": "educación; geodatos; centros; territorio"
+   "etiquetas": "educación; geodatos; centros; territorio",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-121",
@@ -4563,7 +5018,9 @@
    "rel": "",
    "notas": "No hay un corte único verificado para todos los indicadores.",
    "fuentes": "https://prisma.uy/eportal/web/anii-prisma",
-   "etiquetas": "ciencia; tecnología; innovación; investigación; género"
+   "etiquetas": "ciencia; tecnología; innovación; investigación; género",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-122",
@@ -4592,7 +5049,9 @@
    "rel": "",
    "notas": "Vigencia y condiciones de acceso según cada conjunto.",
    "fuentes": "https://anii.org.uy/sitios/servicios-digitales/",
-   "etiquetas": "investigación; datos-abiertos; ciencia-abierta"
+   "etiquetas": "investigación; datos-abiertos; ciencia-abierta",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-123",
@@ -4622,7 +5081,9 @@
    "rel": "",
    "notas": "Acceso y requisitos varían según conjunto; destino enlazado por INE.",
    "fuentes": "https://www.gub.uy/instituto-nacional-estadistica/",
-   "etiquetas": "microdatos; encuestas; censos; metadatos"
+   "etiquetas": "microdatos; encuestas; censos; metadatos",
+   "gran": "Portal general",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-124",
@@ -4651,7 +5112,9 @@
    "rel": "",
    "notas": "Actualización y licencia por conjunto.",
    "fuentes": "https://montevideo.gub.uy/tipo/area-tematica/cercania-digital/datos-abiertos",
-   "etiquetas": "montevideo; datos-abiertos; catálogo; gestión"
+   "etiquetas": "montevideo; datos-abiertos; catálogo; gestión",
+   "gran": "Portal general",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-125",
@@ -4678,7 +5141,9 @@
    "rel": "",
    "notas": "Cada conjunto tiene su propia fecha, licencia y frecuencia; no se listó cada dataset como portal.",
    "fuentes": "https://www.gub.uy/agencia-gobierno-electronico-sociedad-informacion-conocimiento/comunicacion/noticias/catalogo-nacional-datos-abiertos-supero-2600-conjuntos-publicados",
-   "etiquetas": "datos-abiertos; catálogo; reutilización; transversal"
+   "etiquetas": "datos-abiertos; catálogo; reutilización; transversal",
+   "gran": "Portal general",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-126",
@@ -4707,7 +5172,9 @@
    "rel": "",
    "notas": "Año de referencia censal, no fecha de publicación.",
    "fuentes": "https://www.gub.uy/instituto-nacional-estadistica/censosphv",
-   "etiquetas": "censos; demografía; vivienda; territorio"
+   "etiquetas": "censos; demografía; vivienda; territorio",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-127",
@@ -4736,7 +5203,9 @@
    "rel": "",
    "notas": "Complementa el observatorio con vías de acceso a datos.",
    "fuentes": "https://www.gub.uy/agencia-reguladora-compras-estatales/datosdecomprasp%C3%BAblicas",
-   "etiquetas": "compras-públicas; datos-abiertos; contratación"
+   "etiquetas": "compras-públicas; datos-abiertos; contratación",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-128",
@@ -4763,7 +5232,9 @@
    "rel": "",
    "notas": "Fecha de actualización del conjunto abierto de elecciones departamentales 2025.",
    "fuentes": "https://www.gub.uy/corte-electoral/datos-y-estadisticas/estadisticas\nhttps://www.gub.uy/corte-electoral/datos-y-estadisticas/datos-abiertos",
-   "etiquetas": "elecciones; democracia; resultados; territorio"
+   "etiquetas": "elecciones; democracia; resultados; territorio",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-129",
@@ -4792,9 +5263,11 @@
    "periodo": "",
    "pub": "",
    "rel": "Montevidata",
-   "notas": "Fecha variable por tablero.",
+   "notas": "Fecha variable por tablero. La página de Información y Comunicación no muestra indicadores; los datos podrían estar en subpáginas.",
    "fuentes": "https://montevidata.montevideo.gub.uy/informacion-y-comunicacion",
-   "etiquetas": "montevideo; atención-ciudadana; comunicación; gestión"
+   "etiquetas": "montevideo; atención-ciudadana; comunicación; gestión",
+   "gran": "Específico",
+   "contenido": "A revisar"
   },
   {
    "id": "UY-130",
@@ -4823,7 +5296,9 @@
    "rel": "",
    "notas": "2025–2029 es el período del sexto plan, no una fecha de datos.",
    "fuentes": "https://miradordegobiernoabierto.agesic.gub.uy/SigesVisualizador/gu/o/GA/p/1989?csrt=16533568085812402590\nhttps://miradordegobiernoabierto.agesic.gub.uy/SigesVisualizador/gu/o/GA/p/3141%3Bjsessionid%3Dr3S9WHvhuSpDeKVSXs5s702W.node1",
-   "etiquetas": "gobierno-abierto; compromisos; participación; seguimiento"
+   "etiquetas": "gobierno-abierto; compromisos; participación; seguimiento",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-131",
@@ -4850,7 +5325,9 @@
    "rel": "",
    "notas": "Algunos paneles declaran actualización diaria; último corte no auditado.",
    "fuentes": "https://observatorio.arce.gub.uy/eportal/iw_IL/web/guest/inicio\nhttps://observatorio.arce.gub.uy/eportal/web/guest/grandes-rubros",
-   "etiquetas": "compras-públicas; proveedores; contratación; gasto"
+   "etiquetas": "compras-públicas; proveedores; contratación; gasto",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-132",
@@ -4881,7 +5358,9 @@
    "rel": "",
    "notas": "Entrada institucional; fecha de la página de objetivos, no corte de las bases.",
    "fuentes": "https://www.gub.uy/oficina-nacional-servicio-civil/politicas-y-gestion/observatorio-sus-objetivos\nhttps://www.gub.uy/oficina-nacional-servicio-civil/laboratorio-observatorio",
-   "etiquetas": "empleo-público; funcionarios; género; gestión"
+   "etiquetas": "empleo-público; funcionarios; género; gestión",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-133",
@@ -4912,7 +5391,9 @@
    "rel": "Montevidata",
    "notas": "Fecha variable por serie.",
    "fuentes": "https://montevidata.montevideo.gub.uy/transparencia-0",
-   "etiquetas": "montevideo; presupuesto; ingresos; gastos"
+   "etiquetas": "montevideo; presupuesto; ingresos; gastos",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-134",
@@ -4939,7 +5420,9 @@
    "rel": "",
    "notas": "La edición 2026 del sitio no equivale al período de cada indicador.",
    "fuentes": "https://www.opp.gub.uy/es/ods-2026",
-   "etiquetas": "ods; desarrollo-sostenible; indicadores; políticas"
+   "etiquetas": "ods; desarrollo-sostenible; indicadores; políticas",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-135",
@@ -4968,7 +5451,9 @@
    "rel": "",
    "notas": "Último corte de ejecución no comprobado.",
    "fuentes": "https://transparenciapresupuestaria.opp.gub.uy/sites/default/files/datos-abiertos/PTP%20-%20Nota%20met%20presupuesto%20genero.pdf\nhttps://opp.gub.uy/es/noticias/portal-de-transparencia-presupuestaria-de-opp-es-premiado",
-   "etiquetas": "presupuesto; gasto-público; resultados; planificación"
+   "etiquetas": "presupuesto; gasto-público; resultados; planificación",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-136",
@@ -5000,7 +5485,9 @@
    "rel": "",
    "notas": "Fecha del boletín de mercado laboral localizado; otros productos tienen otros cortes.",
    "fuentes": "https://www.gub.uy/instituto-nacional-estadistica/",
-   "etiquetas": "estadísticas-oficiales; demografía; economía; sociedad"
+   "etiquetas": "estadísticas-oficiales; demografía; economía; sociedad",
+   "gran": "Portal general",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-137",
@@ -5029,7 +5516,9 @@
    "rel": "",
    "notas": "Enlace al nodo Uruguay de Redatam.",
    "fuentes": "https://www.redatam.org/es/procesar-en-linea/latam/uruguay",
-   "etiquetas": "censos; tabulaciones; demografía; microdatos"
+   "etiquetas": "censos; tabulaciones; demografía; microdatos",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-138",
@@ -5061,7 +5550,9 @@
    "rel": "",
    "notas": "La versión 2026 de un visor no acredita por sí sola que todos sus datos sean de 2026.",
    "fuentes": "https://www.gub.uy/instituto-nacional-estadistica/visualizadores",
-   "etiquetas": "visualizadores; empleo; empresas; inmuebles; censo"
+   "etiquetas": "visualizadores; empleo; empresas; inmuebles; censo",
+   "gran": "Portal general",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-139",
@@ -5088,7 +5579,9 @@
    "rel": "",
    "notas": "Acceso desde la página AECA; período más reciente no comprobado.",
    "fuentes": "https://www.gub.uy/ministerio-interior/violencia-criminalidad",
-   "etiquetas": "cárceles; privación-libertad; sistema-penitenciario"
+   "etiquetas": "cárceles; privación-libertad; sistema-penitenciario",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-140",
@@ -5115,7 +5608,9 @@
    "rel": "",
    "notas": "Último ejercicio publicado no comprobado.",
    "fuentes": "https://www.poderjudicial.gub.uy/informacion-estadistica",
-   "etiquetas": "justicia; expedientes; sentencias; actividad-judicial"
+   "etiquetas": "justicia; expedientes; sentencias; actividad-judicial",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-141",
@@ -5144,7 +5639,9 @@
    "rel": "",
    "notas": "Monitoreo documental, no una base exclusivamente numérica.",
    "fuentes": "https://www.gub.uy/institucion-nacional-derechos-humanos-uruguay/tematica/observatorio-legislativo",
-   "etiquetas": "derechos-humanos; legislación; parlamento; seguimiento"
+   "etiquetas": "derechos-humanos; legislación; parlamento; seguimiento",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-142",
@@ -5173,7 +5670,9 @@
    "rel": "",
    "notas": "El último año de un informe nacional puede diferir del disponible en el mapa.",
    "fuentes": "https://aplicacionesunasev.presidencia.gub.uy/mapas",
-   "etiquetas": "seguridad-vial; siniestros; movilidad; geodatos"
+   "etiquetas": "seguridad-vial; siniestros; movilidad; geodatos",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-143",
@@ -5202,7 +5701,9 @@
    "rel": "",
    "notas": "Enlace confirmado por INDDHH; carga del destino no confirmada.",
    "fuentes": "https://www.gub.uy/institucion-nacional-derechos-humanos-uruguay/estudios",
-   "etiquetas": "derechos-humanos; recomendaciones; compromisos; seguimiento"
+   "etiquetas": "derechos-humanos; recomendaciones; compromisos; seguimiento",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-144",
@@ -5231,7 +5732,9 @@
    "rel": "",
    "notas": "Entrada institucional al visualizador; no se usó la fecha de lanzamiento como fecha de datos.",
    "fuentes": "https://www.gub.uy/fiscalia-general-nacion/comunicacion/noticias/fiscalia-presenta-nuevo-visualizador-datos\nhttps://www.gub.uy/fiscalia-general-nacion/",
-   "etiquetas": "justicia; proceso-penal; denuncias; imputaciones"
+   "etiquetas": "justicia; proceso-penal; denuncias; imputaciones",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-145",
@@ -5260,7 +5763,9 @@
    "rel": "",
    "notas": "Período confirmado en boletín AECA; no se verificó igual corte en todos los paneles.",
    "fuentes": "https://observatorioseguridad.minterior.gub.uy/\nhttps://www.gub.uy/ministerio-interior/comunicacion/noticias/delitos-bajaron-37-primer-semestre-2026-respecto-igual-periodo-2025",
-   "etiquetas": "delitos; seguridad; violencia; denuncias"
+   "etiquetas": "delitos; seguridad; violencia; denuncias",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-146",
@@ -5290,7 +5795,9 @@
    "rel": "",
    "notas": "Basado en el Innovation Capabilities Outlook 2026. Más de 2.500 capacidades de innovación.",
    "fuentes": "https://www.wipo.int/es/web/economics/w/news/2026/ipo-launches-innovation-capabilities-navigator-to-support-evidence-based-innovation-policy",
-   "etiquetas": ""
+   "etiquetas": "",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-147",
@@ -5320,7 +5827,9 @@
    "rel": "",
    "notas": "Perfil de economía de la edición 2025 localizado.",
    "fuentes": "https://www.wipo.int/edocs/gii-ranking/2025/uy.pdf",
-   "etiquetas": ""
+   "etiquetas": "",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-148",
@@ -5349,7 +5858,9 @@
    "rel": "",
    "notas": "URL de referencia; período no verificado en este corte.",
    "fuentes": "https://www3.wipo.int/ipstats/",
-   "etiquetas": ""
+   "etiquetas": "",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-149",
@@ -5379,7 +5890,9 @@
    "rel": "",
    "notas": "URL de referencia; Uruguay reporta a la red por medio de ANII. Período no verificado en este corte.",
    "fuentes": "https://www.ricyt.org/",
-   "etiquetas": ""
+   "etiquetas": "",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-150",
@@ -5410,7 +5923,9 @@
    "rel": "",
    "notas": "URL de referencia; período no verificado en este corte.",
    "fuentes": "https://databrowser.uis.unesco.org/",
-   "etiquetas": ""
+   "etiquetas": "",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-151",
@@ -5440,7 +5955,9 @@
    "rel": "",
    "notas": "Fichas de país y aspectos metodológicos ILIA 2025 localizados.",
    "fuentes": "https://indicelatam.cl/wp-content/uploads/2026/03/ILIA-2025.-Fichas-de-pais-y-aspectos-metodologicos.pdf",
-   "etiquetas": ""
+   "etiquetas": "",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-152",
@@ -5469,7 +5986,9 @@
    "rel": "",
    "notas": "URL de referencia; período no verificado en este corte.",
    "fuentes": "https://www.scimagojr.com/countryrank.php",
-   "etiquetas": ""
+   "etiquetas": "",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-153",
@@ -5499,7 +6018,9 @@
    "rel": "",
    "notas": "URL de referencia; período no verificado en este corte.",
    "fuentes": "https://atlas.hks.harvard.edu/",
-   "etiquetas": ""
+   "etiquetas": "",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-154",
@@ -5528,7 +6049,9 @@
    "rel": "",
    "notas": "Último reporte nacional localizado: GEM 2023 (IEEM). Verificar continuidad.",
    "fuentes": "https://ieem.edu.uy/pdf/noticias/610/nuevo-reporte-nacional-gem-2023.pdf",
-   "etiquetas": ""
+   "etiquetas": "",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-155",
@@ -5557,7 +6080,9 @@
    "rel": "",
    "notas": "URL de referencia; período no verificado en este corte.",
    "fuentes": "https://oecd.ai/",
-   "etiquetas": ""
+   "etiquetas": "",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-156",
@@ -5588,7 +6113,9 @@
    "rel": "",
    "notas": "URL de referencia; período no verificado en este corte.",
    "fuentes": "https://data.worldbank.org/country/uruguay",
-   "etiquetas": ""
+   "etiquetas": "",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-157",
@@ -5619,7 +6146,9 @@
    "rel": "",
    "notas": "URL de referencia; período no verificado en este corte.",
    "fuentes": "https://statistics.cepal.org/portal/cepalstat/",
-   "etiquetas": ""
+   "etiquetas": "",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-158",
@@ -5648,7 +6177,9 @@
    "rel": "",
    "notas": "URL de referencia; período no verificado en este corte.",
    "fuentes": "https://ilostat.ilo.org/",
-   "etiquetas": ""
+   "etiquetas": "",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-159",
@@ -5680,7 +6211,9 @@
    "rel": "",
    "notas": "URL de referencia; período no verificado en este corte.",
    "fuentes": "https://oig.cepal.org/",
-   "etiquetas": ""
+   "etiquetas": "",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-160",
@@ -5707,7 +6240,9 @@
    "rel": "",
    "notas": "URL de referencia; período no verificado en este corte.",
    "fuentes": "https://dashboards.sdgindex.org/",
-   "etiquetas": ""
+   "etiquetas": "",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-161",
@@ -5734,7 +6269,9 @@
    "rel": "",
    "notas": "URL de referencia; período no verificado en este corte.",
    "fuentes": "https://unstats.un.org/sdgs/dataportal",
-   "etiquetas": ""
+   "etiquetas": "",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-162",
@@ -5764,7 +6301,9 @@
    "rel": "",
    "notas": "URL de referencia; período no verificado en este corte.",
    "fuentes": "https://www.who.int/data/gho",
-   "etiquetas": ""
+   "etiquetas": "",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-163",
@@ -5793,7 +6332,9 @@
    "rel": "",
    "notas": "URL de referencia; período no verificado en este corte.",
    "fuentes": "https://www.fao.org/faostat/",
-   "etiquetas": ""
+   "etiquetas": "",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-164",
@@ -5822,7 +6363,9 @@
    "rel": "",
    "notas": "URL de referencia; período no verificado en este corte.",
    "fuentes": "https://publicadministration.un.org/egovkb/",
-   "etiquetas": ""
+   "etiquetas": "",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-165",
@@ -5849,7 +6392,9 @@
    "rel": "",
    "notas": "URL de referencia; período no verificado en este corte.",
    "fuentes": "https://datahub.itu.int/",
-   "etiquetas": ""
+   "etiquetas": "",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-166",
@@ -5876,7 +6421,9 @@
    "rel": "",
    "notas": "URL de referencia; período no verificado en este corte.",
    "fuentes": "https://comtradeplus.un.org/",
-   "etiquetas": ""
+   "etiquetas": "",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-167",
@@ -5905,7 +6452,9 @@
    "rel": "",
    "notas": "URL de referencia; período no verificado en este corte.",
    "fuentes": "https://www.climatewatchdata.org/",
-   "etiquetas": ""
+   "etiquetas": "",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-168",
@@ -5934,7 +6483,9 @@
    "rel": "",
    "notas": "Informe EUTIC 2025 localizado. Conviene enlazar la página de la encuesta en gub.uy cuando se confirme.",
    "fuentes": "https://www.gub.uy/agencia-gobierno-electronico-sociedad-informacion-conocimiento/sites/agencia-gobierno-electronico-sociedad-informacion-conocimiento/files/2025-11/_Informe_EUTIC_2025.pdf",
-   "etiquetas": ""
+   "etiquetas": "",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-169",
@@ -5967,7 +6518,9 @@
    "rel": "",
    "notas": "Se localizaron informes Cuidados rinde cuentas hasta 2020 en la búsqueda; vigencia actual no comprobada.",
    "fuentes": "https://www.gub.uy/sistema-cuidados/datos-y-estadisticas/estadisticas/cuidados-rinde-cuentas-febrero-2020",
-   "etiquetas": ""
+   "etiquetas": "",
+   "gran": "Específico",
+   "contenido": "Con datos"
   },
   {
    "id": "UY-170",
@@ -5996,7 +6549,73 @@
    "rel": "",
    "notas": "Herramienta de consulta de registros; no se localizó un tablero estadístico público de la DNPI.",
    "fuentes": "https://www.gub.uy/ministerio-industria-energia-mineria/tramites-y-servicios/servicios/base-publica-marcas-patentes",
-   "etiquetas": ""
+   "etiquetas": "",
+   "gran": "Específico",
+   "contenido": "Con datos"
+  },
+  {
+   "id": "UY-171",
+   "nombre": "Monitor Laboral: demanda de empleos TI",
+   "inst": "Observatorio TI de CUTI y Advice",
+   "ambito": "Nacional",
+   "nat": "Sector empresarial",
+   "tipo": "Módulo",
+   "alcance": "Nacional",
+   "desc": "Edición especial del Monitor Laboral de Advice sobre la demanda de empleo en el sector TI, a partir de avisos laborales depurados y sin duplicados. Periodicidad mensual.",
+   "url": "https://observatorioti.cuti.org.uy/mirador/estudios-especializados/monitor-laboral-la-demanda-de-empleos-ti/",
+   "tema": "T14",
+   "temas_sec": [
+    "T13"
+   ],
+   "enfoques": [],
+   "area": "Trabajo y protección social",
+   "ods": 8,
+   "nivel": 4,
+   "descarga": "Por verificar",
+   "api": "Por verificar",
+   "des_terr": "Por verificar",
+   "des_sexo": "Por verificar",
+   "periodo": "Julio 2026: avisos laborales",
+   "pub": "2026-08-27",
+   "rel": "",
+   "notas": "Módulo específico del Observatorio TI; se prioriza sobre el portal general para el tema empleo.",
+   "fuentes": "https://observatorioti.cuti.org.uy/mirador/estudios-especializados/monitor-laboral-la-demanda-de-empleos-ti/",
+   "etiquetas": "",
+   "gran": "Específico",
+   "contenido": "Con datos"
+  },
+  {
+   "id": "UY-172",
+   "nombre": "Mercado laboral — ECH (visualizador)",
+   "inst": "Instituto Nacional de Estadística",
+   "ambito": "Nacional",
+   "nat": "Público nacional",
+   "tipo": "Visualizador",
+   "alcance": "Nacional y departamental",
+   "desc": "Visualizador de indicadores de actividad, empleo, desempleo, no registro a la seguridad social y subempleo de la Encuesta Continua de Hogares, con aperturas departamentales y series de tiempo descargables.",
+   "url": "https://www7.ine.gub.uy/Dashboard-%20ML-ECH/MercadoLaboral/",
+   "tema": "T14",
+   "temas_sec": [
+    "T16"
+   ],
+   "enfoques": [
+    "E09"
+   ],
+   "area": "Trabajo y protección social",
+   "ods": 8,
+   "nivel": 3,
+   "descarga": "Sí",
+   "api": "Por verificar",
+   "des_terr": "Sí",
+   "des_sexo": "Por verificar",
+   "periodo": "",
+   "pub": "",
+   "rel": "",
+   "notas": "Módulo específico de la ECH; complementa los informes mensuales del INE. Último período no comprobado en este corte.",
+   "fuentes": "https://www7.ine.gub.uy/Dashboard-%20ML-ECH/MercadoLaboral/",
+   "etiquetas": "",
+   "gran": "Específico",
+   "contenido": "Con datos"
   }
  ]
 }

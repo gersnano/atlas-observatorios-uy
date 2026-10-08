@@ -169,6 +169,24 @@ section.block{padding-block:64px}
 .ficha{font-size:12.5px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 12px;background:var(--paper-2);border-radius:6px;padding:10px 12px;margin:0}
 .ficha dt{color:var(--muted)}
 .ficha dd{margin:0;overflow-wrap:anywhere}
+.rank{display:inline-grid;place-items:center;min-width:26px;height:26px;border-radius:50%;border:1px solid var(--gold);color:var(--gold);font:600 15px var(--f-display);font-variant-numeric:lining-nums}
+.card.ref{border-color:color-mix(in srgb,var(--gold) 45%,var(--line))}
+.badge{font:500 10.5px var(--f-mono);letter-spacing:.06em;text-transform:uppercase;border-radius:3px;padding:2px 6px;background:var(--paper-2);color:var(--muted)}
+.badge.rev{background:var(--warn-bg);color:var(--warn)}
+details.others{margin-top:22px;border-top:1px solid var(--line)}
+details.others>summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:10px;padding:14px 0 10px;font-family:var(--f-display);font-size:20px;font-weight:600;color:var(--muted)}
+details.others>summary::-webkit-details-marker{display:none}
+details.others>summary::after{content:"Ver";margin-left:auto;font:500 12.5px var(--f-body);color:var(--accent)}
+details.others[open]>summary::after{content:"Ocultar"}
+details.others>summary small{font-family:var(--f-mono);font-size:11px;font-weight:400}
+.rows{display:flex;flex-direction:column}
+.row{display:grid;grid-template-columns:24px minmax(0,1fr) auto auto;gap:12px;align-items:center;padding:9px 2px;border-bottom:1px dotted var(--hair);font-size:13.5px}
+.row .glyph{width:22px;height:22px}
+.row a{color:var(--ink);text-decoration:none;font-weight:500}
+.row a:hover{text-decoration:underline}
+.row .ri{display:block;font-size:12px;color:var(--muted)}
+.row .rt{display:flex;gap:6px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+@media (max-width:620px){.row{grid-template-columns:24px minmax(0,1fr)}.row .rt{grid-column:2;justify-content:flex-start}}
 .empty{padding:40px 20px;text-align:center;color:var(--muted);border:1px dashed var(--hair);border-radius:var(--r);font-family:var(--f-display);font-size:19px;font-style:italic}
 .showall{margin:18px auto 0;display:block;background:transparent;border:1px solid var(--ink);color:var(--ink);border-radius:999px;padding:9px 20px;font:500 14px var(--f-body);cursor:pointer}
 
@@ -277,7 +295,7 @@ footer .wrap{padding-block:26px;display:flex;flex-wrap:wrap;gap:10px 30px;justif
   <div class="wrap">
     <div class="sec-head">
       <div><div class="eyebrow">Buscador temático</div><h2><span class="roman">II.</span>Quién publica datos <em>sobre un tema</em></h2>
-      <p>La búsqueda reconoce sinónimos y los traduce a la taxonomía. Un enfoque como género solo trae recursos que lo incorporan de forma explícita.</p></div>
+      <p>Cada tema muestra primero sus referencias principales, en orden de prioridad. El resto de los recursos queda disponible en segundo plano. La búsqueda reconoce sinónimos, y un enfoque como género solo trae recursos que lo incorporan de forma explícita.</p></div>
     </div>
     <div class="layout">
       <aside class="filters" id="filters" aria-label="Filtros"></aside>
@@ -468,11 +486,14 @@ function run(){
       for (const w of words) { if (nm.includes(w)) {score+=2; hits+=.5;} else if (!concepts.length && h.includes(w)) {score+=1; hits+=.5;} } }
     return {r,hits,score}; });
   if (concepts.length || words.length) list = list.filter(x=>x.score>0);
-  list = list.filter(({r}) => (!state.area.size||state.area.has(r.area)) && (!state.amb.size||state.amb.has(r.ambito)) &&
+  const pass = r => (!state.area.size||state.area.has(r.area)) && (!state.amb.size||state.amb.has(r.ambito)) &&
     (!state.niv.size||state.niv.has(r.nivel)) && (!state.enf.size||[...state.enf].every(e=>r.enfoques.includes(e))) &&
-    (!state.ods||r.ods===state.ods) && (!state.vig||r.periodo) && (!state.dl||r.descarga==="Sí"));
-  list.sort((a,b)=>(b.hits-a.hits)||(b.score-a.score)||(b.r.nivel-a.r.nivel)||a.r.nombre.localeCompare(b.r.nombre));
-  renderInterp(concepts, words); renderResults(list, concepts.length); renderFilters();
+    (!state.ods||r.ods===state.ods) && (!state.vig||r.periodo) && (!state.dl||r.descarga==="Sí");
+  state.pass = pass;
+  list = list.filter(({r}) => pass(r));
+  const refSet = new Set([...Object.values(T),...Object.values(E)].flatMap(x=>x.refs||[]));
+  list.sort((a,b)=>(b.hits-a.hits)||(b.score-a.score)||(refSet.has(b.r.id)-refSet.has(a.r.id))||(rankKey(a.r)-rankKey(b.r))||(b.r.nivel-a.r.nivel)||a.r.nombre.localeCompare(b.r.nombre));
+  renderInterp(concepts, words); renderResults(list, concepts); renderFilters();
 }
 function renderInterp(concepts, words){
   const el = $("#interp");
@@ -486,10 +507,10 @@ function renderInterp(concepts, words){
   el.innerHTML = h + `</div>`;
 }
 const lvl = n => `<span class="lvl" title="Nivel ${n}: ${esc(N[n].nombre)}"><i>${[1,2,3,4].map(k=>`<b class="${k<=n?"on":""}"></b>`).join("")}</i>${esc(N[n].nombre)}</span>`;
-function card(r,i){
+function card(r,i,rank){
   const t = T[r.tema], ak = areaKey(r.area);
-  return `<article class="card" style="--i:${Math.min(i,18)}">
-    <div class="meta">${glyphUse(ak)}<span>${esc(r.id)} · ${esc(r.tipo)}</span><span class="amb">${esc(r.ambito)}</span></div>
+  return `<article class="card${rank?" ref":""}" style="--i:${Math.min(i,18)}">
+    <div class="meta">${rank?`<span class="rank" title="Referencia principal ${rank}">${rank}</span>`:glyphUse(ak)}<span>${esc(r.id)} · ${esc(r.tipo)}</span><span class="amb">${r.contenido==="A revisar"?'<span class="badge rev">A revisar</span>':esc(r.ambito)}</span></div>
     <h3><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.nombre)}</a></h3>
     <div class="inst">${esc(r.inst)}</div>
     <p class="desc">${esc(r.desc)}</p>
@@ -505,17 +526,43 @@ function card(r,i){
       ${r.fuentes?`<dt>Fuente</dt><dd><a href="${esc(r.fuentes.split(/[\s;]/)[0])}" target="_blank" rel="noopener">verificación ↗</a></dd>`:""}
     </dl></article>`;
 }
-function renderResults(list, need){
+function row(r){
+  const ak = areaKey(r.area);
+  return `<div class="row">${glyphUse(ak)}<div style="min-width:0"><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.nombre)}</a><span class="ri">${esc(r.inst)} · ${esc(T[r.tema].nombre)}</span></div>
+    <div class="rt">${r.contenido==="A revisar"?'<span class="badge rev">A revisar</span>':""}${r.gran==="Portal general"?'<span class="badge">Portal general</span>':""}${lvl(r.nivel)}</div>
+    <span class="ods-sq" style="background:${ODSC[r.ods]};color:${ODSTXT[r.ods]||"#fff"}" title="ODS ${r.ods}">${r.ods}</span></div>`;
+}
+const rankKey = r => (r.contenido==="A revisar"?2:0) + (r.gran==="Portal general"?1:0);
+function renderResults(list, concepts){
+  const need = concepts.length;
   const nac = list.filter(x=>!isInt(x.r)), int = list.filter(x=>isInt(x.r));
   $("#count").innerHTML = `<b>${list.length}</b> recursos · ${nac.length} nacionales y departamentales · ${int.length} internacionales`;
   if (!list.length) { $("#results").innerHTML = `<div class="empty">No hay recursos para esta búsqueda con los filtros actuales. Si el tema existe en la taxonomía y no tiene recursos, es un vacío del ecosistema.</div>`; return; }
-  let h="", i=0; const shown = nac.slice(0, state.limit);
-  if (need>1) { const all = shown.filter(x=>x.hits>=need), part = shown.filter(x=>x.hits<need);
-    if (all.length) h += `<div class="group-title">Coinciden con todos los conceptos <small>${all.length}</small></div><div class="results">${all.map(x=>card(x.r,i++)).join("")}</div>`;
-    if (part.length) h += `<div class="group-title">Coinciden con alguno <small>${part.length}</small></div><div class="results">${part.map(x=>card(x.r,i++)).join("")}</div>`;
-  } else if (shown.length) h += `<div class="group-title">Uruguay <small>${nac.length}</small></div><div class="results">${shown.map(x=>card(x.r,i++)).join("")}</div>`;
-  if (nac.length > state.limit) h += `<button class="showall" data-act="more">Mostrar ${Math.min(24, nac.length-state.limit)} más · quedan ${nac.length-state.limit}</button>`;
-  if (int.length) h += `<div class="group-title">Comparación internacional <small>${int.length}</small></div><div class="results">${int.map(x=>card(x.r,i++)).join("")}</div>`;
+  let h = "", i = 0;
+  if (need) {
+    // referencias principales: lista curada del concepto (o recursos que cumplen todos los conceptos)
+    const byId = new Map(nac.map(x=>[x.r.id,x]));
+    R.forEach(r => { if (!byId.has(r.id) && !isInt(r) && state.pass(r)) byId.set(r.id, {r, hits:0, score:0}); });
+    let featured = [];
+    if (need === 1) {
+      const c = concepts[0], refs = (c.k==="t" ? T[c.code].refs : E[c.code].refs) || [];
+      featured = refs.map(id=>byId.get(id)).filter(x=>x && x.r.contenido!=="A revisar");
+    } else {
+      const refs = new Set(concepts.flatMap(c => (c.k==="t" ? T[c.code].refs : E[c.code].refs) || []));
+      featured = nac.filter(x=>x.hits>=need).sort((a,b)=>(refs.has(b.r.id)-refs.has(a.r.id))||(rankKey(a.r)-rankKey(b.r))).slice(0,5);
+    }
+    if (!featured.length) featured = nac.filter(x=>x.r.contenido!=="A revisar").sort((a,b)=>(b.hits-a.hits)||(rankKey(a.r)-rankKey(b.r))||(b.r.nivel-a.r.nivel)).slice(0,3);
+    const fids = new Set(featured.map(x=>x.r.id));
+    const rest = nac.filter(x=>!fids.has(x.r.id)).sort((a,b)=>(b.hits-a.hits)||(rankKey(a.r)-rankKey(b.r))||(b.score-a.score));
+    h += `<div class="group-title">Referencias principales <small>${featured.length}</small></div><div class="results">${featured.map((x,k)=>card(x.r,i++,k+1)).join("")}</div>`;
+    if (rest.length) h += `<details class="others"><summary>Otros recursos con información sobre el tema <small>${rest.length}</small></summary><div class="rows">${rest.map(x=>row(x.r)).join("")}</div></details>`;
+    if (int.length) h += `<details class="others"><summary>Comparación internacional <small>${int.length}</small></summary><div class="rows">${int.map(x=>row(x.r)).join("")}</div></details>`;
+  } else {
+    const shown = nac.slice(0, state.limit);
+    h += `<div class="group-title">Uruguay <small>${nac.length}</small></div><div class="results">${shown.map(x=>card(x.r,i++)).join("")}</div>`;
+    if (nac.length > state.limit) h += `<button class="showall" data-act="more">Mostrar ${Math.min(24, nac.length-state.limit)} más · quedan ${nac.length-state.limit}</button>`;
+    if (int.length) h += `<details class="others"><summary>Comparación internacional <small>${int.length}</small></summary><div class="rows">${int.map(x=>row(x.r)).join("")}</div></details>`;
+  }
   $("#results").innerHTML = h;
 }
 const fgroup = (id, title, items, set, open) => `<details ${open?"open":""}><summary>${title}</summary><div class="fopts">${items.map(([v,l,n,g])=>`<button class="fbtn" data-f="${id}" data-v="${esc(v)}" aria-pressed="${set.has(v)}">${g||""}${esc(l)}<span class="n">${n}</span></button>`).join("")}</div></details>`;

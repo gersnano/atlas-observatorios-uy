@@ -37,6 +37,7 @@ def main(xlsx, outdir):
     recs = []
     for row in ws.iter_rows(min_row=2, values_only=True):
         if not row[0]: continue
+        if g(row, "Contenido de datos").startswith("Sin datos"): continue
         code = g(row, "Tema principal")[:3]
         if code not in temas: continue
         t = temas[code]
@@ -53,8 +54,17 @@ def main(xlsx, outdir):
             "periodo": g(row, "Período de datos comprobado"), "pub": g(row, "Publicación / actualización comprobada"),
             "rel": g(row, "Portal o sistema relacionado"), "notas": g(row, "Notas de verificación"),
             "fuentes": g(row, "Fuentes de verificación"), "etiquetas": g(row, "Etiquetas originales"),
+            "gran": g(row, "Granularidad") or "Específico", "contenido": g(row, "Contenido de datos") or "Con datos",
         })
-    fechas = [r.get("fecha") for r in recs]
+    # referencias principales por tema o enfoque
+    ids = {r["id"] for r in recs}
+    refs = {}
+    for r in wb["Referencias por tema"].iter_rows(min_row=2, values_only=True):
+        if r[0] and r[3] and re.match(r"[TE]\d\d$", str(r[0])) and r[3] in ids:
+            refs.setdefault(r[0], []).append((int(r[2] or 99), r[3]))
+    for code, lst in refs.items():
+        target = temas if code.startswith("T") else enfoques
+        if code in target: target[code]["refs"] = [i for _, i in sorted(lst)]
     corte = max([g(row, "Fecha de relevamiento") for row in ws.iter_rows(min_row=2, values_only=True) if row[0]] or [""])
     data = {"corte": corte, "regla": regla, "areas": areas, "temas": temas, "enfoques": enfoques,
             "niveles": niveles, "ods": ods, "recursos": recs}
