@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Atlas de observatorios, monitores y portales de datos de Uruguay, ordenados por tema, enfoque y nivel de análisis.">
+<meta name="description" content="Reúne en un solo lugar los observatorios, monitores y portales de datos de Uruguay, organizados por tema.">
 <title>Atlas de Observatorios del Uruguay</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -57,7 +57,7 @@ h1,h2,h3{text-wrap:balance;margin:0}
 @media (max-width:900px){.hero .wrap{grid-template-columns:minmax(0,1fr)}}
 .plate-no{font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;color:var(--muted);display:flex;gap:14px;align-items:center}
 .plate-no::after{content:"";height:1px;flex:1;background:var(--hair);max-width:120px}
-.hero h1{font-family:var(--f-display);font-weight:600;font-size:clamp(40px,6.2vw,80px);line-height:.96;letter-spacing:-.015em;margin-top:18px}
+.hero h1{font-family:var(--f-display);font-weight:600;font-size:clamp(36px,5.2vw,66px);line-height:1;letter-spacing:-.015em;margin-top:18px}
 .hero h1 em{font-style:italic;font-weight:500;color:var(--gold)}
 .hero h1 .w{display:inline-block;animation:wordIn .9s cubic-bezier(.2,.7,.1,1) both;animation-delay:calc(var(--d) * 90ms + 200ms)}
 @keyframes wordIn{from{transform:translateY(.35em);filter:blur(4px)}to{transform:none;filter:none}}
@@ -108,8 +108,8 @@ section.block{padding-block:64px}
 .sec-head h2 em{font-style:italic;font-weight:500}
 .sec-head p{color:var(--muted);max-width:62ch;margin:10px 0 0}
 .howto{list-style:none;counter-reset:h;display:flex;flex-wrap:wrap;gap:8px 22px;padding:0;margin:20px 0 0;font-size:13px;color:var(--muted)}
-.howto li{counter-increment:h;display:flex;gap:8px;align-items:baseline;max-width:30ch}
-.howto li::before{content:counter(h);font-family:var(--f-display);font-weight:600;font-size:17px;color:var(--gold)}
+.howto li{counter-increment:h;display:block;max-width:30ch}
+.howto li::before{content:counter(h);margin-right:7px;font-family:var(--f-display);font-weight:600;font-size:17px;color:var(--gold)}
 .howto b{color:var(--ink);font-weight:600}
 .navbtn{border:1px solid var(--ink);background:transparent;color:var(--ink);border-radius:999px;padding:5px 12px;font:500 13px var(--f-body);cursor:pointer;margin-left:6px}
 .navbtn:hover{background:var(--ink);color:var(--paper)}
@@ -270,8 +270,8 @@ footer .wrap{padding-block:26px;display:flex;flex-wrap:wrap;gap:10px 30px;justif
   <div class="wrap">
     <div style="min-width:0">
       <div class="plate-no">LÁMINA I · URUGUAY · CORTE <span id="corte"></span></div>
-      <h1 id="h1"><span class="w" style="--d:0">Qué</span> <span class="w" style="--d:1">se</span> <span class="w" style="--d:2">mide,</span> <span class="w" style="--d:3">quién</span> <span class="w" style="--d:4">lo</span> <span class="w" style="--d:5">mide</span> <span class="w" style="--d:6">y</span> <em class="w" style="--d:7">dónde</em> <em class="w" style="--d:8">falta.</em></h1>
-      <p class="lead">Atlas de los observatorios, monitores, portales estadísticos y geoportales de Uruguay, ordenados por tema, enfoque y nivel de análisis, con referencias internacionales para comparar.</p>
+      <h1 id="h1"><span class="w" style="--d:0">Observatorios,</span> <span class="w" style="--d:1">monitores</span> <span class="w" style="--d:2">y</span> <span class="w" style="--d:3">portales</span> <span class="w" style="--d:4">de</span> <span class="w" style="--d:5">datos</span> <span class="w" style="--d:6">de</span> <span class="w" style="--d:7">Uruguay,</span> <em class="w" style="--d:8">en</em> <em class="w" style="--d:9">un</em> <em class="w" style="--d:10">solo</em> <em class="w" style="--d:11">lugar.</em></h1>
+      <p class="lead">El Atlas reúne en un solo sitio los observatorios, monitores y portales de datos del país, organizados por tema. Buscá un tema y encontrá qué instituciones publican información, cuáles son las fuentes de referencia, qué nivel de análisis ofrecen y en qué temas faltan datos.</p>
       <form class="search" id="heroForm" role="search">
         <label for="heroQ" hidden>Buscar un tema</label>
         <input id="heroQ" type="search" placeholder="Buscá un tema: género, PBI, empleo, CTI…" autocomplete="off">
@@ -355,7 +355,7 @@ footer .wrap{padding-block:26px;display:flex;flex-wrap:wrap;gap:10px 30px;justif
 </section>
 
 <footer><div class="wrap">
-  <span>Atlas de Observatorios del Uruguay · prototipo para validación con el ecosistema</span>
+  <span>Atlas de Observatorios del Uruguay · observatorios, monitores y portales de datos del país, organizados por tema · prototipo</span>
   <span>Relevamiento web 02/10/2026, ampliado el <span id="corte2"></span>. Clasificación provisoria.</span>
 </div></footer>
 
