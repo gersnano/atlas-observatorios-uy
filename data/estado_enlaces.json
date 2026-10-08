@@ -393,8 +393,8 @@
   },
   {
    "id": "UY-098",
-   "status": 200,
-   "error": ""
+   "status": 0,
+   "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
   },
   {
    "id": "UY-099",
@@ -493,8 +493,8 @@
   },
   {
    "id": "UY-121",
-   "status": 200,
-   "error": ""
+   "status": 403,
+   "error": "HTTP Error 403: Forbidden"
   },
   {
    "id": "UY-122",
@@ -648,8 +648,8 @@
   },
   {
    "id": "UY-156",
-   "status": 500,
-   "error": "HTTP Error 500: Internal Server Error"
+   "status": 504,
+   "error": "HTTP Error 504: Gateway Timeout"
   },
   {
    "id": "UY-157",
