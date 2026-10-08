@@ -60,8 +60,10 @@ h1,h2,h3{text-wrap:balance;margin:0;color:var(--head)}
 .wc4{width:300px;height:300px;right:6%;top:46%;background:radial-gradient(circle,var(--blue) 0%,color-mix(in srgb,var(--blue) 35%,transparent) 42%,transparent 70%);opacity:.3;animation-duration:26s}
 @keyframes drift{from{transform:translate(0,0) scale(1) rotate(0)}to{transform:translate(-30px,24px) scale(1.08) rotate(12deg)}}
 /* lupa */
-.lensbg{fill:var(--surface)}
-.lensring{fill:none;stroke:var(--navy);stroke-width:3}
+.lensbg{fill:var(--paper)}
+.lensring{fill:none;stroke:var(--orange);stroke-width:1.4;pointer-events:none}
+.dnum{font:700 26px var(--f-body);fill:currentColor}
+.dsub2{font:700 8.5px var(--f-body);letter-spacing:.06em;fill:var(--head)}
 .lensring2{fill:none;stroke:var(--sky);stroke-width:1.2;stroke-dasharray:2 5;transform-box:fill-box;transform-origin:center;animation:spinr 18s linear infinite}
 @keyframes spinr{to{transform:rotate(360deg)}}
 .lenshandle{stroke:var(--navy);stroke-width:11;stroke-linecap:round}
@@ -375,12 +377,14 @@ footer .wrap{padding-block:26px;display:flex;flex-wrap:wrap;gap:10px 30px;justif
         <input id="heroQ" type="search" placeholder="Buscá un tema: género, PBI, empleo, CTI…" autocomplete="off">
         <button type="submit"><svg width="18" height="18" viewBox="0 0 120 120" aria-hidden="true"><circle cx="52" cy="52" r="30" fill="none" stroke="currentColor" stroke-width="12"/><path d="M74 74L104 104" stroke="currentColor" stroke-width="12" stroke-linecap="round"/></svg>Buscar</button>
       </form>
+      <div class="chips-try"><span>por ejemplo</span>
+        <button data-q="género">género</button><button data-q="pbi">PBI</button><button data-q="empleo">empleo</button><button data-q="cti">CTI</button><button data-q="exportaciones">exportaciones</button><button data-q="género universidad">género en universidad</button><button data-q="agua">agua</button>
+      </div>
       
       <ol class="howto"><li><b>Buscá un tema</b> o tocá uno en el mapa de cobertura.</li><li><b>Mirá las referencias principales</b>, ordenadas por prioridad.</li><li><b>Revisá los vacíos</b> en el mapa de cobertura.</li></ol>
     </div>
-    <div class="art" aria-label="Mapa de Uruguay en puntos con la red de datos, una lupa que revela la concentración de recursos y las ocho áreas temáticas"><svg id="artSvg" viewBox="0 0 600 560"></svg><div class="art-hint"><svg width="16" height="16" viewBox="0 0 120 120" aria-hidden="true"><circle cx="52" cy="52" r="30" fill="none" stroke="currentColor" stroke-width="10"/><path d="M74 74L104 104" stroke="currentColor" stroke-width="10" stroke-linecap="round"/></svg>Pasá el cursor por el mapa</div></div>
+    <div class="art" aria-label="Mapa de Uruguay en puntos con la red de datos, una lupa que revela la concentración de recursos y las ocho áreas temáticas"><svg id="artSvg" viewBox="0 0 600 560"></svg><div class="art-hint"><svg width="16" height="16" viewBox="0 0 120 120" aria-hidden="true"><circle cx="52" cy="52" r="30" fill="none" stroke="currentColor" stroke-width="10"/><path d="M74 74L104 104" stroke="currentColor" stroke-width="10" stroke-linecap="round"/></svg>Pasá el cursor: capa de datos</div></div>
   </div>
-  <div class="wrap"><div class="prompts-h"><h2>Probá una búsqueda</h2><span>// atlas.buscar()</span></div><div class="prompts" id="prompts"></div></div>
   <div class="wrap"><div class="kpis">
     <div class="kpi"><span class="ci" data-ico="DB"></span><div><b class="cu" data-k="nac">0</b><span>recursos nacionales y departamentales</span></div></div>
     <div class="kpi"><span class="ci" data-ico="GL"></span><div><b class="cu" data-k="int">0</b><span>referencias internacionales para comparar</span></div></div>
@@ -543,34 +547,28 @@ AK.forEach(k=>{ const rs = R.filter(r=>!isInt(r)&&r.area===A[k]); const ts = Obj
   for (let y=Y0; y<=Y0+H; y+=step) for (let x=X0; x<=X0+W; x+=step) if (inside(x,y)) { const h = heat(x,y); ddots += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${(2.2+Math.min(1.6,h*.18)).toFixed(2)}" style="fill:${ramp(h)}"/>`; }
   const labels = nodes.map(n => { const c = DEP[n.n] ? depCount(n.n) : 0;
     return `<g class="lab"><circle cx="${n.p[0].toFixed(1)}" cy="${n.p[1].toFixed(1)}" r="${n===mvd?6.5:4.5}" class="lnode"/><text x="${(n.p[0]+8).toFixed(1)}" y="${(n.p[1]+4).toFixed(1)}" class="ltxt">${esc(n.n)}</text>${c?`<text x="${(n.p[0]+8).toFixed(1)}" y="${(n.p[1]+16).toFixed(1)}" class="lcnt">${c} recursos departamentales</text>`:""}</g>`; }).join("");
-  const LR = 74, MAG = 1.7;
-  svg.innerHTML = `<defs><clipPath id="lensClip"><circle id="lensCirc" cx="300" cy="276" r="${LR}"/></clipPath></defs>
+  // capa de datos de las áreas (visible bajo la lupa)
+  let dic = "";
+  AK.forEach((k,i) => { const a = i/AK.length*2*Math.PI - Math.PI/2, x = 300 + 252*Math.cos(a), y = 276 + 222*Math.sin(a), s = areaStat[k];
+    dic += `<g style="color:var(--${k.toLowerCase()})"><circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="40" style="fill:color-mix(in srgb,currentColor 14%,var(--paper))"/>
+      <svg x="${(x-17).toFixed(1)}" y="${(y-36).toFixed(1)}" width="34" height="34" viewBox="0 0 120 120">${OBJ[k]()}</svg>
+      <text x="${x.toFixed(1)}" y="${(y+18).toFixed(1)}" text-anchor="middle" class="dnum">${s.n}</text>
+      <text x="${x.toFixed(1)}" y="${(y+56).toFixed(1)}" text-anchor="middle" class="dsub2">${s.an} CON ANÁLISIS · ${s.gaps} VACÍO${s.gaps===1?"":"S"}</text></g>`; });
+  svg.innerHTML = `<defs><clipPath id="lensClip"><circle id="lensCirc" cx="300" cy="276" r="0"/></clipPath></defs>
     <g>${sp}</g><g>${dots}</g><g>${eh}</g><g>${pk}</g><g>${nh}</g>${ic}
-    <g clip-path="url(#lensClip)" class="lensview"><circle id="lensBg" cx="300" cy="276" r="${LR}" class="lensbg"/>
-      <g id="magG"><g>${eh}</g><g>${ddots}</g>${labels}</g></g>
-    <g id="lensUI" class="lensui"><circle id="lensRing" cx="300" cy="276" r="${LR}" class="lensring"/><circle id="lensRing2" cx="300" cy="276" r="${LR+5}" class="lensring2"/>
-      <path id="lensHandle" class="lenshandle" d=""/></g>
-    <g class="lensui"><text id="lensLbl" class="lenslbl" text-anchor="middle"><tspan id="llName" x="300" dy="0"></tspan><tspan id="llInfo" x="300" dy="15"></tspan></text></g>`;
-  // movimiento de la lupa: recorre el mapa sola y sigue al cursor
-  const lc = svg.querySelector("#lensCirc"), lb = svg.querySelector("#lensBg"), lr = svg.querySelector("#lensRing"), lr2 = svg.querySelector("#lensRing2"), lh = svg.querySelector("#lensHandle"), mg = svg.querySelector("#magG");
-  const ll = svg.querySelector("#lensLbl"), lln = svg.querySelector("#llName"), lli = svg.querySelector("#llInfo");
-  const depOf = {}; nodes.forEach(n => { depOf[n.n] = DEP[n.n] ? depCount(n.n) : 0; });
-  let lastNear = null;
-  let lx = 300, ly = 276, tx = 300, ty = 276, user = false, idleT = 0;
-  const place = () => { [lc,lb,lr,lr2].forEach(c => { c.setAttribute("cx", lx.toFixed(1)); c.setAttribute("cy", ly.toFixed(1)); });
-    const a = Math.PI/4, r1 = LR+5, r2 = LR+46; lh.setAttribute("d", `M${(lx+r1*Math.cos(a)).toFixed(1)} ${(ly+r1*Math.sin(a)).toFixed(1)}L${(lx+r2*Math.cos(a)).toFixed(1)} ${(ly+r2*Math.sin(a)).toFixed(1)}`);
-    mg.setAttribute("transform", `translate(${lx.toFixed(1)} ${ly.toFixed(1)}) scale(${MAG}) translate(${(-lx).toFixed(1)} ${(-ly).toFixed(1)})`);
-    const near = nodes.reduce((a,n)=> Math.hypot(n.p[0]-lx,n.p[1]-ly) < Math.hypot(a.p[0]-lx,a.p[1]-ly) ? n : a, nodes[0]);
-    const ty2 = Math.min(ly + LR + 22, 548); [lln,lli].forEach(t=>t.setAttribute("x", lx.toFixed(1))); lln.setAttribute("y", ty2.toFixed(1)); ll.setAttribute("y", ty2.toFixed(1));
-    if (near !== lastNear) { lastNear = near; const c = depOf[near.n]; lln.textContent = near.n; lli.textContent = c ? `${c} recursos con foco departamental` : "sin observatorios departamentales relevados"; lli.setAttribute("class", c ? "lli ok" : "lli gap"); } };
+    <g clip-path="url(#lensClip)" class="lensview"><rect width="600" height="560" class="lensbg"/><g>${eh}</g><g>${ddots}</g>${labels}${dic}</g>
+    <circle id="lensRing" cx="300" cy="276" r="0" class="lensring"/>`;
+  // lupa: revela la capa de datos bajo el cursor
+  const lc = svg.querySelector("#lensCirc"), lr = svg.querySelector("#lensRing"), RMAX = 105;
+  let lx = 300, ly = 276, tx = 300, ty = 276, rad = 0, rt = 0, raf = 0;
   const toSvg = e => { const b = svg.getBoundingClientRect(); return [(e.clientX-b.left)/b.width*600, (e.clientY-b.top)/b.height*560]; };
-  const clampT = () => { tx = Math.max(X0+20, Math.min(X0+W-20, tx)); ty = Math.max(Y0+20, Math.min(Y0+H-20, ty)); };
-  svg.addEventListener("pointermove", e => { [tx,ty] = toSvg(e); clampT(); user = true; idleT = performance.now(); });
-  svg.addEventListener("pointerleave", () => { user = false; });
-  let artVis = true; new IntersectionObserver(es=>{artVis=es[0].isIntersecting;}).observe(svg);
-  const tour = t => { const s = t/1000; return [X0+W/2 + W*0.36*Math.sin(s*0.42), Y0+H/2 + H*0.34*Math.sin(s*0.29+1.2)]; };
-  if (reduce) { lx = mvd.p[0]; ly = mvd.p[1]-20; place(); }
-  else { const loop = t => { if (artVis) { if (!user || t-idleT > 2600) { [tx,ty] = tour(t); user = false; } lx += (tx-lx)*.08; ly += (ty-ly)*.08; place(); } requestAnimationFrame(loop); }; requestAnimationFrame(loop); }
+  const draw = () => { lx += (tx-lx)*(reduce?1:.25); ly += (ty-ly)*(reduce?1:.25); rad += (rt-rad)*(reduce?1:.18);
+    [lc,lr].forEach(c => { c.setAttribute("cx", lx.toFixed(1)); c.setAttribute("cy", ly.toFixed(1)); c.setAttribute("r", Math.max(0,rad).toFixed(1)); });
+    if (Math.abs(tx-lx)+Math.abs(ty-ly)+Math.abs(rt-rad) > .3) raf = requestAnimationFrame(draw); else raf = 0; };
+  const kick = () => { if (!raf) raf = requestAnimationFrame(draw); };
+  svg.addEventListener("pointermove", e => { [tx,ty] = toSvg(e); rt = RMAX; kick(); });
+  svg.addEventListener("pointerdown", e => { [tx,ty] = toSvg(e); if (rad < 1) { lx = tx; ly = ty; } rt = RMAX; kick(); });
+  svg.addEventListener("pointerleave", () => { rt = 0; kick(); });
   svg.querySelectorAll(".aicon").forEach(g => {
     const go = () => { state.area = new Set([A[g.dataset.area]]); setQ(""); };
     g.addEventListener("click", go); g.addEventListener("keydown", e => { if (e.key==="Enter"||e.key===" ") { e.preventDefault(); go(); } });
@@ -579,18 +577,6 @@ AK.forEach(k=>{ const rs = R.filter(r=>!isInt(r)&&r.area===A[k]); const ts = Obj
 
 
 /* ---------- tarjetas de búsqueda estilo código ---------- */
-function renderPrompts(){
-  const P = [["empleo","¿Quién publica datos sobre empleo y mercado de trabajo?"],["género","¿Qué observatorios trabajan con enfoque de género?"],["cti","¿Dónde encuentro indicadores de ciencia, tecnología e innovación?"],["exportaciones","¿Qué fuentes hay sobre exportaciones y comercio exterior?"]];
-  $("#prompts").innerHTML = P.map(([q,txt],i)=>{
-    const r = resolve(q), c = r.concepts[0], n = c ? ((c.k==="t"?T[c.code].refs:E[c.code].refs)||[]).length : 0;
-    const slug = norm(q).replace(/\s+/g,"-");
-    return `<button class="prompt" data-q="${esc(q)}" style="--d:${i}">
-      <span class="ptop"><span class="ptag">${i+1}/${esc(slug)}</span><span class="pdots"><i></i><i></i><i></i></span></span>
-      <span class="ptxt">${esc(txt)}</span>
-      <span class="pres"><span class="pcode">→ ${n} referencias principales</span><span class="pgo">Buscar en el Atlas<svg viewBox="0 0 20 20" width="14" height="14" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></span>
-    </button>`; }).join("");
-}
-
 /* ---------- cifras ---------- */
 const statv = {nac: R.filter(r=>!isInt(r)).length, int: R.filter(isInt).length, inst: new Set(R.map(r=>r.inst)).size, gap: Object.values(cov).filter(c=>c.st==="bad").length};
 document.querySelectorAll(".cu").forEach(el => {
@@ -757,7 +743,6 @@ $("#enfRow").innerHTML = Object.entries(E).map(([c,e])=>{ const n=R.filter(r=>!i
 $("#scale").innerHTML = [1,2,3,4].map(n=>`<div>${lvl(n)}<span style="color:var(--muted)">${esc(N[n].def)}</span></div>`).join("");
 const nacR = R.filter(r=>!isInt(r)); $("#vigPct").textContent = Math.round(100*nacR.filter(r=>r.periodo).length/nacR.length)+"%";
 document.querySelectorAll(".chips-try button").forEach(b=>b.addEventListener("click",()=>setQ(b.dataset.q)));
-renderPrompts();
 run();
 })();
 </script>
