@@ -1,0 +1,855 @@
+{
+ "fecha": "2026-10-08",
+ "resultados": [
+  {
+   "id": "UY-001",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-002",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-003",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-004",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-005",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-006",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-007",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-008",
+   "status": 0,
+   "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>"
+  },
+  {
+   "id": "UY-009",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-010",
+   "status": 0,
+   "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'inavi.com.uy'. (_ssl.c:1010)>"
+  },
+  {
+   "id": "UY-011",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-012",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-013",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-014",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-015",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-016",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-017",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-018",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-019",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-020",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-021",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-022",
+   "status": 0,
+   "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>"
+  },
+  {
+   "id": "UY-023",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-024",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-025",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-026",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-027",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-028",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-029",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-030",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-031",
+   "status": 403,
+   "error": "HTTP Error 403: Forbidden"
+  },
+  {
+   "id": "UY-032",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-033",
+   "status": 0,
+   "error": "<urlopen error timed out>"
+  },
+  {
+   "id": "UY-034",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-035",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-036",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-037",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-038",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-039",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-040",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-041",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-042",
+   "status": 0,
+   "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>"
+  },
+  {
+   "id": "UY-043",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-044",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-045",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-046",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-047",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-048",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-049",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-050",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-051",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-052",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-053",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-054",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-055",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-056",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-057",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-058",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-059",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-060",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-061",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-062",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-063",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-064",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-065",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-066",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-067",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-068",
+   "status": 404,
+   "error": "HTTP Error 404: Not Found"
+  },
+  {
+   "id": "UY-069",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-070",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-071",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-072",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-073",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-074",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-075",
+   "status": 503,
+   "error": "HTTP Error 503: Service Unavailable"
+  },
+  {
+   "id": "UY-076",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-077",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-078",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-079",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-080",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-081",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-082",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-083",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-084",
+   "status": 0,
+   "error": "The read operation timed out"
+  },
+  {
+   "id": "UY-085",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-086",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-087",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-088",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-089",
+   "status": 403,
+   "error": "HTTP Error 403: Forbidden"
+  },
+  {
+   "id": "UY-090",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-091",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-092",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-093",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-094",
+   "status": 403,
+   "error": "HTTP Error 403: Forbidden"
+  },
+  {
+   "id": "UY-095",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-096",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-097",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-098",
+   "status": 0,
+   "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+  },
+  {
+   "id": "UY-099",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-100",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-101",
+   "status": 403,
+   "error": "HTTP Error 403: Forbidden"
+  },
+  {
+   "id": "UY-102",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-103",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-104",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-105",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-106",
+   "status": 0,
+   "error": "<urlopen error [Errno 104] Connection reset by peer>"
+  },
+  {
+   "id": "UY-107",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-108",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-109",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-110",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-111",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-112",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-113",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-114",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-115",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-116",
+   "status": 403,
+   "error": "HTTP Error 403: ACCESO RESTRINGIDO"
+  },
+  {
+   "id": "UY-117",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-118",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-119",
+   "status": 0,
+   "error": "<urlopen error [Errno -2] Name or service not known>"
+  },
+  {
+   "id": "UY-120",
+   "status": 0,
+   "error": "<urlopen error [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1010)>"
+  },
+  {
+   "id": "UY-121",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-122",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-123",
+   "status": 0,
+   "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>"
+  },
+  {
+   "id": "UY-124",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-125",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-126",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-127",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-128",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-129",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-130",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-131",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-132",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-133",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-134",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-135",
+   "status": 403,
+   "error": "HTTP Error 403: Forbidden"
+  },
+  {
+   "id": "UY-136",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-137",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-138",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-139",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-140",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-141",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-142",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-143",
+   "status": 0,
+   "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>"
+  },
+  {
+   "id": "UY-144",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-145",
+   "status": 0,
+   "error": "The read operation timed out"
+  },
+  {
+   "id": "UY-146",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-147",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-148",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-149",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-150",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-151",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-152",
+   "status": 403,
+   "error": "HTTP Error 403: Forbidden"
+  },
+  {
+   "id": "UY-153",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-154",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-155",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-156",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-157",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-158",
+   "status": 403,
+   "error": "HTTP Error 403: Forbidden"
+  },
+  {
+   "id": "UY-159",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-160",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-161",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-162",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-163",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-164",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-165",
+   "status": 403,
+   "error": "HTTP Error 403: Forbidden"
+  },
+  {
+   "id": "UY-166",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-167",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-168",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-169",
+   "status": 404,
+   "error": "HTTP Error 404: Not Found"
+  },
+  {
+   "id": "UY-170",
+   "status": 200,
+   "error": ""
+  }
+ ]
+}
