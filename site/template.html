@@ -67,30 +67,67 @@ h1,h2,h3{text-wrap:balance;margin:0;color:var(--head)}
 .wc4{width:300px;height:300px;right:6%;top:46%;background:radial-gradient(circle,var(--blue) 0%,color-mix(in srgb,var(--blue) 35%,transparent) 42%,transparent 70%);opacity:.3;animation-duration:26s}
 @keyframes drift{from{transform:translate(0,0) scale(1) rotate(0)}to{transform:translate(-30px,24px) scale(1.08) rotate(12deg)}}
 .hero h1 em{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-weight:600;font-size:1.12em;letter-spacing:-.01em}
-/* collage */
-.bfill{fill:var(--surface)} .bline{fill:none;stroke:var(--navy);stroke-width:1.6;stroke-linejoin:round}
-.curl,.bdet{fill:none;stroke:var(--navy);stroke-width:1.2;stroke-linecap:round}
-.bust{animation:floaty 7s ease-in-out infinite alternate}
-@keyframes floaty{from{transform:translateY(0)}to{transform:translateY(-6px)}}
-.syn{stroke:var(--blue);stroke-width:1.1;fill:none;stroke-dasharray:4 4;animation:flow 1.6s linear infinite}
-@keyframes flow{to{stroke-dashoffset:-16}}
-.neuron{fill:var(--blue);transform-box:fill-box;transform-origin:center;animation:pulse 2.6s ease-in-out infinite;animation-delay:calc(var(--k) * 260ms)}
-.neuron.o{fill:var(--orange)}
-.coat{fill:var(--surface);stroke:var(--navy);stroke-width:1.6;stroke-linejoin:round}
-.sline,.micro{fill:none;stroke:var(--navy);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
-.micro{fill:color-mix(in srgb,var(--sky) 35%,var(--surface))}
-.skin{fill:var(--surface);stroke:var(--navy);stroke-width:1.6}
-.hair{fill:var(--navy)}
-.slide{stroke:var(--orange);stroke-width:3;stroke-linecap:round;animation:glow 2.4s ease-in-out infinite}
-@keyframes glow{50%{stroke:var(--sky)}}
-.strand{fill:none;stroke-width:2;stroke-linecap:round}.strand.a{stroke:var(--navy)}.strand.b{stroke:var(--orange)}
-.rung{stroke:var(--sky);stroke-width:1.4}.rung.front{stroke:var(--blue)}
-.cbg{fill:var(--navy)} .cd{fill:var(--sky)} .cd.o{fill:var(--orange)} .cd.b{fill:var(--blue)}
-.ctext{font:500 14px var(--f-mono);fill:var(--paper)} .ck{fill:var(--sky)} .cs{fill:var(--orange)} .cres{fill:var(--sky);font-size:12.5px}
-.caret{animation:blink 1s steps(1) infinite;fill:var(--orange)} @keyframes blink{50%{opacity:0}}
-.axis{stroke:var(--hair);stroke-width:1}
-.bar{fill:var(--blue);transform-box:fill-box;transform-origin:bottom;animation:grow 1.2s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i) * 120ms + 600ms)} .bar.o{fill:var(--orange)}
+/* ilustración */
+.wash{filter:url(#paint);transform-box:fill-box;transform-origin:center;animation:breathe 14s ease-in-out infinite alternate}
+.wash.sky{fill:var(--sky);opacity:.75} .wash.org{fill:var(--orange);opacity:.6;animation-duration:17s} .wash.org.s{opacity:.45} .wash.blu{fill:var(--blue);opacity:.35;animation-duration:19s}
+@keyframes breathe{from{transform:scale(1) rotate(0)}to{transform:scale(1.06) rotate(8deg)}}
+.cline{stroke:var(--blue);stroke-width:.8;opacity:.35;fill:none;stroke-dasharray:1;stroke-dashoffset:1;animation:draw 2.2s ease-out both;animation-delay:calc(var(--i) * 90ms + 300ms)}
+.cdot{fill:var(--navy);opacity:.7;transform-box:fill-box;transform-origin:center;animation:twinkle 3.4s ease-in-out infinite;animation-delay:calc(var(--k) * 170ms)} .cdot.o{fill:var(--orange)}
+@keyframes twinkle{0%,100%{opacity:.35;transform:scale(.8)}50%{opacity:1;transform:scale(1.3)}}
+.dish{fill:var(--surface);stroke:var(--navy);stroke-width:1.5}
+.dish2{fill:var(--sky);opacity:.45;filter:url(#paint)}
+.cmem{fill:color-mix(in srgb,var(--surface) 70%,transparent);stroke:var(--blue);stroke-width:1.3} .cnuc{fill:var(--orange);opacity:.85}
+.cell{animation:cellmove 9s ease-in-out infinite alternate;animation-delay:calc(var(--d) * -1.3s)}
+@keyframes cellmove{0%{transform:translate(0,0)}50%{transform:translate(3px,-4px)}100%{transform:translate(-3px,3px)}}
+.sbar{fill:var(--blue);opacity:.42;transform-box:fill-box;transform-origin:bottom;animation:grow 1.2s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i) * 70ms + 500ms)} .sbar.o{fill:var(--orange);opacity:.6}
 @keyframes grow{from{transform:scaleY(.05)}to{transform:none}}
+.trend{fill:none;stroke:var(--orange);stroke-width:2;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;animation:draw 2s ease-out 1.4s both}
+.tnode{fill:var(--orange);transform-box:fill-box;transform-origin:center;animation:pulse 2.4s ease-in-out infinite 3s}
+.stem{fill:none;stroke:var(--navy);stroke-width:1.6}
+.leaf{fill:var(--blue);opacity:.8;stroke:var(--navy);stroke-width:1}
+.plant{transform-box:fill-box;transform-origin:bottom left;animation:sway 6s ease-in-out infinite alternate}
+@keyframes sway{from{transform:rotate(-2deg)}to{transform:rotate(3deg)}}
+.rung{stroke:var(--sky);stroke-width:1.2}
+.bp.a{fill:var(--navy)} .bp.b{fill:var(--orange)}
+.bfill{fill:var(--surface)} .bshade{fill:var(--sky);opacity:.35;filter:url(#paint)}
+.bline{fill:none;stroke:var(--navy);stroke-width:3;stroke-linejoin:round}
+.curl,.bdet{fill:none;stroke:var(--navy);stroke-width:2.4;stroke-linecap:round} .bped{fill:var(--surface);stroke:var(--navy);stroke-width:2.4}
+.bust{animation:floaty 7s ease-in-out infinite alternate}
+@keyframes floaty{from{transform:translateY(0)}to{transform:translateY(-10px)}}
+.syn{stroke:var(--blue);stroke-width:2;fill:none;stroke-dasharray:6 6;animation:flow 1.6s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-24}}
+.neuron{fill:var(--blue);transform-box:fill-box;transform-origin:center;animation:pulse 2.6s ease-in-out infinite;animation-delay:calc(var(--k) * 260ms)} .neuron.o{fill:var(--orange)}
+.coat{fill:var(--surface);stroke:var(--navy);stroke-width:1.6;stroke-linejoin:round}
+.coat-w{fill:var(--sky);opacity:.55;filter:url(#paint)}
+.shirt{fill:var(--mist)}
+.sline{fill:none;stroke:var(--navy);stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.neck,.skin{fill:color-mix(in srgb,var(--orange) 14%,var(--surface));stroke:var(--navy);stroke-width:1.5;stroke-linejoin:round}
+.hair{fill:var(--navy)} .strand-h{fill:none;stroke:var(--blue);stroke-width:1.2;opacity:.8}
+.arm{fill:var(--surface);stroke:var(--navy);stroke-width:1.5;stroke-linejoin:round}
+.tube{stroke:var(--navy);stroke-width:17;stroke-linecap:round} .tube-h{stroke:var(--blue);stroke-width:3;stroke-linecap:round;opacity:.8}
+.mic{fill:var(--navy)}
+.knob{fill:var(--surface);stroke:var(--navy);stroke-width:2}
+.lamp{fill:var(--orange);transform-box:fill-box;transform-origin:center;animation:pulse 2s ease-in-out infinite}
+/* tarjetas de búsqueda estilo código */
+.prompts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;padding-block:8px 18px}
+@media (max-width:980px){.prompts{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:540px){.prompts{grid-template-columns:minmax(0,1fr)}}
+.prompt{position:relative;display:flex;flex-direction:column;gap:12px;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px 14px;cursor:pointer;font-family:var(--f-body);color:var(--ink);box-shadow:0 1px 0 var(--line);transition:transform .25s,box-shadow .25s,border-color .25s;animation:rise .6s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--d) * 90ms + 500ms);overflow:hidden}
+.prompt::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:linear-gradient(90deg,var(--navy),var(--blue) 60%,var(--orange));transform:scaleX(0);transform-origin:left;transition:transform .4s}
+.prompt:hover{transform:translateY(-4px);box-shadow:0 18px 34px color-mix(in srgb,var(--navy) 14%,transparent);border-color:var(--sky)}
+.prompt:hover::before{transform:none}
+.ptop{display:flex;align-items:center;justify-content:space-between}
+.ptag{font:500 12.5px var(--f-mono);color:var(--orange);background:var(--gold-soft);border-radius:6px;padding:2px 8px}
+.pdots{display:flex;gap:4px} .pdots i{width:6px;height:6px;border-radius:50%;background:var(--line)}
+.prompt:hover .pdots i:nth-child(1){background:var(--orange)} .prompt:hover .pdots i:nth-child(2){background:var(--sky)} .prompt:hover .pdots i:nth-child(3){background:var(--blue)}
+.ptxt{flex:1;font-size:16.5px;font-weight:600;line-height:1.3;color:var(--head)}
+.pres{display:flex;flex-direction:column;gap:8px;border-top:1px dashed var(--line);padding-top:10px}
+.pcode{font:500 12.5px var(--f-mono);color:var(--blue)}
+.pgo{display:inline-flex;align-items:center;gap:6px;align-self:flex-start;background:var(--navy);color:var(--paper);font-weight:600;font-size:13.5px;border-radius:999px;padding:6px 13px;transition:gap .2s}
+.prompt:hover .pgo{gap:10px}
+.prompts-h{display:flex;align-items:baseline;gap:12px;margin-top:6px}
+.prompts-h h2{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--head)}
+.prompts-h span{font:500 12.5px var(--f-mono);color:var(--muted)}
 .temas{padding-block:6px 4px}
 .temas h2{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--head);margin-bottom:12px}
 .temas-row{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:10px}
@@ -246,7 +283,7 @@ details.others>summary::after{content:"Ver";margin-left:auto;font:600 13.5px var
 details.others[open]>summary::after{content:"Ocultar"}
 details.others>summary small{font-size:12px;font-weight:600;color:var(--muted);background:var(--paper-2);border-radius:999px;padding:1px 8px}
 .rows{display:flex;flex-direction:column;padding-bottom:8px}
-.row{display:grid;grid-template-columns:26px minmax(0,1fr) auto auto;gap:12px;align-items:center;padding:9px 2px;border-top:1px solid var(--line);font-size:14px}
+.row{display:grid;grid-template-columns:26px minmax(0,1fr) auto;gap:12px;align-items:center;padding:9px 2px;border-top:1px solid var(--line);font-size:14px}
 .row .glyph{width:24px;height:24px}
 .row a{color:var(--head);text-decoration:none;font-weight:600}
 .row a:hover{text-decoration:underline}
@@ -306,18 +343,18 @@ footer .wrap{padding-block:26px;display:flex;flex-wrap:wrap;gap:10px 30px;justif
 @media (prefers-reduced-motion:reduce){*,*::before{animation:none!important;transition:none!important}}
 </style>
 
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs id="sprite"><filter id="wcf" x="-20%" y="-20%" width="140%" height="140%"><feTurbulence type="fractalNoise" baseFrequency="0.011" numOctaves="3" seed="7"/><feDisplacementMap in="SourceGraphic" scale="70"/><feGaussianBlur stdDeviation="2"/></filter><filter id="wcl" x="-10%" y="-10%" width="120%" height="120%"><feTurbulence type="fractalNoise" baseFrequency="0.06" numOctaves="2" seed="3"/><feDisplacementMap in="SourceGraphic" scale="5"/></filter></defs></svg>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs id="sprite"><filter id="wcf" x="-20%" y="-20%" width="140%" height="140%"><feTurbulence type="fractalNoise" baseFrequency="0.011" numOctaves="3" seed="7"/><feDisplacementMap in="SourceGraphic" scale="70"/><feGaussianBlur stdDeviation="2"/></filter><filter id="paint" x="-10%" y="-10%" width="120%" height="120%"><feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="4" seed="5" result="n"/><feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  1.5 0 0 0 -0.25" result="m"/><feComposite in="SourceGraphic" in2="m" operator="in" result="t"/><feDisplacementMap in="t" in2="n" scale="10" xChannelSelector="R" yChannelSelector="G"/></filter><filter id="wcl" x="-10%" y="-10%" width="120%" height="120%"><feTurbulence type="fractalNoise" baseFrequency="0.06" numOctaves="2" seed="3"/><feDisplacementMap in="SourceGraphic" scale="5"/></filter></defs></svg>
 
 <header class="top">
   <div class="wrap">
     <a class="brand" href="#inicio"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><circle cx="15" cy="15" r="13" fill="none" stroke="var(--navy)" stroke-width="1.4"/><path d="M9 19L14 9L21 16Z" fill="none" stroke="var(--blue)" stroke-width="1.2"/><circle cx="9" cy="19" r="2.3" fill="var(--navy)"/><circle cx="14" cy="9" r="2.3" fill="var(--orange)"/><circle cx="21" cy="16" r="2.3" fill="var(--blue)"/></svg>Atlas <i>de Observatorios</i></a>
     <span class="tag-proto">Prototipo</span>
-    <nav class="nav" aria-label="Secciones"><a href="#inicio">Buscar</a><a href="#cobertura">Cobertura</a><a href="#ods">ODS</a><a href="#metodologia">Metodología</a><button class="navbtn" data-act="browse">Ver inventario completo</button></nav>
+    <nav class="nav" aria-label="Secciones"><a href="#inicio">Buscar</a><a href="#cobertura">Cobertura</a><a href="#metodologia">Metodología</a><button class="navbtn" data-act="browse">Ver inventario completo</button></nav>
   </div>
 </header>
 
 <section class="hero" id="inicio">
-  <div class="wc wc1" aria-hidden="true"></div><div class="wc wc2" aria-hidden="true"></div><div class="wc wc3" aria-hidden="true"></div><div class="wc wc4" aria-hidden="true"></div>
+  <div class="wc wc1" aria-hidden="true"></div><div class="wc wc2" aria-hidden="true"></div><div class="wc wc3" aria-hidden="true"></div>
   <div class="wrap hgrid">
     <div style="min-width:0;position:relative">
       <div class="eyebrow">Atlas de datos de Uruguay · corte <span id="corte"></span></div>
@@ -328,13 +365,12 @@ footer .wrap{padding-block:26px;display:flex;flex-wrap:wrap;gap:10px 30px;justif
         <input id="heroQ" type="search" placeholder="Buscá un tema: género, PBI, empleo, CTI…" autocomplete="off">
         <button type="submit"><svg width="18" height="18" viewBox="0 0 120 120" aria-hidden="true"><circle cx="52" cy="52" r="30" fill="none" stroke="currentColor" stroke-width="12"/><path d="M74 74L104 104" stroke="currentColor" stroke-width="12" stroke-linecap="round"/></svg>Buscar</button>
       </form>
-      <div class="chips-try"><span>por ejemplo</span>
-        <button data-q="género">género</button><button data-q="pbi">PBI</button><button data-q="empleo">empleo</button><button data-q="cti">CTI</button><button data-q="género universidad">género en universidad</button><button data-q="agua">agua</button>
-      </div>
-      <ol class="howto"><li><b>Buscá un tema</b> o tocá uno en el mapa de cobertura.</li><li><b>Mirá las referencias principales</b>, ordenadas por prioridad.</li><li><b>Revisá los vacíos</b> en el mapa y por ODS.</li></ol>
+      
+      <ol class="howto"><li><b>Buscá un tema</b> o tocá uno en el mapa de cobertura.</li><li><b>Mirá las referencias principales</b>, ordenadas por prioridad.</li><li><b>Revisá los vacíos</b> en el mapa de cobertura.</li></ol>
     </div>
-    <div class="art" aria-label="Ilustración: mapa de Uruguay en puntos con red de datos, busto clásico con red neuronal, científica con microscopio y código"><svg id="artSvg" viewBox="0 0 600 560"></svg></div>
+    <div class="art" aria-label="Ilustración: científica con microscopio, ADN, placa de Petri, mapa de Uruguay en puntos, busto clásico con red neuronal y gráficos"><svg id="artSvg" viewBox="0 0 600 560"></svg></div>
   </div>
+  <div class="wrap"><div class="prompts-h"><h2>Probá una búsqueda</h2><span>// atlas.buscar()</span></div><div class="prompts" id="prompts"></div></div>
   <div class="wrap temas"><h2>Grandes temas</h2><div class="temas-row" id="temasRow"></div></div>
   <div class="wrap"><div class="kpis">
     <div class="kpi"><span class="ci" data-ico="DB"></span><div><b class="cu" data-k="nac">0</b><span>recursos nacionales y departamentales</span></div></div>
@@ -377,21 +413,11 @@ footer .wrap{padding-block:26px;display:flex;flex-wrap:wrap;gap:10px 30px;justif
   </div>
 </section>
 
-<section class="block" id="ods">
-  <div class="wrap">
-    <div class="sec-head">
-      <div><div class="eyebrow">Agenda 2030</div><h2>Cobertura por <em>Objetivo de Desarrollo Sostenible</em></h2>
-      <p>Recursos nacionales agrupados según el ODS principal de su tema. La barra muestra el estado de los temas asociados a cada objetivo.</p></div>
-    </div>
-    <div class="ods-grid" id="odsGrid"></div>
-  </div>
-</section>
-
 <section class="block band" id="metodologia">
   <div class="wrap">
     <div class="sec-head"><div><div class="eyebrow">Cómo se construye</div><h2>Metodología</h2></div></div>
     <div class="meto">
-      <div><h3>Taxonomía en facetas</h3><p>Cada recurso tiene un tema principal, temas secundarios y enfoques transversales. Los 53 temas se agrupan en 8 áreas y se vinculan a metas ODS. La taxonomía incluye temas de referencia sin recursos para que los vacíos queden a la vista.</p></div>
+      <div><h3>Taxonomía en facetas</h3><p>Cada recurso tiene un tema principal, temas secundarios y enfoques transversales. Los 53 temas se agrupan en 8 áreas. La taxonomía incluye temas de referencia sin recursos para que los vacíos queden a la vista.</p></div>
       <div><h3>Regla de enfoque explícito</h3><p id="regla"></p></div>
       <div><h3>Nivel de análisis</h3><div class="scale" id="scale"></div></div>
       <div><h3>Vigencia</h3><p>El período de datos se registra solo cuando pudo comprobarse en la fuente. Un recurso sin período comprobado no está necesariamente desactualizado. Hoy <b id="vigPct"></b> de los recursos nacionales tienen período comprobado.</p></div>
@@ -463,102 +489,140 @@ const areaStat = {};
 AK.forEach(k=>{ const rs = R.filter(r=>!isInt(r)&&r.area===A[k]); const ts = Object.keys(T).filter(c=>T[c].area===k);
   areaStat[k] = {n:rs.length, an:rs.filter(r=>r.nivel===4).length, int:R.filter(r=>isInt(r)&&r.area===A[k]).length, gaps:ts.filter(c=>cov[c].st==="bad").length, temas:ts.length}; });
 
-/* ---------- portada: collage clásico y moderno ---------- */
+/* ---------- portada: ilustración científica con texturas de acuarela ---------- */
 (function art(){
   const svg = $("#artSvg");
   const f = n => n.toFixed(1);
-  // 1. mapa de Uruguay en matriz de puntos con red de datos
+  let seed = 11; const rnd = () => (seed = (seed*16807)%2147483647)/2147483647;
+
+  // capa 0: acuarelas
+  const wash = `<g class="lay" data-depth="6">
+    <circle class="wash sky" cx="392" cy="318" r="178"/>
+    <circle class="wash org" cx="520" cy="128" r="92"/>
+    <circle class="wash org s" cx="96" cy="470" r="62"/>
+    <circle class="wash blu" cx="150" cy="150" r="70"/></g>`;
+
+  // capa 1: constelación
+  const pts = []; for (let i=0;i<26;i++) pts.push([20+rnd()*560, 16+rnd()*520]);
+  let con = "";
+  pts.forEach((a,i) => pts.forEach((b,j) => { if (j>i) { const d = Math.hypot(a[0]-b[0],a[1]-b[1]); if (d<118) con += `<path class="cline" pathLength="1" d="M${f(a[0])} ${f(a[1])}L${f(b[0])} ${f(b[1])}" style="--i:${(i+j)%14}"/>`; } }));
+  con += pts.map((p,i)=>`<circle class="cdot${i%4===0?" o":""}" cx="${f(p[0])}" cy="${f(p[1])}" r="${i%4===0?2.8:2}" style="--k:${i}"/>`).join("");
+  const constel = `<g class="lay" data-depth="3">${con}</g>`;
+
+  // capa 2: mapa de Uruguay en puntos
   const UY = [[-57.61,-30.18],[-57.1,-30.11],[-56.83,-30.1],[-56.4,-30.4],[-56.0,-30.8],[-55.6,-30.85],[-55.2,-31.27],[-54.6,-31.48],[-54.1,-31.9],[-53.7,-32.1],[-53.37,-32.56],[-53.1,-32.9],[-53.4,-33.16],[-53.52,-33.69],[-53.75,-34.05],[-54.2,-34.55],[-54.6,-34.82],[-54.95,-34.97],[-55.5,-34.8],[-56.2,-34.92],[-56.8,-34.62],[-57.4,-34.45],[-57.85,-34.47],[-58.3,-34.0],[-58.43,-33.55],[-58.35,-33.08],[-58.15,-32.6],[-58.1,-32.2],[-58.0,-31.6],[-57.85,-31.1],[-57.7,-30.6]];
-  const lon0=-58.6, lon1=-52.95, lat0=-29.95, lat1=-35.15, W=176, H=188, X0=30, Y0=26;
+  const lon0=-58.6, lon1=-52.95, lat0=-29.95, lat1=-35.15, W=164, H=176, X0=70, Y0=34;
   const pr = ([lo,la]) => [X0 + (lo-lon0)/(lon1-lon0)*W, Y0 + (lat0-la)/(lat0-lat1)*H];
   const poly = UY.map(pr);
   const inside = (x,y) => { let c=false; for(let i=0,j=poly.length-1;i<poly.length;j=i++){ const [xi,yi]=poly[i],[xj,yj]=poly[j]; if(((yi>y)!==(yj>y)) && (x < (xj-xi)*(y-yi)/(yj-yi)+xi)) c=!c; } return c; };
   let dots = "";
-  for (let y=Y0; y<=Y0+H; y+=6.2) for (let x=X0; x<=X0+W; x+=6.2) if (inside(x,y)) dots += `<circle class="mapdot" cx="${f(x)}" cy="${f(y)}" r="1.9" style="--x:${(x-X0+(y-Y0)*.4).toFixed(0)}"/>`;
-  const C = [[-56.19,-34.88],[-57.96,-31.39],[-58.06,-32.32],[-55.55,-30.92],[-56.47,-30.42],[-55.98,-31.72],[-54.19,-32.37],[-56.52,-33.38],[-54.95,-34.88],[-57.82,-34.45],[-54.38,-33.23],[-58.0,-33.25],[-56.21,-34.1],[-54.33,-34.48],[-55.24,-34.37]];
-  const nodes = C.map(pr);
-  const edges = [];
-  nodes.forEach((a,ia) => nodes.map((b,ib)=>[ib,Math.hypot(b[0]-a[0],b[1]-a[1])]).filter(x=>x[0]!==ia).sort((p,q)=>p[1]-q[1]).slice(0,2)
-    .forEach(([ib]) => { if (!edges.some(e=>(e[0]===ia&&e[1]===ib)||(e[0]===ib&&e[1]===ia))) edges.push([ia,ib]); }));
-  [1,3,6,7].forEach(ib => edges.push([0,ib]));
-  let net = "";
-  edges.forEach(([ia,ib],i) => { const a=nodes[ia], b=nodes[ib], d=`M${f(a[0])} ${f(a[1])}L${f(b[0])} ${f(b[1])}`; net += `<path class="edge" d="${d}"/>`;
-    if (!reduce && i%2===0) { const bg=(1.2+(i%9)*.33).toFixed(2); net += `<circle class="packet" r="2" opacity="0"><set attributeName="opacity" to="1" begin="${bg}s"/><animateMotion dur="${(3+(i%5)*.7).toFixed(1)}s" begin="${bg}s" repeatCount="indefinite" path="${d}"/></circle>`; } });
-  net += nodes.map((n,k)=>`<circle class="node${k%3===1?" b":""}" cx="${f(n[0])}" cy="${f(n[1])}" r="${k?3.2:4.6}" style="--k:${k}"/>`).join("");
+  for (let y=Y0; y<=Y0+H; y+=5.4) for (let x=X0; x<=X0+W; x+=5.4) if (inside(x,y)) { const edge = !inside(x+6,y)||!inside(x-6,y)||!inside(x,y+6)||!inside(x,y-6); dots += `<circle class="mapdot" cx="${f(x)}" cy="${f(y)}" r="${edge?1.2:1.75}" style="--x:${(x-X0+(y-Y0)*.4).toFixed(0)}"/>`; }
+  const cities = [[-56.19,-34.88],[-57.96,-31.39],[-55.55,-30.92],[-54.19,-32.37],[-56.52,-33.38],[-54.95,-34.88],[-57.82,-34.45],[-58.06,-32.32]].map(pr);
+  let mnet = ""; cities.slice(1).forEach((c,i)=>{ const d=`M${f(cities[0][0])} ${f(cities[0][1])}L${f(c[0])} ${f(c[1])}`; mnet += `<path class="edge" d="${d}"/>`;
+    if (!reduce) { const bg=(1+i*.4).toFixed(1); mnet += `<circle class="packet" r="1.8" opacity="0"><set attributeName="opacity" to="1" begin="${bg}s"/><animateMotion dur="${(2.6+i*.35).toFixed(1)}s" begin="${bg}s" repeatCount="indefinite" path="${d}"/></circle>`; } });
+  mnet += cities.map((c,k)=>`<circle class="node${k%2?" b":""}" cx="${f(c[0])}" cy="${f(c[1])}" r="${k?2.8:4}" style="--k:${k}"/>`).join("");
+  const map = `<g class="lay" data-depth="9">${dots}${mnet}</g>`;
 
-  // 2. busto clásico con red neuronal
-  const bust = "M470 96C440 64 382 58 352 84C336 97 330 114 332 132L328 152C322 160 316 168 312 180L305 198C311 202 317 204 322 206C319 212 321 216 326 218C322 222 322 228 326 232C324 240 326 250 334 258C344 264 356 264 366 260L380 292C384 322 382 346 372 366L360 382C400 402 470 406 522 386C522 342 506 302 490 282C500 252 510 222 506 192C506 152 496 114 470 96Z";
+  // capa 3: placa de Petri con células
+  let cells = ""; [[-22,-14,11],[10,-22,9],[24,6,12],[-4,14,10],[-28,16,8],[2,-4,7],[30,-20,6]].forEach(([dx,dy,r],i)=>{
+    cells += `<g class="cell" style="--d:${i}"><circle cx="${118+dx}" cy="${330+dy}" r="${r}" class="cmem"/><circle cx="${118+dx+r*.25}" cy="${330+dy-r*.2}" r="${r*.35}" class="cnuc"/></g>`; });
+  const petri = `<g class="lay" data-depth="12"><circle cx="118" cy="330" r="60" class="dish"/><circle cx="118" cy="330" r="52" class="dish2"/>${cells}</g>`;
+
+  // capa 4: barras y línea de tendencia
+  let bars = ""; const vals = [26,38,30,52,44,60,48,70,58,82,66,90];
+  vals.forEach((v,i)=> bars += `<rect class="sbar${i%4===3?" o":""}" x="${24+i*16}" y="${548-v}" width="11" height="${v}" style="--i:${i}"/>`);
+  const trend = "M28 520 C70 512 96 500 130 494 S190 478 214 462";
+  const chart = `<g class="lay" data-depth="5">${bars}<path class="trend" pathLength="1" d="${trend}"/><circle class="tnode" cx="214" cy="462" r="4"/></g>`;
+
+  // capa 5: planta
+  const plant = `<g class="lay plant" data-depth="14"><path class="stem" d="M34 548C30 500 36 460 52 420"/>
+    <path class="leaf" d="M40 500C14 492 6 470 10 452C30 456 42 474 40 500Z"/><path class="leaf" d="M44 470C62 452 82 450 92 456C86 474 66 482 44 470Z"/>
+    <path class="leaf" d="M48 440C28 426 26 406 32 392C48 402 54 420 48 440Z"/><path class="leaf" d="M52 420C64 400 80 394 90 396C88 412 72 424 52 420Z"/></g>`;
+
+  // capa 6: hélice de ADN en puntos
+  const dna = `<g class="lay" data-depth="10" id="dna"></g>`;
+
+  // capa 7: busto clásico con red neuronal
+  const bustP = "M470 96C440 64 382 58 352 84C336 97 330 114 332 132L328 152C322 160 316 168 312 180L305 198C311 202 317 204 322 206C319 212 321 216 326 218C322 222 322 228 326 232C324 240 326 250 334 258C344 264 356 264 366 260L380 292C384 322 382 346 372 366L360 382C400 402 470 406 522 386C522 342 506 302 490 282C500 252 510 222 506 192C506 152 496 114 470 96Z";
   let curls = ""; for (let i=0;i<10;i++){ const a = Math.PI*1.24 + i*Math.PI*0.075, cx = 432+74*Math.cos(a), cy = 168+86*Math.sin(a); curls += `<path class="curl" d="M${f(cx-7)} ${f(cy)}a7 7 0 1 1 7 7"/>`; }
-  for (let i=0;i<5;i++){ const cx = 486+ (i%2)*10, cy = 150+i*20; curls += `<path class="curl" d="M${f(cx-6)} ${f(cy)}a6 6 0 1 0 6 -6"/>`; }
-  const NN = [[360,40],[410,18],[466,28],[514,58],[392,74],[440,58],[488,86],[540,100],[548,38]];
+  for (let i=0;i<5;i++){ const cx = 486+(i%2)*10, cy = 150+i*20; curls += `<path class="curl" d="M${f(cx-6)} ${f(cy)}a6 6 0 1 0 6 -6"/>`; }
+  const NN = [[352,40],[404,14],[462,24],[516,52],[386,72],[438,56],[492,84],[548,96],[552,30]];
   const NE = [[0,1],[1,2],[2,3],[0,4],[4,5],[5,2],[5,6],[6,3],[3,7],[2,8],[8,3],[1,5],[4,1],[6,7]];
   let nn = NE.map(([a,b],i)=>`<path class="syn" d="M${NN[a][0]} ${NN[a][1]}L${NN[b][0]} ${NN[b][1]}" style="--i:${i}"/>`).join("");
-  nn += [[392,74,382,86],[440,58,428,72],[488,86,474,98]].map(([x1,y1,x2,y2])=>`<path class="syn" d="M${x1} ${y1}L${x2} ${y2}"/>`).join("");
-  nn += NN.map(([x,y],k)=>`<circle class="neuron${k%3===0?" o":""}" cx="${x}" cy="${y}" r="${k%3===0?5:3.6}" style="--k:${k}"/>`).join("");
-  const bustSvg = `<g class="bust">
-    <path d="${bust}" class="bfill"/><path d="${bust}" fill="url(#hatch)" clip-path="url(#backhalf)" opacity=".55"/>
-    <path d="${bust}" class="bline"/>${curls}
+  nn += NN.map(([x,y],k)=>`<circle class="neuron${k%3===0?" o":""}" cx="${x}" cy="${y}" r="${k%3===0?6:4.4}" style="--k:${k}"/>`).join("");
+  const bust = `<g class="lay" data-depth="7"><g transform="translate(286 4) scale(.5)"><g class="bust">
+    <path d="${bustP}" class="bfill"/><path d="${bustP}" class="bshade"/><path d="${bustP}" fill="url(#halftone)" clip-path="url(#backhalf)"/>
+    <path d="${bustP}" class="bline"/>${curls}
     <path class="bdet" d="M338 158C344 154 352 154 358 158M340 162C346 166 352 166 356 162"/>
     <ellipse class="bdet" cx="444" cy="196" rx="12" ry="20"/><path class="bdet" d="M440 186C446 190 446 202 440 206"/>
-    <path class="bdet" d="M352 384H526V398H352ZM344 398H534V412H344Z"/>
-    <g class="nn">${nn}</g></g>`;
+    <path class="bped" d="M352 384H526V398H352ZM344 398H534V412H344Z"/>
+    <g>${nn}</g></g></g></g>`;
 
-  // 3. científica con microscopio (ilustración lineal estilizada)
-  const sci = `<g class="sci">
-    <path class="coat" d="M96 368C66 378 50 420 46 476L42 546H206L196 476C190 424 172 386 146 370C132 380 110 380 96 368Z"/>
-    <path class="sline" d="M96 368C108 392 116 410 120 440M146 370C138 392 130 412 124 440M120 440V546"/>
-    <path class="sline" d="M150 396C170 418 186 432 206 446C214 452 222 450 226 444"/>
-    <circle class="skin" cx="124" cy="330" r="27"/>
-    <path class="hair" d="M98 334C92 306 108 292 126 292C142 292 152 300 154 314C140 312 128 318 120 330C114 340 108 346 98 334Z"/>
-    <circle class="hair" cx="96" cy="310" r="13"/>
-    <path class="sline" d="M138 326H146M142 340C146 342 148 342 150 340"/>
-    <path class="sline" d="M124 356V368"/>
-    <path class="micro" d="M150 322L162 316L196 384L184 390Z"/>
-    <path class="micro" d="M178 386L184 412M168 420H252M206 420V446"/>
-    <path class="micro" d="M232 524C262 488 258 420 214 372"/>
-    <rect class="micro" x="168" y="520" width="104" height="14" rx="5"/>
-    <circle class="micro" cx="220" cy="400" r="7"/>
-    <path class="slide" d="M176 416H236"/>
-  </g>`;
-
-  // 4. hélice de ADN
-  let dna = `<g id="dna" class="dna"></g>`;
-  // 5. tarjeta de código
-  const code = `<g class="codecard" transform="translate(300 446)">
-    <rect width="270" height="88" rx="12" class="cbg"/>
-    <circle cx="16" cy="16" r="3.5" class="cd o"/><circle cx="28" cy="16" r="3.5" class="cd"/><circle cx="40" cy="16" r="3.5" class="cd b"/>
-    <text x="16" y="46" class="ctext"><tspan class="ck">atlas</tspan>.buscar(<tspan class="cs" id="ctyped"></tspan>)<tspan class="caret">▍</tspan></text>
-    <text x="16" y="72" class="ctext cres" id="cres"></text></g>`;
-  // 6. gráfico de barras
-  const bars = [22,34,28,46,40,58].map((h,i)=>`<rect class="bar${i===5?" o":""}" x="${232+i*12}" y="${214-h}" width="8" height="${h}" style="--i:${i}"/>`).join("");
-  const chart = `<g class="chart"><path class="axis" d="M226 214H306"/>${bars}</g>`;
+  // capa 8: científica con microscopio
+  const sci = `<g class="lay" data-depth="16"><g class="sci">
+    <path class="coat" d="M440 352C418 362 402 392 396 432L390 548H574L568 452C562 398 532 358 502 346C488 354 460 356 440 352Z"/>
+    <path class="coat-w" d="M440 352C418 362 402 392 396 432L390 548H574L568 452C562 398 532 358 502 346C488 354 460 356 440 352Z"/>
+    <path class="shirt" d="M462 352L478 402L494 350C484 354 472 355 462 352Z"/>
+    <path class="sline" d="M462 352L478 402L494 350M478 402V548M512 360C530 392 536 430 534 470"/>
+    <path class="neck" d="M466 326V350C474 354 486 352 490 346L488 326Z"/>
+    <circle class="skin" cx="472" cy="304" r="30"/>
+    <path class="skin" d="M444 300L433 314C432 318 436 320 442 320"/>
+    <path class="sline" d="M446 296C450 294 454 294 458 296"/>
+    <path class="hair" d="M444 290C442 262 470 252 494 264C510 274 512 298 504 318C498 330 490 336 480 336C488 318 486 298 472 290C462 284 452 288 444 290Z"/>
+    <circle class="hair" cx="510" cy="278" r="15"/>
+    <path class="strand-h" d="M462 270C476 266 492 270 500 282M470 262C486 262 500 270 506 286"/>
+    <path class="arm" d="M450 372C432 392 418 410 404 430C398 438 404 446 412 442C428 432 442 418 456 404Z"/>
+    <path class="tube" d="M362 418L432 300"/><path class="tube-h" d="M360 412L428 298"/>
+    <rect class="mic" x="424" y="288" width="18" height="12" rx="3" transform="rotate(30 433 294)"/>
+    <path class="mic" d="M392 522C420 472 418 420 380 382L368 394C398 426 398 470 376 522Z"/>
+    <rect class="mic" x="346" y="414" width="16" height="30" rx="3"/>
+    <rect class="mic" x="314" y="448" width="96" height="9" rx="3"/>
+    <rect class="mic" x="300" y="520" width="124" height="18" rx="6"/>
+    <circle class="knob" cx="396" cy="462" r="9"/>
+    <circle class="lamp" cx="354" cy="452" r="4"/>
+  </g></g>`;
 
   svg.innerHTML = `<defs>
-      <pattern id="hatch" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(32)"><line x1="0" y1="0" x2="0" y2="5" style="stroke:var(--blue);stroke-width:1"/></pattern>
+      <pattern id="halftone" width="6" height="6" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1.3" style="fill:var(--blue)"/></pattern>
       <clipPath id="backhalf"><path d="M430 40H560V420H360L420 300Z"/></clipPath></defs>
-    <g>${dots}</g><g>${net}</g>${chart}${bustSvg}${sci}${dna}${code}`;
+    ${wash}${constel}${chart}${map}${petri}${plant}${dna}${bust}${sci}`;
 
-  // ADN animado
-  const dg = svg.querySelector("#dna"), X = 566, Y0d = 150, L = 250;
-  function helix(t){ let s1="", s2="", rungs=""; for (let i=0;i<=40;i++){ const y = Y0d + i*L/40, ph = i*0.38 + t; const x1 = X + 18*Math.sin(ph), x2 = X - 18*Math.sin(ph);
-      s1 += (i?"L":"M")+f(x1)+" "+f(y); s2 += (i?"L":"M")+f(x2)+" "+f(y); if (i%3===0) rungs += `<path class="rung${Math.cos(ph)>0?" front":""}" d="M${f(x1)} ${f(y)}L${f(x2)} ${f(y)}"/>`; }
-    dg.innerHTML = rungs + `<path class="strand a" d="${s1}"/><path class="strand b" d="${s2}"/>`; }
+  // ADN de puntos animado
+  const dg = svg.querySelector("#dna"), DX = 282, DY = 64, DL = 330;
+  function helix(t){ let h = ""; for (let i=0;i<=30;i++){ const y = DY + i*DL/30, ph = i*0.42 + t, s = Math.sin(ph), c = Math.cos(ph);
+      const x1 = DX + 26*s, x2 = DX - 26*s;
+      if (i%2===0) h += `<path class="rung" d="M${f(x1)} ${f(y)}L${f(x2)} ${f(y)}"/>`;
+      h += `<circle class="bp a" cx="${f(x1)}" cy="${f(y)}" r="${f(2.6+1.4*c)}"/><circle class="bp b" cx="${f(x2)}" cy="${f(y)}" r="${f(2.6-1.4*c)}"/>`; }
+    dg.innerHTML = h; }
   helix(0);
-  if (!reduce) { let vis = true; new IntersectionObserver(es=>{vis=es[0].isIntersecting;}).observe(svg);
-    const loop = t => { if (vis) helix(t/900); requestAnimationFrame(loop); }; requestAnimationFrame(loop); }
+  let vis = true;
+  if (!reduce) { new IntersectionObserver(es=>{vis=es[0].isIntersecting;}).observe(svg);
+    const loop = t => { if (vis) helix(t/1100); requestAnimationFrame(loop); }; requestAnimationFrame(loop); }
 
-  // tarjeta de código que escribe búsquedas reales
-  const demos = ["empleo","género","cti","exportaciones","agua"];
-  const typed = svg.querySelector("#ctyped"), res = svg.querySelector("#cres");
-  const refsOf = q => { const r = resolve(q); const c = r.concepts[0]; return c ? ((c.k==="t"?T[c.code].refs:E[c.code].refs)||[]).length : 0; };
-  let di = 0;
-  function play(){
-    const q = demos[di++ % demos.length], full = `'${q}'`; let k = 0; res.textContent = "";
-    const tick = () => { typed.textContent = full.slice(0, ++k); if (k < full.length) setTimeout(tick, 90); else setTimeout(()=>{ res.textContent = `→ ${refsOf(q)} referencias principales`; setTimeout(play, 2600); }, 380); };
-    tick();
+  // paralaje con el cursor
+  const lays = [...svg.querySelectorAll(".lay")];
+  const hero = document.getElementById("inicio");
+  if (!reduce && matchMedia("(pointer:fine)").matches) {
+    let tx=0, ty=0, cx=0, cy=0;
+    hero.addEventListener("pointermove", e => { const b = hero.getBoundingClientRect(); tx = (e.clientX-b.left)/b.width - .5; ty = (e.clientY-b.top)/b.height - .5; });
+    hero.addEventListener("pointerleave", () => { tx = 0; ty = 0; });
+    const step = () => { cx += (tx-cx)*.06; cy += (ty-cy)*.06; if (vis) lays.forEach(l => { const d = +l.dataset.depth; l.setAttribute("transform", `translate(${f(-cx*d*1.6)} ${f(-cy*d*1.6)})`); }); requestAnimationFrame(step); };
+    requestAnimationFrame(step);
   }
-  if (reduce) { typed.textContent = "'empleo'"; } else setTimeout(play, 1600);
 })();
+
+/* ---------- tarjetas de búsqueda estilo código ---------- */
+function renderPrompts(){
+  const P = [["empleo","¿Quién publica datos sobre empleo y mercado de trabajo?"],["género","¿Qué observatorios trabajan con enfoque de género?"],["cti","¿Dónde encuentro indicadores de ciencia, tecnología e innovación?"],["exportaciones","¿Qué fuentes hay sobre exportaciones y comercio exterior?"]];
+  $("#prompts").innerHTML = P.map(([q,txt],i)=>{
+    const r = resolve(q), c = r.concepts[0], n = c ? ((c.k==="t"?T[c.code].refs:E[c.code].refs)||[]).length : 0;
+    const slug = norm(q).replace(/\s+/g,"-");
+    return `<button class="prompt" data-q="${esc(q)}" style="--d:${i}">
+      <span class="ptop"><span class="ptag">${i+1}/${esc(slug)}</span><span class="pdots"><i></i><i></i><i></i></span></span>
+      <span class="ptxt">${esc(txt)}</span>
+      <span class="pres"><span class="pcode">→ ${n} referencias principales</span><span class="pgo">Buscar en el Atlas<svg viewBox="0 0 20 20" width="14" height="14" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></span>
+    </button>`; }).join("");
+}
 
 /* ---------- grandes temas ---------- */
 $("#temasRow").innerHTML = AK.map((k,i)=>`<button class="tema" data-area="${k}" style="--d:${i}"><span class="tc2">${glyph(k)}</span><span class="tl">${esc(SHORT[k])}</span><span class="tn2">${areaStat[k].n} recursos</span></button>`).join("");
@@ -633,7 +697,7 @@ function card(r,i,rank){
     <div class="inst">${esc(r.inst)}</div>
     <p class="desc">${esc(r.desc)}</p>
     <div class="chips"><button class="chip" data-q="${esc(t.nombre)}">${esc(t.nombre)}</button>${r.temas_sec.map(c=>`<button class="chip sec" data-q="${esc(T[c].nombre)}">${esc(T[c].nombre)}</button>`).join("")}${r.enfoques.map(c=>`<button class="chip enf" data-q="${esc(E[c].nombre)}">${esc(E[c].nombre)}</button>`).join("")}</div>
-    <div class="foot"><span class="ods-sq" style="background:${ODSC[r.ods]};color:${ODSTXT[r.ods]||"#fff"}" title="ODS ${r.ods}: ${esc(O[r.ods])}">${r.ods}</span>${lvl(r.nivel)}<span class="vig ${r.periodo?"ok":""}">${r.periodo?("Datos: "+esc(r.periodo)):"Período no comprobado"}</span></div>
+    <div class="foot">${lvl(r.nivel)}<span class="vig ${r.periodo?"ok":""}">${r.periodo?("Datos: "+esc(r.periodo)):"Período no comprobado"}</span></div>
     <button class="more" data-ficha="${esc(r.id)}" aria-expanded="false">Ver ficha</button>
     <dl class="ficha" id="f-${esc(r.id)}" hidden>
       <dt>Área</dt><dd>${esc(r.area)}</dd><dt>Naturaleza</dt><dd>${esc(r.nat)}</dd><dt>Alcance</dt><dd>${esc(r.alcance)}</dd>
@@ -647,8 +711,7 @@ function card(r,i,rank){
 function row(r){
   const ak = areaKey(r.area);
   return `<div class="row">${glyphUse(ak)}<div style="min-width:0"><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.nombre)}</a><span class="ri">${esc(r.inst)} · ${esc(T[r.tema].nombre)}</span></div>
-    <div class="rt">${r.contenido==="A revisar"?'<span class="badge rev">A revisar</span>':""}${r.gran==="Portal general"?'<span class="badge">Portal general</span>':""}${lvl(r.nivel)}</div>
-    <span class="ods-sq" style="background:${ODSC[r.ods]};color:${ODSTXT[r.ods]||"#fff"}" title="ODS ${r.ods}">${r.ods}</span></div>`;
+    <div class="rt">${r.contenido==="A revisar"?'<span class="badge rev">A revisar</span>':""}${r.gran==="Portal general"?'<span class="badge">Portal general</span>':""}${lvl(r.nivel)}</div></div>`;
 }
 const rankKey = r => (r.contenido==="A revisar"?2:0) + (r.gran==="Portal general"?1:0);
 function renderResults(list, concepts){
@@ -727,19 +790,11 @@ $("#areas").innerHTML = AK.map(k => {
 $("#enfRow").innerHTML = Object.entries(E).map(([c,e])=>{ const n=R.filter(r=>!isInt(r)&&r.enfoques.includes(c)).length, an=R.filter(r=>!isInt(r)&&r.enfoques.includes(c)&&r.nivel===4).length; const st=n===0?"bad":an===0?"warn":"ok";
   return `<button class="tile ${st}" data-enf="${c}"><span class="dot"></span><span class="tn">${esc(e.nombre)}<small>${n===0?"Sin recursos explícitos":an+" con análisis"}</small></span><span class="tc">${n}</span></button>`; }).join("");
 
-/* ---------- ODS ---------- */
-$("#odsGrid").innerHTML = Object.keys(O).map(k=>{ k=+k;
-  const temas = Object.entries(T).filter(([c,t])=>t.ods===k).map(([c])=>cov[c]);
-  const n = R.filter(r=>!isInt(r)&&r.ods===k).length, fg = ODSTXT[k]||"#fff", gaps = temas.filter(t=>t.st==="bad").length;
-  const segs = ["ok","warn","ind","bad"].map(s=>[s,temas.filter(t=>t.st===s).length]).filter(x=>x[1]);
-  const col = {ok:fg, warn:fg+"99", ind:fg+"66", bad:"rgba(0,0,0,.4)"};
-  return `<button class="odst" style="background:${ODSC[k]};color:${fg}" data-ods="${k}" title="${temas.length} temas: ${segs.map(([s,c])=>c+" "+ST[s].toLowerCase()).join(", ")}">${gaps?`<span class="flag">${gaps} vacío${gaps>1?"s":""}</span>`:""}<span class="on">${k}</span><span class="ot">${esc(O[k])}</span><span class="oc"><b>${n}</b> recursos · ${temas.length} temas</span><span class="stack">${segs.map(([s,c])=>`<i style="flex:${c};background:${col[s]}"></i>`).join("")}</span></button>`;
-}).join("");
-
 /* ---------- metodología ---------- */
 $("#scale").innerHTML = [1,2,3,4].map(n=>`<div>${lvl(n)}<span style="color:var(--muted)">${esc(N[n].def)}</span></div>`).join("");
 const nacR = R.filter(r=>!isInt(r)); $("#vigPct").textContent = Math.round(100*nacR.filter(r=>r.periodo).length/nacR.length)+"%";
 document.querySelectorAll(".chips-try button").forEach(b=>b.addEventListener("click",()=>setQ(b.dataset.q)));
+renderPrompts();
 run();
 })();
 </script>
