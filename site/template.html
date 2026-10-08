@@ -1,0 +1,578 @@
+<title>Atlas de Observatorios del Uruguay</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: lámina de atlas grabada (dos tintas, papel y tinta) con un objeto temático por área; una capa de datos en color se revela bajo el cursor. Debajo, buscador, mapa de cobertura y grilla ODS. */
+:root{
+  --paper:#F3F2EC; --paper-2:#E8E6DD; --surface:#FBFAF6; --ink:#18222D; --muted:#5D6570; --line:#D3D0C4; --hair:#B9B5A6;
+  --accent:#1D5C96; --accent-soft:#DCE7F1; --gold:#A97813; --gold-soft:#F2E7CC;
+  --a1:#2A6AA6; --a2:#B05A28; --a3:#2F8656; --a4:#874A9B; --a5:#C08A12; --a6:#23888A; --a7:#6F7A22; --a8:#A23546;
+  --ok:#24754C; --ok-bg:#D9EDDF; --warn:#8F6200; --warn-bg:#F5E8C4; --ind:#AA5317; --ind-bg:#F6DFCB; --bad:#A6352E; --bad-bg:#F3D6D1;
+  --f-display:"Cormorant Garamond","EB Garamond",Garamond,"Times New Roman",serif;
+  --f-body:"IBM Plex Sans","Segoe UI",Arial,sans-serif; --f-mono:"IBM Plex Mono",Consolas,monospace;
+  --r:8px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#0F151C; --paper-2:#17202A; --surface:#141B23; --ink:#ECE8DC; --muted:#A2A7AD; --line:#2A3440; --hair:#3B4652;
+  --accent:#7FB6E6; --accent-soft:#18324A; --gold:#E3B455; --gold-soft:#3A2F15;
+  --a1:#6FA8E0; --a2:#E39566; --a3:#6CC895; --a4:#C08FD4; --a5:#E8BC52; --a6:#5CC6C8; --a7:#B9C35C; --a8:#E07A8A;
+  --ok:#74D3A1; --ok-bg:#133025; --warn:#EDC35A; --warn-bg:#382D10; --ind:#F0A266; --ind-bg:#3A2413; --bad:#F08A80; --bad-bg:#3D1C19; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#0F151C; --paper-2:#17202A; --surface:#141B23; --ink:#ECE8DC; --muted:#A2A7AD; --line:#2A3440; --hair:#3B4652;
+  --accent:#7FB6E6; --accent-soft:#18324A; --gold:#E3B455; --gold-soft:#3A2F15;
+  --a1:#6FA8E0; --a2:#E39566; --a3:#6CC895; --a4:#C08FD4; --a5:#E8BC52; --a6:#5CC6C8; --a7:#B9C35C; --a8:#E07A8A;
+  --ok:#74D3A1; --ok-bg:#133025; --warn:#EDC35A; --warn-bg:#382D10; --ind:#F0A266; --ind-bg:#3A2413; --bad:#F08A80; --bad-bg:#3D1C19; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.55}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:3px}
+.wrap{max-width:1240px;margin:0 auto;padding-inline:20px}
+h1,h2,h3{text-wrap:balance;margin:0}
+.eyebrow{font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.mono{font-family:var(--f-mono)}
+.num{font-variant-numeric:tabular-nums}
+.ln{fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+
+/* barra superior */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:18px;min-height:58px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font-family:var(--f-display);font-size:21px;font-weight:600;letter-spacing:.01em}
+.brand i{font-style:italic;font-weight:500;color:var(--muted)}
+.tag-proto{font-family:var(--f-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold);padding:2px 7px;border-radius:3px}
+.nav{display:flex;gap:2px;margin-left:auto;flex-wrap:wrap}
+.nav a{color:var(--muted);text-decoration:none;font-size:13.5px;padding:6px 10px;border-radius:5px;transition:color .2s,background .2s}
+.nav a:hover{color:var(--ink);background:var(--paper-2)}
+
+/* hero / lámina */
+.hero{position:relative;border-bottom:1px solid var(--line);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:32px;align-items:center;padding-block:44px 40px}
+@media (max-width:900px){.hero .wrap{grid-template-columns:minmax(0,1fr)}}
+.plate-no{font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;color:var(--muted);display:flex;gap:14px;align-items:center}
+.plate-no::after{content:"";height:1px;flex:1;background:var(--hair);max-width:120px}
+.hero h1{font-family:var(--f-display);font-weight:600;font-size:clamp(40px,6.2vw,80px);line-height:.96;letter-spacing:-.015em;margin-top:18px}
+.hero h1 em{font-style:italic;font-weight:500;color:var(--gold)}
+.hero h1 .w{display:inline-block;animation:wordIn .9s cubic-bezier(.2,.7,.1,1) both;animation-delay:calc(var(--d) * 90ms + 200ms)}
+@keyframes wordIn{from{transform:translateY(.35em);filter:blur(4px)}to{transform:none;filter:none}}
+.lead{color:var(--muted);font-size:17px;max-width:50ch;margin:20px 0 24px}
+.search{display:flex;max-width:600px;background:var(--surface);border:1px solid var(--ink);border-radius:var(--r);overflow:hidden;transition:box-shadow .2s}
+.search input{flex:1;min-width:0;border:0;background:transparent;color:var(--ink);font:500 16.5px var(--f-body);padding:15px 16px}
+.search input:focus{outline:none}
+.search button{border:0;background:var(--ink);color:var(--paper);font:600 14px var(--f-body);letter-spacing:.02em;padding:0 22px;cursor:pointer}
+.search:focus-within{box-shadow:0 0 0 4px var(--accent-soft)}
+.chips-try{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px;align-items:center}
+.chips-try span{color:var(--muted);font-size:13px;font-family:var(--f-display);font-style:italic;font-size:16px}
+.chips-try button{background:transparent;border:1px solid var(--hair);color:var(--ink);border-radius:999px;padding:4px 12px;font:500 13px var(--f-body);cursor:pointer;transition:border-color .2s,background .2s}
+.chips-try button:hover{border-color:var(--gold);background:var(--gold-soft)}
+
+.plate-wrap{position:relative;width:100%;max-width:600px;justify-self:center;aspect-ratio:1/1;touch-action:manipulation}
+.plate-wrap svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.plate-ink{color:var(--ink)}
+.plate-ink .ring{color:var(--hair)}
+.plate-data{color:var(--ink);-webkit-mask:radial-gradient(circle var(--rr,0px) at var(--mx,50%) var(--my,50%),#000 97%,transparent 100%);mask:radial-gradient(circle var(--rr,0px) at var(--mx,50%) var(--my,50%),#000 97%,transparent 100%);background:var(--paper);border-radius:50%;transition:--rr .3s}
+.plate-wrap:hover .plate-data,.plate-wrap.reveal .plate-data{--rr:110px}
+@property --rr{syntax:"<length>";inherits:true;initial-value:0px}
+.lens{position:absolute;left:var(--mx,50%);top:var(--my,50%);width:calc(var(--rr,0px)*2);height:calc(var(--rr,0px)*2);transform:translate(-50%,-50%);border:1px solid var(--gold);border-radius:50%;pointer-events:none;transition:width .3s,height .3s}
+.plate-wrap:hover .lens,.plate-wrap.reveal .lens{--rr:110px}
+.plate-hint{position:absolute;right:0;bottom:-4px;font-family:var(--f-display);font-style:italic;font-size:15px;color:var(--muted)}
+.draw{stroke-dasharray:1;stroke-dashoffset:0}
+.intro .draw{animation:draw 1.8s cubic-bezier(.6,.1,.2,1) both;animation-delay:calc(var(--d,0) * 120ms + 150ms)}
+@keyframes draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+.orbit{animation:spin var(--sp,60s) linear infinite;transform-box:view-box}
+@keyframes spin{to{transform:rotate(360deg)}}
+.obj{cursor:pointer}
+.obj .hit{fill:transparent}
+.obj:hover .ln,.obj:focus-visible .ln{stroke-width:2}
+.plabel{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.1em;fill:var(--muted);text-transform:uppercase;paint-order:stroke;stroke:var(--paper);stroke-width:5px;stroke-linejoin:round}
+.dlabel{font-family:var(--f-display);font-weight:700;font-size:30px}
+.dsub{font-family:var(--f-mono);font-size:10px;letter-spacing:.06em}
+
+.ledger{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--ink);margin-top:34px;max-width:640px}
+.ledger div{padding:12px 14px 0 0}
+.ledger b{display:block;font-family:var(--f-display);font-size:38px;font-weight:600;line-height:1;font-variant-numeric:tabular-nums lining-nums}
+.ledger span{font-size:12.5px;color:var(--muted);display:block;margin-top:4px}
+@media (max-width:560px){.ledger{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* secciones */
+section.block{padding-block:64px}
+.sec-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:end;margin-bottom:28px;border-bottom:1px solid var(--line);padding-bottom:18px}
+@media (max-width:760px){.sec-head{grid-template-columns:minmax(0,1fr)}}
+.sec-head h2{font-family:var(--f-display);font-weight:600;font-size:clamp(32px,4vw,48px);line-height:1;margin-top:8px}
+.sec-head h2 em{font-style:italic;font-weight:500}
+.sec-head p{color:var(--muted);max-width:62ch;margin:10px 0 0}
+.roman{font-family:var(--f-display);font-style:italic;color:var(--gold);font-size:20px;margin-right:6px}
+@supports (animation-timeline:view()){
+  .sec-head h2{animation:slideIn linear both;animation-timeline:view();animation-range:entry 0% entry 60%}
+  .area .glyph .ln{animation:draw linear both;animation-timeline:view();animation-range:entry 10% cover 35%}
+}
+@keyframes slideIn{from{transform:translateX(-24px)}to{transform:none}}
+
+/* buscador */
+.layout{display:grid;grid-template-columns:250px minmax(0,1fr);gap:30px;align-items:start}
+@media (max-width:880px){.layout{grid-template-columns:minmax(0,1fr)}}
+.filters{position:sticky;top:calc(env(safe-area-inset-top,0px) + 76px);display:flex;flex-direction:column;gap:16px}
+@media (max-width:880px){.filters{position:static}}
+.filters details{border-bottom:1px solid var(--line);padding-bottom:12px}
+.filters summary{cursor:pointer;font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);list-style:none;display:flex;justify-content:space-between}
+.filters summary::-webkit-details-marker{display:none}
+.filters summary::after{content:"+"}
+.filters details[open] summary::after{content:"–"}
+.fopts{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.fbtn{display:inline-flex;align-items:center;gap:5px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:4px 10px;font:500 12.5px var(--f-body);cursor:pointer;transition:all .15s}
+.fbtn svg{width:15px;height:15px}
+.fbtn:hover{border-color:var(--ink)}
+.fbtn[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.fbtn .n{opacity:.55;font-variant-numeric:tabular-nums}
+.check{display:flex;gap:8px;align-items:center;font-size:13.5px;margin-top:8px;cursor:pointer}
+.check input{accent-color:var(--accent)}
+.reset{align-self:flex-start;background:none;border:0;color:var(--accent);font:500 13px var(--f-body);cursor:pointer;padding:0;text-decoration:underline;text-underline-offset:3px}
+.qbar{margin-bottom:14px}
+.qbar .search{max-width:none;border-color:var(--hair)}
+.interp{border:1px solid var(--line);background:var(--surface);border-radius:var(--r);padding:11px 14px;margin-bottom:14px;font-size:13.5px;display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center}
+.interp .lbl{font-family:var(--f-display);font-style:italic;font-size:16px;color:var(--muted)}
+.concept{display:inline-flex;align-items:center;gap:6px;border-radius:5px;padding:3px 8px;font-weight:500;font-size:13px;background:var(--paper-2)}
+.concept.t{background:var(--accent-soft);color:var(--accent)}
+.concept.e{background:var(--gold-soft);color:var(--gold)}
+.agesic{margin-left:auto;font-weight:500;text-decoration:none;white-space:nowrap}
+.count{font-size:13.5px;color:var(--muted);margin-bottom:6px}
+.count b{color:var(--ink)}
+.group-title{display:flex;align-items:center;gap:12px;margin:22px 0 12px;font-family:var(--f-display);font-size:21px;font-weight:600}
+.group-title small{font-family:var(--f-mono);font-size:11px;color:var(--muted);font-weight:400;letter-spacing:.08em}
+.group-title::after{content:"";flex:1;height:1px;background:var(--line)}
+.results{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,330px),1fr));gap:12px}
+.card{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px;display:flex;flex-direction:column;gap:8px;min-width:0;transition:border-color .2s,transform .25s,box-shadow .25s;animation:rise .5s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i,0) * 24ms)}
+.card:hover{border-color:var(--ink);transform:translateY(-2px);box-shadow:0 10px 28px color-mix(in srgb,var(--ink) 10%,transparent)}
+@keyframes rise{from{transform:translateY(10px)}to{transform:none}}
+.card .meta{display:flex;align-items:center;gap:10px;font-family:var(--f-mono);font-size:10.5px;color:var(--muted);letter-spacing:.05em;text-transform:uppercase}
+.card .meta .amb{margin-left:auto}
+.card .glyph{width:30px;height:30px;flex:none}
+.card h3{font-family:var(--f-display);font-size:22px;font-weight:600;line-height:1.08}
+.card h3 a{color:var(--ink);text-decoration:none}
+.card h3 a:hover{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+.card .inst{font-size:13px;color:var(--muted);margin-top:-2px}
+.card .desc{font-size:13.5px;margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:5px}
+.chip{font:500 11.5px var(--f-body);border-radius:4px;padding:2px 7px;background:var(--paper-2);color:var(--ink);border:0;cursor:pointer}
+.chip.sec{background:transparent;border:1px solid var(--line);color:var(--muted);font-weight:400}
+.chip.enf{background:var(--gold-soft);color:var(--gold)}
+.chip:hover{outline:1px solid var(--ink)}
+.foot{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:auto;padding-top:9px;border-top:1px dotted var(--hair);font-size:12px;color:var(--muted)}
+.ods-sq{width:22px;height:22px;border-radius:2px;font:700 11px var(--f-mono);display:inline-grid;place-items:center;flex:none}
+.lvl{display:inline-flex;align-items:center;gap:6px}
+.lvl i{display:inline-flex;gap:2px}
+.lvl i b{width:6px;height:12px;border-radius:1px;background:var(--line)}
+.lvl i b.on{background:var(--ink)}
+.vig{margin-left:auto}
+.vig.ok{color:var(--ok)}
+.more{background:none;border:0;color:var(--accent);font:500 12.5px var(--f-body);cursor:pointer;padding:0;align-self:flex-start}
+.ficha{font-size:12.5px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 12px;background:var(--paper-2);border-radius:6px;padding:10px 12px;margin:0}
+.ficha dt{color:var(--muted)}
+.ficha dd{margin:0;overflow-wrap:anywhere}
+.empty{padding:40px 20px;text-align:center;color:var(--muted);border:1px dashed var(--hair);border-radius:var(--r);font-family:var(--f-display);font-size:19px;font-style:italic}
+.showall{margin:18px auto 0;display:block;background:transparent;border:1px solid var(--ink);color:var(--ink);border-radius:999px;padding:9px 20px;font:500 14px var(--f-body);cursor:pointer}
+
+/* cobertura */
+.band{background:var(--surface);border-block:1px solid var(--line)}
+.legend{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end}
+.pill{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:4px 12px 4px 5px;font-size:12.5px;font-weight:500}
+.pill b{font-family:var(--f-display);font-size:17px;min-width:26px;height:26px;border-radius:999px;display:inline-grid;place-items:center;background:var(--surface);font-variant-numeric:tabular-nums lining-nums}
+.s-ok{background:var(--ok-bg);color:var(--ok)} .s-warn{background:var(--warn-bg);color:var(--warn)} .s-ind{background:var(--ind-bg);color:var(--ind)} .s-bad{background:var(--bad-bg);color:var(--bad)} .s-conc{background:var(--gold-soft);color:var(--gold)}
+.areas{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));gap:34px 26px}
+.area header{display:grid;grid-template-columns:64px minmax(0,1fr);gap:12px;align-items:center;margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid var(--ink)}
+.area .glyph{width:64px;height:64px}
+.area h3{font-family:var(--f-display);font-size:22px;font-weight:600;line-height:1.05}
+.area h3 small{display:block;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:400;margin-top:4px}
+.tiles{display:flex;flex-direction:column}
+.tile{display:grid;grid-template-columns:10px minmax(0,1fr) auto;gap:10px;align-items:center;text-align:left;background:transparent;border:0;border-bottom:1px dotted var(--hair);padding:8px 2px;cursor:pointer;color:var(--ink);font:500 13.5px var(--f-body);transition:background .15s,padding .2s}
+.tile:hover{background:var(--paper-2);padding-left:8px}
+.tile .dot{width:10px;height:10px;border-radius:50%}
+.tile.ok .dot{background:var(--ok)} .tile.warn .dot{background:var(--warn)} .tile.ind .dot{background:var(--ind)} .tile.bad .dot{background:transparent;border:2px solid var(--bad)}
+.tile.bad .tn{color:var(--bad)}
+.tile .tn{min-width:0}
+.tile .tn small{display:block;color:var(--muted);font-weight:400;font-size:11.5px}
+.tile .tc{font-family:var(--f-display);font-weight:600;font-size:22px;font-variant-numeric:tabular-nums lining-nums;display:flex;align-items:center;gap:6px}
+.tile .tc .conc{width:7px;height:7px;transform:rotate(45deg);background:var(--gold)}
+.enf-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,210px),1fr));gap:0 26px;margin-top:10px}
+.note{color:var(--muted);font-size:13px;margin-top:22px;max-width:86ch}
+
+/* ODS */
+.ods-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,168px),1fr));gap:8px}
+.odst{position:relative;border:0;border-radius:4px;padding:12px 12px 11px;text-align:left;cursor:pointer;min-height:156px;display:flex;flex-direction:column;gap:5px;font-family:var(--f-body);overflow:hidden;transition:transform .25s,box-shadow .25s}
+.odst:hover{transform:translateY(-4px) rotate(-.4deg);box-shadow:0 14px 30px rgba(0,0,0,.2)}
+.odst .on{font-family:var(--f-display);font-weight:700;font-size:44px;line-height:.9}
+.odst .ot{font-size:12.5px;font-weight:600;line-height:1.25}
+.odst .oc{margin-top:auto;font-size:12px}
+.odst .oc b{font-family:var(--f-display);font-size:22px;font-variant-numeric:lining-nums}
+.odst .stack{display:flex;height:5px;gap:2px}
+.odst .stack i{display:block;height:100%;border-radius:1px}
+.odst .flag{position:absolute;top:10px;right:10px;font-size:10.5px;font-weight:600;background:rgba(0,0,0,.3);color:#fff;padding:2px 7px;border-radius:999px}
+
+/* metodología */
+.meto{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,330px),1fr));gap:30px 40px}
+.meto h3{font-family:var(--f-display);font-size:24px;font-weight:600;margin-bottom:6px}
+.meto p{margin:0;color:var(--muted);font-size:14px;max-width:60ch}
+.scale{display:flex;flex-direction:column;gap:6px;margin-top:6px}
+.scale div{display:grid;grid-template-columns:150px minmax(0,1fr);gap:10px;font-size:13px;align-items:center}
+footer{border-top:1px solid var(--ink);color:var(--muted);font-size:13px}
+footer .wrap{padding-block:26px;display:flex;flex-wrap:wrap;gap:10px 30px;justify-content:space-between}
+@media (prefers-reduced-motion:reduce){*,*::before{animation:none!important;transition:none!important}}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs id="sprite"></defs></svg>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio">Atlas <i>de Observatorios</i></a>
+    <span class="tag-proto">Prototipo</span>
+    <nav class="nav" aria-label="Secciones"><a href="#cobertura">Cobertura</a><a href="#buscar">Recursos</a><a href="#ods">ODS</a><a href="#metodologia">Metodología</a></nav>
+  </div>
+</header>
+
+<section class="hero" id="inicio">
+  <div class="wrap">
+    <div style="min-width:0">
+      <div class="plate-no">LÁMINA I · URUGUAY · CORTE <span id="corte"></span></div>
+      <h1 id="h1"><span class="w" style="--d:0">Qué</span> <span class="w" style="--d:1">se</span> <span class="w" style="--d:2">mide,</span> <span class="w" style="--d:3">quién</span> <span class="w" style="--d:4">lo</span> <span class="w" style="--d:5">mide</span> <span class="w" style="--d:6">y</span> <em class="w" style="--d:7">dónde</em> <em class="w" style="--d:8">falta.</em></h1>
+      <p class="lead">Atlas de los observatorios, monitores, portales estadísticos y geoportales de Uruguay, ordenados por tema, enfoque y nivel de análisis, con referencias internacionales para comparar.</p>
+      <form class="search" id="heroForm" role="search">
+        <label for="heroQ" hidden>Buscar un tema</label>
+        <input id="heroQ" type="search" placeholder="Buscá un tema: género, PBI, empleo, CTI…" autocomplete="off">
+        <button type="submit">Buscar</button>
+      </form>
+      <div class="chips-try"><span>por ejemplo</span>
+        <button data-q="género">género</button><button data-q="pbi">PBI</button><button data-q="empleo">empleo</button><button data-q="cti">CTI</button><button data-q="género universidad">género en universidad</button><button data-q="agua">agua</button>
+      </div>
+      <div class="ledger">
+        <div><b class="cu" data-k="nac">0</b><span>recursos nacionales y departamentales</span></div>
+        <div><b class="cu" data-k="int">0</b><span>referencias internacionales</span></div>
+        <div><b class="cu" data-k="inst">0</b><span>instituciones productoras</span></div>
+        <div><b class="cu" data-k="gap">0</b><span>temas sin cobertura nacional</span></div>
+      </div>
+    </div>
+    <div class="plate-wrap" id="plate" aria-label="Lámina del ecosistema: ocho áreas temáticas con sus recursos">
+      <svg class="plate-ink intro" id="plateInk" viewBox="0 0 600 600" role="group"></svg>
+      <svg class="plate-data" id="plateData" viewBox="0 0 600 600" aria-hidden="true"></svg>
+      <div class="lens" aria-hidden="true"></div>
+      <div class="plate-hint">Pasá el cursor: capa de datos</div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="cobertura">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="eyebrow">Análisis ecosistémico</div><h2><span class="roman">I.</span>Mapa de <em>cobertura</em></h2>
+      <p>Cada tema muestra cuántos recursos nacionales lo tienen como tema principal y su estado. Tocá un tema para ver los recursos.</p></div>
+      <div class="legend" id="legend"></div>
+    </div>
+    <div class="areas" id="areas"></div>
+    <h3 style="font-family:var(--f-display);font-size:28px;font-weight:600;margin-top:48px;border-bottom:1px solid var(--ink);padding-bottom:8px">Enfoques transversales</h3>
+    <div class="enf-row" id="enfRow"></div>
+    <p class="note">Con análisis: al menos un recurso nacional produce informes interpretativos (nivel 4). Sin análisis: hay recursos con el tema como principal y ninguno de nivel 4. Indirecta: el tema solo aparece como secundario. Sin cobertura: ningún recurso nacional relevado. El rombo dorado marca temas con cinco o más recursos principales, donde conviene revisar superposiciones.</p>
+  </div>
+</section>
+
+<section class="block band" id="buscar">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="eyebrow">Buscador temático</div><h2><span class="roman">II.</span>Quién publica datos <em>sobre un tema</em></h2>
+      <p>La búsqueda reconoce sinónimos y los traduce a la taxonomía. Un enfoque como género solo trae recursos que lo incorporan de forma explícita.</p></div>
+    </div>
+    <div class="layout">
+      <aside class="filters" id="filters" aria-label="Filtros"></aside>
+      <div style="min-width:0">
+        <form class="qbar" id="qForm" role="search"><div class="search"><label for="q" hidden>Buscar</label><input id="q" type="search" placeholder="Tema, institución o palabra clave" autocomplete="off"><button type="submit">Buscar</button></div></form>
+        <div id="interp"></div>
+        <div class="count" id="count" aria-live="polite"></div>
+        <div id="results"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="ods">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="eyebrow">Agenda 2030</div><h2><span class="roman">III.</span>Cobertura por <em>ODS</em></h2>
+      <p>Recursos nacionales agrupados según el ODS principal de su tema. La barra muestra el estado de los temas asociados a cada objetivo.</p></div>
+    </div>
+    <div class="ods-grid" id="odsGrid"></div>
+  </div>
+</section>
+
+<section class="block band" id="metodologia">
+  <div class="wrap">
+    <div class="sec-head"><div><div class="eyebrow">Cómo se construye</div><h2><span class="roman">IV.</span>Metodología</h2></div></div>
+    <div class="meto">
+      <div><h3>Taxonomía en facetas</h3><p>Cada recurso tiene un tema principal, temas secundarios y enfoques transversales. Los 53 temas se agrupan en 8 áreas y se vinculan a metas ODS. La taxonomía incluye temas de referencia sin recursos para que los vacíos queden a la vista.</p></div>
+      <div><h3>Regla de enfoque explícito</h3><p id="regla"></p></div>
+      <div><h3>Nivel de análisis</h3><div class="scale" id="scale"></div></div>
+      <div><h3>Vigencia</h3><p>El período de datos se registra solo cuando pudo comprobarse en la fuente. Un recurso sin período comprobado no está necesariamente desactualizado. Hoy <b id="vigPct"></b> de los recursos nacionales tienen período comprobado.</p></div>
+      <div><h3>Referencias internacionales</h3><p>Plataformas de organismos y redes internacionales con datos comparables de Uruguay, como el Innovation Capabilities Navigator de la OMPI, el Global Innovation Index o RICYT. Se cuentan aparte para no inflar la cobertura nacional.</p></div>
+      <div><h3>Datos crudos</h3><p>Cada búsqueda ofrece un enlace al Catálogo Nacional de Datos Abiertos de AGESIC con el mismo término, como capa complementaria para procesamiento propio.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+  <span>Atlas de Observatorios del Uruguay · prototipo para validación con el ecosistema</span>
+  <span>Relevamiento web 02/10/2026, ampliado el <span id="corte2"></span>. Clasificación provisoria.</span>
+</div></footer>
+
+<script>
+window.__DATA__ = __DATA_JSON__;
+</script>
+<script>
+(function(){
+const D = window.__DATA__;
+const R = D.recursos, T = D.temas, E = D.enfoques, A = D.areas, O = D.ods, N = D.niveles;
+const ODSC = {1:"#E5243B",2:"#DDA63A",3:"#4C9F38",4:"#C5192D",5:"#FF3A21",6:"#26BDE2",7:"#FCC30B",8:"#A21942",9:"#FD6925",10:"#DD1367",11:"#FD9D24",12:"#BF8B2E",13:"#3F7E44",14:"#0A97D9",15:"#56C02B",16:"#00689D",17:"#19486A"};
+const ODSTXT = {2:"#2b1d00",6:"#06303a",7:"#3a2a00",11:"#2b1600",12:"#2b1d00",15:"#0f2a05"};
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const norm = s => String(s||"").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").trim();
+const isInt = r => r.ambito === "Internacional";
+const fmtDate = s => { if(!s) return ""; const p = s.split("-"); return p.length===3 ? `${p[2]}/${p[1]}/${p[0]}` : s; };
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+$("#corte").textContent = fmtDate(D.corte); $("#corte2").textContent = fmtDate(D.corte);
+$("#regla").textContent = D.regla;
+const AK = Object.keys(A);                       // A1..A8
+const areaKey = name => AK.find(k => A[k] === name);
+const SHORT = {A1:"Economía",A2:"Trabajo y protección",A3:"Salud y población",A4:"Educación y cultura",A5:"Ciencia y tecnología",A6:"Ambiente y energía",A7:"Territorio",A8:"Estado y derechos"};
+
+/* ---------- objetos temáticos (grabado lineal, caja 120×120) ---------- */
+function gear(){ let d=""; const n=10, R1=46, R2=37; for(let i=0;i<n;i++){ const a=i/n*2*Math.PI, w=Math.PI/n*.55;
+  const pts=[[R2,a-w*1.4],[R1,a-w*.8],[R1,a+w*.8],[R2,a+w*1.4],[R2,a+Math.PI/n*1.0]]; pts.forEach(([r,t],j)=>{d+=(i===0&&j===0?"M":"L")+(60+r*Math.cos(t)).toFixed(1)+" "+(60+r*Math.sin(t)).toFixed(1);}); }
+  return d+"Z"; }
+const OBJ = {
+ A1: () => { let s=`<path class="ln draw" pathLength="1" d="M12 106H108"/>`; [[32,70],[60,52],[88,30]].forEach(([x,t],i)=>{
+   s+=`<path class="ln draw" pathLength="1" d="M${x-12} ${t}H${x+12}V${t+7}H${x-12}Z M${x-9} ${t+7}V100 M${x+9} ${t+7}V100 M${x-12} 100H${x+12}V106H${x-12}Z M${x-3.5} ${t+12}V96 M${x+3.5} ${t+12}V96"/>`;});
+   return s+`<path class="ln draw" pathLength="1" d="M14 60 Q50 44 98 14 M90 14H99V23" stroke-dasharray="3 3"/>`; },
+ A2: () => `<path class="ln draw" pathLength="1" d="${gear()}"/><circle class="ln draw" pathLength="1" cx="60" cy="60" r="27"/><circle class="ln draw" pathLength="1" cx="60" cy="60" r="10"/><path class="ln draw" pathLength="1" d="M60 33V50M60 70V87M33 60H50M70 60H87M41 41L53 53M67 67L79 79M41 79L53 67M67 53L79 41"/>`,
+ A3: () => `<circle class="ln draw" pathLength="1" cx="60" cy="60" r="48"/><path class="ln draw" pathLength="1" d="M60 94C22 68 26 34 47 34C55 34 60 41 60 46C60 41 65 34 73 34C94 34 98 68 60 94Z"/><path class="ln draw" pathLength="1" d="M10 62H38L44 48L52 78L60 38L66 64L72 56H110"/>`,
+ A4: () => { let s=`<path class="ln draw" pathLength="1" d="M60 36C46 28 28 28 12 33V92C28 87 46 87 60 96ZM60 36C74 28 92 28 108 33V92C92 87 74 87 60 96ZM60 36V96"/>`;
+   for(let k=0;k<5;k++){const y=46+k*8; s+=`<path class="ln draw" pathLength="1" d="M20 ${y-1}Q36 ${y-4} 52 ${y+1}M68 ${y+1}Q84 ${y-4} 100 ${y-1}"/>`;} return s+`<path class="ln draw" pathLength="1" d="M60 22L66 14L72 22"/>`; },
+ A5: () => `<ellipse class="ln draw" pathLength="1" cx="60" cy="60" rx="50" ry="18"/><ellipse class="ln draw" pathLength="1" cx="60" cy="60" rx="50" ry="18" transform="rotate(60 60 60)"/><ellipse class="ln draw" pathLength="1" cx="60" cy="60" rx="50" ry="18" transform="rotate(120 60 60)"/><circle class="ln draw" pathLength="1" cx="60" cy="60" r="8"/><circle cx="110" cy="60" r="3.2" fill="currentColor"/><circle cx="35" cy="17" r="3.2" fill="currentColor"/><circle cx="35" cy="103" r="3.2" fill="currentColor"/>`,
+ A6: () => `<path class="ln draw" pathLength="1" d="M28 92C24 50 58 22 100 18C98 58 70 90 28 92Z"/><path class="ln draw" pathLength="1" d="M28 92C50 70 72 46 100 18M50 70L46 50M50 70L70 72M64 55L62 38M64 55L82 56M78 40L78 28M78 40L90 40"/><path class="ln draw" pathLength="1" d="M8 106q8-6 16 0t16 0t16 0t16 0t16 0t16 0t16 0"/><circle class="ln draw" pathLength="1" cx="24" cy="26" r="8"/><path class="ln draw" pathLength="1" d="M24 12V8M24 44V40M10 26H6M42 26H38M14 16L11 13M34 36L37 39M14 36L11 39M34 16L37 13"/>`,
+ A7: () => `<circle class="ln draw" pathLength="1" cx="60" cy="60" r="48"/><circle class="ln draw" pathLength="1" cx="60" cy="60" r="40" stroke-dasharray="2 4"/><path class="ln draw" pathLength="1" d="M60 10L67 53L110 60L67 67L60 110L53 67L10 60L53 53Z"/><path class="ln draw" pathLength="1" d="M60 60L84 36M60 60L36 84M60 60L84 84M60 60L36 36M60 10V60"/><path d="M60 10L67 53L60 60Z" fill="currentColor"/>`,
+ A8: () => { let s=`<path class="ln draw" pathLength="1" d="M12 40L60 14L108 40ZM12 40H108V48H12Z"/><circle class="ln draw" pathLength="1" cx="60" cy="30" r="4"/>`;
+   [24,42,60,78,96].forEach(x=>{s+=`<path class="ln draw" pathLength="1" d="M${x-5} 48V90M${x+5} 48V90M${x-6} 90H${x+6}"/>`;});
+   return s+`<path class="ln draw" pathLength="1" d="M8 92H112V98H8ZM4 98H116V104H4Z"/>`; },
+};
+const sprite = $("#sprite");
+sprite.innerHTML = AK.map(k=>`<symbol id="o-${k}" viewBox="0 0 120 120">${OBJ[k]()}</symbol>`).join("");
+const glyph = (k, cls="glyph") => `<svg class="${cls}" viewBox="0 0 120 120" aria-hidden="true" style="color:var(--${k.toLowerCase()})">${OBJ[k]()}</svg>`;
+const glyphUse = (k, cls="glyph") => `<svg class="${cls}" viewBox="0 0 120 120" aria-hidden="true" style="color:var(--${k.toLowerCase()})"><use href="#o-${k}"/></svg>`;
+
+/* ---------- cobertura ---------- */
+const cov = {};
+for (const code in T) {
+  const nac = R.filter(r => !isInt(r) && (r.tema===code || r.temas_sec.includes(code)));
+  const pri = nac.filter(r => r.tema===code), an = nac.filter(r => r.nivel===4);
+  const it = R.filter(r => isInt(r) && (r.tema===code || r.temas_sec.includes(code)));
+  const st = nac.length===0 ? "bad" : pri.length===0 ? "ind" : an.length===0 ? "warn" : "ok";
+  cov[code] = {nac:nac.length, pri:pri.length, an:an.length, int:it.length, st, conc: pri.length>=5};
+}
+const ST = {ok:"Cobertura con análisis", warn:"Cobertura sin análisis", ind:"Cobertura indirecta", bad:"Sin cobertura nacional"};
+const SC = {ok:"s-ok", warn:"s-warn", ind:"s-ind", bad:"s-bad"};
+const areaStat = {};
+AK.forEach(k=>{ const rs = R.filter(r=>!isInt(r)&&r.area===A[k]); const ts = Object.keys(T).filter(c=>T[c].area===k);
+  areaStat[k] = {n:rs.length, an:rs.filter(r=>r.nivel===4).length, int:R.filter(r=>isInt(r)&&r.area===A[k]).length, gaps:ts.filter(c=>cov[c].st==="bad").length, temas:ts.length}; });
+
+/* ---------- lámina del hero ---------- */
+(function plate(){
+  const C = 300, RO = 200;
+  let ink = `<g class="ring">`;
+  ink += `<circle class="ln draw" pathLength="1" cx="${C}" cy="${C}" r="286" style="--d:0"/><circle class="ln draw" pathLength="1" cx="${C}" cy="${C}" r="272" style="--d:1"/>`;
+  let ticks = ""; for (let i=0;i<120;i++){ const a=i/120*2*Math.PI, r1 = i%5===0?272:278; ticks += `M${(C+r1*Math.cos(a)).toFixed(1)} ${(C+r1*Math.sin(a)).toFixed(1)}L${(C+286*Math.cos(a)).toFixed(1)} ${(C+286*Math.sin(a)).toFixed(1)}`; }
+  ink += `<path class="ln" d="${ticks}" style="stroke-width:.8"/>`;
+  ink += `<circle class="ln draw" pathLength="1" cx="${C}" cy="${C}" r="${RO}" stroke-dasharray="1 5" style="--d:2"/><circle class="ln draw" pathLength="1" cx="${C}" cy="${C}" r="118" style="--d:3"/>`;
+  AK.forEach((k,i)=>{ const a=i/AK.length*2*Math.PI-Math.PI/2; ink += `<path class="ln draw" pathLength="1" d="M${C+64*Math.cos(a)} ${C+64*Math.sin(a)}L${C+(RO-52)*Math.cos(a)} ${C+(RO-52)*Math.sin(a)}" style="--d:3;stroke-dasharray:1"/>`; });
+  ink += `</g>`;
+  // sol central
+  let rays=""; for(let i=0;i<16;i++){const a=i/16*2*Math.PI, r1=i%2?34:30, r2=i%2?46:54; rays+=`M${(C+r1*Math.cos(a)).toFixed(1)} ${(C+r1*Math.sin(a)).toFixed(1)}L${(C+r2*Math.cos(a)).toFixed(1)} ${(C+r2*Math.sin(a)).toFixed(1)}`;}
+  ink += `<g style="color:var(--gold)"><circle class="ln draw" pathLength="1" cx="${C}" cy="${C}" r="24" style="--d:4"/><path class="ln draw" pathLength="1" d="${rays}" style="--d:5"/></g>`;
+  let data = `<circle cx="${C}" cy="${C}" r="290" style="fill:var(--paper)"/>`;
+  data += `<text x="${C}" y="${C-4}" text-anchor="middle" class="dlabel" style="fill:var(--gold)">${R.filter(r=>!isInt(r)).length}</text><text x="${C}" y="${C+14}" text-anchor="middle" class="dsub" style="fill:var(--muted)">RECURSOS</text>`;
+  AK.forEach((k,i)=>{
+    const a=i/AK.length*2*Math.PI-Math.PI/2, x=C+RO*Math.cos(a), y=C+RO*Math.sin(a), s = areaStat[k];
+    // puntos en órbita = recursos del área
+    let dots=""; for(let j=0;j<s.n;j++){ const t=j/s.n*2*Math.PI, rr = 54 + (j%3)*5; dots+=`<circle cx="${(x+rr*Math.cos(t)).toFixed(1)}" cy="${(y+rr*Math.sin(t)).toFixed(1)}" r="${j<s.an?2.3:1.5}" fill="currentColor" opacity="${j<s.an?.95:.55}"/>`; }
+    for(let j=0;j<s.int;j++){ const t=j/Math.max(1,s.int)*2*Math.PI+.3; dots+=`<circle cx="${(x+72*Math.cos(t)).toFixed(1)}" cy="${(y+72*Math.sin(t)).toFixed(1)}" r="2.4" fill="none" stroke="currentColor" stroke-width="1"/>`; }
+    const lx = C+(RO+0)*Math.cos(a), ly = C+(RO+0)*Math.sin(a);
+    const labR = 246, tx = C+labR*Math.cos(a), ty = C+labR*Math.sin(a);
+    const anchor = Math.abs(Math.cos(a))<.2 ? "middle" : (Math.cos(a)>0?"start":"end");
+    ink += `<g class="obj" tabindex="0" role="button" aria-label="${esc(A[k])}: ${s.n} recursos" data-area="${k}" style="color:var(--ink)">
+      <circle class="hit" cx="${x}" cy="${y}" r="56"/>
+      <g class="orbit" style="--sp:${50+i*9}s;transform-origin:${x}px ${y}px;opacity:.5">${dots}</g>
+      <g transform="translate(${x-36} ${y-36}) scale(.6)" style="--d:${4+i}">${OBJ[k]().replace(/class="ln draw"/g,`class="ln draw" style="--d:${4+i}"`)}</g>
+      <text class="plabel" x="${tx}" y="${ty+ (Math.sin(a)>.9?2:Math.sin(a)<-.9?-2:4)}" text-anchor="${anchor}">${SHORT[k]}</text></g>`;
+    data += `<g style="color:var(--${k.toLowerCase()})"><circle cx="${x}" cy="${y}" r="60" style="fill:color-mix(in srgb, currentColor 12%, var(--paper))"/>
+      <g class="orbit" style="--sp:${50+i*9}s;transform-origin:${x}px ${y}px">${dots}</g>
+      <g transform="translate(${x-30} ${y-48}) scale(.5)">${OBJ[k]()}</g>
+      <text x="${x}" y="${y+26}" text-anchor="middle" class="dlabel" fill="currentColor">${s.n}</text>
+      <text x="${x}" y="${y+40}" text-anchor="middle" class="dsub" style="fill:var(--ink)">${s.an} ANÁLISIS · ${s.gaps} VACÍO${s.gaps===1?"":"S"}</text></g>`;
+  });
+  $("#plateInk").innerHTML = ink; $("#plateData").innerHTML = data;
+  const pw = $("#plate");
+  const setPos = (e) => { const b = pw.getBoundingClientRect(); pw.style.setProperty("--mx", (e.clientX-b.left)+"px"); pw.style.setProperty("--my", (e.clientY-b.top)+"px"); };
+  pw.addEventListener("pointermove", setPos);
+  pw.addEventListener("pointerdown", e => { setPos(e); if (e.pointerType!=="mouse") pw.classList.add("reveal"); });
+  pw.addEventListener("pointerleave", () => pw.classList.remove("reveal"));
+  pw.querySelectorAll(".obj").forEach(g => {
+    const go = () => { state.area = new Set([A[g.dataset.area]]); setQ(""); };
+    g.addEventListener("click", go); g.addEventListener("keydown", e => { if (e.key==="Enter"||e.key===" ") { e.preventDefault(); go(); } });
+  });
+  setTimeout(()=>$("#plateInk").classList.remove("intro"), 3600);
+  // parallax suave de la lámina con el scroll
+  if (!reduce) { let tk=false; addEventListener("scroll",()=>{ if(tk) return; tk=true; requestAnimationFrame(()=>{ const y=Math.min(scrollY,700); pw.style.transform=`translateY(${y*0.12}px) rotate(${y*0.012}deg)`; tk=false;}); },{passive:true}); }
+})();
+
+/* ---------- cifras ---------- */
+const statv = {nac: R.filter(r=>!isInt(r)).length, int: R.filter(isInt).length, inst: new Set(R.map(r=>r.inst)).size, gap: Object.values(cov).filter(c=>c.st==="bad").length};
+document.querySelectorAll(".cu").forEach(el => {
+  const v = statv[el.dataset.k]; el.textContent = v; if (reduce) return;
+  const t0 = performance.now()+400, dur = 1400;
+  const step = t => { const p = Math.max(0,Math.min(1,(t-t0)/dur)); el.textContent = Math.round(v*(1-Math.pow(1-p,4))); if(p<1) requestAnimationFrame(step); };
+  requestAnimationFrame(step);
+});
+
+/* ---------- búsqueda ---------- */
+const STOP = new Set(["de","del","la","las","el","los","en","y","o","a","para","con","sobre","por","un","una","datos","dato","uruguay","observatorio","observatorios"]);
+const conceptIndex = [];
+for (const [c,t] of Object.entries(T)) [t.nombre, ...t.sin].forEach(s => conceptIndex.push({k:"t", code:c, s:norm(s)}));
+for (const [c,e] of Object.entries(E)) [e.nombre, ...e.sin].forEach(s => conceptIndex.push({k:"e", code:c, s:norm(s)}));
+conceptIndex.sort((a,b)=>b.s.length-a.s.length);
+function resolve(q){
+  let rest = " " + norm(q).replace(/[^a-z0-9+ ]/g," ").replace(/\s+/g," ") + " ";
+  const found = [], seen = new Set();
+  for (const ci of conceptIndex) { if (ci.s.length<2) continue; const pat=" "+ci.s+" ";
+    if (rest.includes(pat)) { const key=ci.k+ci.code; if(!seen.has(key)){seen.add(key);found.push(ci);} rest = rest.replace(pat," "); } }
+  const toks = rest.trim().split(" ").filter(w => w.length>=4 && !STOP.has(w));
+  const leftover = [];
+  for (const w of toks) { const hit = conceptIndex.find(ci => ci.s.split(" ").some(p => p.startsWith(w)));
+    if (hit) { if(!seen.has(hit.k+hit.code)){ seen.add(hit.k+hit.code); found.push(hit);} } else leftover.push(w); }
+  const extra = rest.trim().split(" ").filter(w => w.length===3 && !STOP.has(w));
+  return {concepts: found, words: [...leftover, ...extra]};
+}
+const state = {q:"", area:new Set(), amb:new Set(), niv:new Set(), enf:new Set(), ods:null, vig:false, dl:false, limit:24};
+const hay = r => norm([r.nombre, r.inst, r.etiquetas, r.desc, r.tipo].join(" "));
+function run(){
+  const {concepts, words} = resolve(state.q);
+  const tC = concepts.filter(c=>c.k==="t").map(c=>c.code), eC = concepts.filter(c=>c.k==="e").map(c=>c.code);
+  let list = R.map(r => { let hits=0, score=0;
+    for (const c of tC) { if (r.tema===c) {hits++; score+=3;} else if (r.temas_sec.includes(c)) {hits++; score+=1.5;} }
+    for (const c of eC) if (r.enfoques.includes(c)) {hits++; score+=3;}
+    if (words.length) { const h=hay(r), nm=norm(r.nombre+" "+r.inst);
+      for (const w of words) { if (nm.includes(w)) {score+=2; hits+=.5;} else if (!concepts.length && h.includes(w)) {score+=1; hits+=.5;} } }
+    return {r,hits,score}; });
+  if (concepts.length || words.length) list = list.filter(x=>x.score>0);
+  list = list.filter(({r}) => (!state.area.size||state.area.has(r.area)) && (!state.amb.size||state.amb.has(r.ambito)) &&
+    (!state.niv.size||state.niv.has(r.nivel)) && (!state.enf.size||[...state.enf].every(e=>r.enfoques.includes(e))) &&
+    (!state.ods||r.ods===state.ods) && (!state.vig||r.periodo) && (!state.dl||r.descarga==="Sí"));
+  list.sort((a,b)=>(b.hits-a.hits)||(b.score-a.score)||(b.r.nivel-a.r.nivel)||a.r.nombre.localeCompare(b.r.nombre));
+  renderInterp(concepts, words); renderResults(list, concepts.length); renderFilters();
+}
+function renderInterp(concepts, words){
+  const el = $("#interp");
+  if (!concepts.length && !words.length && !state.ods) { el.innerHTML = ""; return; }
+  const term = concepts.length ? (concepts[0].k==="t" ? T[concepts[0].code].agesic : E[concepts[0].code].nombre) : state.q;
+  let h = `<div class="interp"><span class="lbl">interpretado como</span>`;
+  for (const c of concepts) h += c.k==="t" ? `<span class="concept t"><span class="mono">${c.code}</span>${esc(T[c.code].nombre)}</span>` : `<span class="concept e">Enfoque · ${esc(E[c.code].nombre)}</span>`;
+  for (const w of words) h += `<span class="concept">“${esc(w)}”</span>`;
+  if (state.ods) h += `<span class="concept" style="background:${ODSC[state.ods]};color:${ODSTXT[state.ods]||"#fff"}">ODS ${state.ods}</span><button class="more" data-act="clearods">quitar ODS</button>`;
+  if (term) h += `<a class="agesic" href="https://catalogodatos.gub.uy/dataset?q=${encodeURIComponent(term)}" target="_blank" rel="noopener">Datos crudos en el Catálogo Nacional ↗</a>`;
+  el.innerHTML = h + `</div>`;
+}
+const lvl = n => `<span class="lvl" title="Nivel ${n}: ${esc(N[n].nombre)}"><i>${[1,2,3,4].map(k=>`<b class="${k<=n?"on":""}"></b>`).join("")}</i>${esc(N[n].nombre)}</span>`;
+function card(r,i){
+  const t = T[r.tema], ak = areaKey(r.area);
+  return `<article class="card" style="--i:${Math.min(i,18)}">
+    <div class="meta">${glyphUse(ak)}<span>${esc(r.id)} · ${esc(r.tipo)}</span><span class="amb">${esc(r.ambito)}</span></div>
+    <h3><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.nombre)}</a></h3>
+    <div class="inst">${esc(r.inst)}</div>
+    <p class="desc">${esc(r.desc)}</p>
+    <div class="chips"><button class="chip" data-q="${esc(t.nombre)}">${esc(t.nombre)}</button>${r.temas_sec.map(c=>`<button class="chip sec" data-q="${esc(T[c].nombre)}">${esc(T[c].nombre)}</button>`).join("")}${r.enfoques.map(c=>`<button class="chip enf" data-q="${esc(E[c].nombre)}">${esc(E[c].nombre)}</button>`).join("")}</div>
+    <div class="foot"><span class="ods-sq" style="background:${ODSC[r.ods]};color:${ODSTXT[r.ods]||"#fff"}" title="ODS ${r.ods}: ${esc(O[r.ods])}">${r.ods}</span>${lvl(r.nivel)}<span class="vig ${r.periodo?"ok":""}">${r.periodo?("Datos: "+esc(r.periodo)):"Período no comprobado"}</span></div>
+    <button class="more" data-ficha="${esc(r.id)}" aria-expanded="false">Ver ficha</button>
+    <dl class="ficha" id="f-${esc(r.id)}" hidden>
+      <dt>Área</dt><dd>${esc(r.area)}</dd><dt>Naturaleza</dt><dd>${esc(r.nat)}</dd><dt>Alcance</dt><dd>${esc(r.alcance)}</dd>
+      <dt>Descarga</dt><dd>${esc(r.descarga)}</dd><dt>API</dt><dd>${esc(r.api)}</dd>
+      <dt>Desagregación</dt><dd>Territorial: ${esc(r.des_terr)} · Por sexo: ${esc(r.des_sexo)}</dd>
+      ${r.pub?`<dt>Publicación</dt><dd>${esc(fmtDate(r.pub))}</dd>`:""}${r.rel?`<dt>Sistema</dt><dd>${esc(r.rel)}</dd>`:""}
+      ${r.notas?`<dt>Notas</dt><dd>${esc(r.notas)}</dd>`:""}
+      ${r.fuentes?`<dt>Fuente</dt><dd><a href="${esc(r.fuentes.split(/[\s;]/)[0])}" target="_blank" rel="noopener">verificación ↗</a></dd>`:""}
+    </dl></article>`;
+}
+function renderResults(list, need){
+  const nac = list.filter(x=>!isInt(x.r)), int = list.filter(x=>isInt(x.r));
+  $("#count").innerHTML = `<b>${list.length}</b> recursos · ${nac.length} nacionales y departamentales · ${int.length} internacionales`;
+  if (!list.length) { $("#results").innerHTML = `<div class="empty">No hay recursos para esta búsqueda con los filtros actuales. Si el tema existe en la taxonomía y no tiene recursos, es un vacío del ecosistema.</div>`; return; }
+  let h="", i=0; const shown = nac.slice(0, state.limit);
+  if (need>1) { const all = shown.filter(x=>x.hits>=need), part = shown.filter(x=>x.hits<need);
+    if (all.length) h += `<div class="group-title">Coinciden con todos los conceptos <small>${all.length}</small></div><div class="results">${all.map(x=>card(x.r,i++)).join("")}</div>`;
+    if (part.length) h += `<div class="group-title">Coinciden con alguno <small>${part.length}</small></div><div class="results">${part.map(x=>card(x.r,i++)).join("")}</div>`;
+  } else if (shown.length) h += `<div class="group-title">Uruguay <small>${nac.length}</small></div><div class="results">${shown.map(x=>card(x.r,i++)).join("")}</div>`;
+  if (nac.length > state.limit) h += `<button class="showall" data-act="more">Mostrar ${Math.min(24, nac.length-state.limit)} más · quedan ${nac.length-state.limit}</button>`;
+  if (int.length) h += `<div class="group-title">Comparación internacional <small>${int.length}</small></div><div class="results">${int.map(x=>card(x.r,i++)).join("")}</div>`;
+  $("#results").innerHTML = h;
+}
+const fgroup = (id, title, items, set, open) => `<details ${open?"open":""}><summary>${title}</summary><div class="fopts">${items.map(([v,l,n,g])=>`<button class="fbtn" data-f="${id}" data-v="${esc(v)}" aria-pressed="${set.has(v)}">${g||""}${esc(l)}<span class="n">${n}</span></button>`).join("")}</div></details>`;
+function renderFilters(){
+  const cnt = fn => R.filter(fn).length;
+  $("#filters").innerHTML =
+    fgroup("area","Área", AK.map(k=>[A[k], SHORT[k], cnt(r=>r.area===A[k]), glyphUse(k)]), state.area, true) +
+    fgroup("amb","Ámbito", ["Nacional","Departamental","Internacional"].map(a=>[a,a,cnt(r=>r.ambito===a)]), state.amb, true) +
+    fgroup("niv","Nivel de análisis", [1,2,3,4].map(n=>[n,`${n} · ${N[n].nombre}`,cnt(r=>r.nivel===n)]), state.niv, false) +
+    fgroup("enf","Enfoque transversal", Object.entries(E).map(([c,e])=>[c,e.nombre,cnt(r=>r.enfoques.includes(c))]), state.enf, false) +
+    `<div><label class="check"><input type="checkbox" id="fvig" ${state.vig?"checked":""}> Solo con período comprobado</label>
+     <label class="check"><input type="checkbox" id="fdl" ${state.dl?"checked":""}> Solo con descarga confirmada</label></div>
+     <button class="reset" data-act="reset">Limpiar filtros y búsqueda</button>`;
+}
+const setQ = (q, scroll=true) => { state.q=q; state.limit=24; $("#q").value=q; $("#heroQ").value=q; run(); if (scroll) document.getElementById("buscar").scrollIntoView({behavior: reduce?"auto":"smooth"}); };
+document.addEventListener("click", e => {
+  const b = e.target.closest("button"); if (!b) return;
+  if (b.dataset.q !== undefined) { setQ(b.dataset.q); return; }
+  if (b.dataset.f) { const k=b.dataset.f, v = k==="niv" ? +b.dataset.v : b.dataset.v; const s=state[k]; s.has(v)?s.delete(v):s.add(v); state.limit=24; run(); return; }
+  if (b.dataset.ficha) { const d=document.getElementById("f-"+b.dataset.ficha); d.hidden=!d.hidden; b.textContent=d.hidden?"Ver ficha":"Ocultar ficha"; b.setAttribute("aria-expanded",String(!d.hidden)); return; }
+  if (b.dataset.tema) { setQ(T[b.dataset.tema].nombre); return; }
+  if (b.dataset.enf) { state.enf=new Set([b.dataset.enf]); setQ(""); return; }
+  if (b.dataset.ods) { state.ods=+b.dataset.ods; setQ(""); return; }
+  const act = b.dataset.act;
+  if (act==="more") { state.limit+=24; run(); }
+  if (act==="clearods") { state.ods=null; run(); }
+  if (act==="reset") { Object.assign(state,{area:new Set(),amb:new Set(),niv:new Set(),enf:new Set(),ods:null,vig:false,dl:false}); setQ("",false); }
+});
+document.addEventListener("change", e => { if (e.target.id==="fvig"){state.vig=e.target.checked;run();} if (e.target.id==="fdl"){state.dl=e.target.checked;run();} });
+$("#qForm").addEventListener("submit", e => { e.preventDefault(); setQ($("#q").value,false); });
+$("#heroForm").addEventListener("submit", e => { e.preventDefault(); setQ($("#heroQ").value); });
+let tmr; $("#q").addEventListener("input", e => { clearTimeout(tmr); tmr=setTimeout(()=>{state.q=e.target.value; state.limit=24; run();},180); });
+
+/* ---------- mapa de cobertura ---------- */
+const stCount={ok:0,warn:0,ind:0,bad:0}; let conc=0; Object.values(cov).forEach(c=>{stCount[c.st]++; if(c.conc) conc++;});
+$("#legend").innerHTML = Object.keys(ST).map(k=>`<span class="pill ${SC[k]}"><b>${stCount[k]}</b>${ST[k]}</span>`).join("") + `<span class="pill s-conc"><b>${conc}</b>Alta concentración</span>`;
+$("#areas").innerHTML = AK.map(k => {
+  const ts = Object.entries(T).filter(([c,t])=>t.area===k), s = areaStat[k];
+  return `<div class="area"><header>${glyph(k)}<h3>${esc(A[k])}<small>${s.n} recursos · ${s.temas} temas${s.gaps?` · ${s.gaps} sin cobertura`:""}</small></h3></header><div class="tiles">${ts.map(([c,t])=>{const v=cov[c];
+    return `<button class="tile ${v.st}" data-tema="${c}" title="${esc(ST[v.st])}"><span class="dot"></span><span class="tn">${esc(t.nombre)}<small>${v.st==="bad" ? (v.int? `Sin recursos nacionales · ${v.int} internacionales`:"Sin recursos relevados") : `${v.nac} con mención · ${v.an} con análisis${v.int?` · ${v.int} int.`:""}`}</small></span><span class="tc">${v.conc?'<i class="conc" title="Alta concentración"></i>':""}${v.pri}</span></button>`;}).join("")}</div></div>`;
+}).join("");
+$("#enfRow").innerHTML = Object.entries(E).map(([c,e])=>{ const n=R.filter(r=>!isInt(r)&&r.enfoques.includes(c)).length, an=R.filter(r=>!isInt(r)&&r.enfoques.includes(c)&&r.nivel===4).length; const st=n===0?"bad":an===0?"warn":"ok";
+  return `<button class="tile ${st}" data-enf="${c}"><span class="dot"></span><span class="tn">${esc(e.nombre)}<small>${n===0?"Sin recursos explícitos":an+" con análisis"}</small></span><span class="tc">${n}</span></button>`; }).join("");
+
+/* ---------- ODS ---------- */
+$("#odsGrid").innerHTML = Object.keys(O).map(k=>{ k=+k;
+  const temas = Object.entries(T).filter(([c,t])=>t.ods===k).map(([c])=>cov[c]);
+  const n = R.filter(r=>!isInt(r)&&r.ods===k).length, fg = ODSTXT[k]||"#fff", gaps = temas.filter(t=>t.st==="bad").length;
+  const segs = ["ok","warn","ind","bad"].map(s=>[s,temas.filter(t=>t.st===s).length]).filter(x=>x[1]);
+  const col = {ok:fg, warn:fg+"99", ind:fg+"66", bad:"rgba(0,0,0,.4)"};
+  return `<button class="odst" style="background:${ODSC[k]};color:${fg}" data-ods="${k}" title="${temas.length} temas: ${segs.map(([s,c])=>c+" "+ST[s].toLowerCase()).join(", ")}">${gaps?`<span class="flag">${gaps} vacío${gaps>1?"s":""}</span>`:""}<span class="on">${k}</span><span class="ot">${esc(O[k])}</span><span class="oc"><b>${n}</b> recursos · ${temas.length} temas</span><span class="stack">${segs.map(([s,c])=>`<i style="flex:${c};background:${col[s]}"></i>`).join("")}</span></button>`;
+}).join("");
+
+/* ---------- metodología ---------- */
+$("#scale").innerHTML = [1,2,3,4].map(n=>`<div>${lvl(n)}<span style="color:var(--muted)">${esc(N[n].def)}</span></div>`).join("");
+const nacR = R.filter(r=>!isInt(r)); $("#vigPct").textContent = Math.round(100*nacR.filter(r=>r.periodo).length/nacR.length)+"%";
+document.querySelectorAll(".chips-try button").forEach(b=>b.addEventListener("click",()=>setQ(b.dataset.q)));
+run();
+})();
+</script>

@@ -1,0 +1,35 @@
+name: Construir sitio y verificar enlaces
+
+on:
+  push:
+    paths: ["data/*.xlsx", "site/**", "scripts/**"]
+  schedule:
+    - cron: "0 9 1 * *"   # primer día de cada mes
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install openpyxl
+      - name: Planilla a JSON
+        run: python scripts/xlsx_to_json.py data/Observatorios_Uruguay_taxonomia.xlsx data
+      - name: Generar index.html
+        run: python scripts/build_site.py
+      - name: Verificar enlaces
+        run: python scripts/check_links.py
+        continue-on-error: true
+      - name: Guardar cambios
+        run: |
+          git config user.name "atlas-bot"
+          git config user.email "atlas-bot@users.noreply.github.com"
+          git add index.html data/atlas.json data/estado_enlaces.json || true
+          git diff --cached --quiet || git commit -m "Actualizar sitio y estado de enlaces"
+          git push
