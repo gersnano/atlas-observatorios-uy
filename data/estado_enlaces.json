@@ -7,11 +7,6 @@
    "error": ""
   },
   {
-   "id": "UY-002",
-   "status": 200,
-   "error": ""
-  },
-  {
    "id": "UY-003",
    "status": 200,
    "error": ""
@@ -133,11 +128,6 @@
   },
   {
    "id": "UY-027",
-   "status": 200,
-   "error": ""
-  },
-  {
-   "id": "UY-028",
    "status": 200,
    "error": ""
   },
@@ -277,11 +267,6 @@
    "error": ""
   },
   {
-   "id": "UY-057",
-   "status": 200,
-   "error": ""
-  },
-  {
    "id": "UY-058",
    "status": 200,
    "error": ""
@@ -332,27 +317,7 @@
    "error": ""
   },
   {
-   "id": "UY-068",
-   "status": 404,
-   "error": "HTTP Error 404: Not Found"
-  },
-  {
-   "id": "UY-069",
-   "status": 200,
-   "error": ""
-  },
-  {
    "id": "UY-070",
-   "status": 200,
-   "error": ""
-  },
-  {
-   "id": "UY-071",
-   "status": 200,
-   "error": ""
-  },
-  {
-   "id": "UY-072",
    "status": 200,
    "error": ""
   },
@@ -402,44 +367,9 @@
    "error": ""
   },
   {
-   "id": "UY-082",
-   "status": 200,
-   "error": ""
-  },
-  {
    "id": "UY-083",
    "status": 200,
    "error": ""
-  },
-  {
-   "id": "UY-084",
-   "status": 0,
-   "error": "The read operation timed out"
-  },
-  {
-   "id": "UY-085",
-   "status": 200,
-   "error": ""
-  },
-  {
-   "id": "UY-086",
-   "status": 200,
-   "error": ""
-  },
-  {
-   "id": "UY-087",
-   "status": 200,
-   "error": ""
-  },
-  {
-   "id": "UY-088",
-   "status": 200,
-   "error": ""
-  },
-  {
-   "id": "UY-089",
-   "status": 403,
-   "error": "HTTP Error 403: Forbidden"
   },
   {
    "id": "UY-090",
@@ -453,26 +383,6 @@
   },
   {
    "id": "UY-092",
-   "status": 200,
-   "error": ""
-  },
-  {
-   "id": "UY-093",
-   "status": 200,
-   "error": ""
-  },
-  {
-   "id": "UY-094",
-   "status": 403,
-   "error": "HTTP Error 403: Forbidden"
-  },
-  {
-   "id": "UY-095",
-   "status": 200,
-   "error": ""
-  },
-  {
-   "id": "UY-096",
    "status": 200,
    "error": ""
   },
@@ -552,11 +462,6 @@
    "error": ""
   },
   {
-   "id": "UY-112",
-   "status": 200,
-   "error": ""
-  },
-  {
    "id": "UY-113",
    "status": 200,
    "error": ""
@@ -572,11 +477,6 @@
    "error": ""
   },
   {
-   "id": "UY-116",
-   "status": 403,
-   "error": "HTTP Error 403: ACCESO RESTRINGIDO"
-  },
-  {
    "id": "UY-117",
    "status": 200,
    "error": ""
@@ -585,11 +485,6 @@
    "id": "UY-118",
    "status": 200,
    "error": ""
-  },
-  {
-   "id": "UY-119",
-   "status": 0,
-   "error": "<urlopen error [Errno -2] Name or service not known>"
   },
   {
    "id": "UY-120",
@@ -627,17 +522,7 @@
    "error": ""
   },
   {
-   "id": "UY-127",
-   "status": 200,
-   "error": ""
-  },
-  {
    "id": "UY-128",
-   "status": 200,
-   "error": ""
-  },
-  {
-   "id": "UY-129",
    "status": 200,
    "error": ""
   },
@@ -673,16 +558,6 @@
   },
   {
    "id": "UY-136",
-   "status": 200,
-   "error": ""
-  },
-  {
-   "id": "UY-137",
-   "status": 200,
-   "error": ""
-  },
-  {
-   "id": "UY-138",
    "status": 200,
    "error": ""
   },
@@ -853,6 +728,11 @@
   },
   {
    "id": "UY-172",
+   "status": 0,
+   "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>"
+  },
+  {
+   "id": "UY-173",
    "status": 0,
    "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>"
   }
