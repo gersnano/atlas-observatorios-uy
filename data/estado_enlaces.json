@@ -158,8 +158,8 @@
   },
   {
    "id": "UY-034",
-   "status": 200,
-   "error": ""
+   "status": 0,
+   "error": "Remote end closed connection without response"
   },
   {
    "id": "UY-035",
@@ -393,8 +393,8 @@
   },
   {
    "id": "UY-098",
-   "status": 0,
-   "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+   "status": 200,
+   "error": ""
   },
   {
    "id": "UY-099",
@@ -493,8 +493,8 @@
   },
   {
    "id": "UY-121",
-   "status": 403,
-   "error": "HTTP Error 403: Forbidden"
+   "status": 200,
+   "error": ""
   },
   {
    "id": "UY-122",
@@ -648,8 +648,8 @@
   },
   {
    "id": "UY-156",
-   "status": 504,
-   "error": "HTTP Error 504: Gateway Timeout"
+   "status": 500,
+   "error": "HTTP Error 500: Internal Server Error"
   },
   {
    "id": "UY-157",
