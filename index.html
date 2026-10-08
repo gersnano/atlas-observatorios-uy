@@ -7,7 +7,7 @@
 <title>Atlas de Observatorios del Uruguay</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Source+Code+Pro:wght@500&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
 <style>
 /* Layout: identidad científica institucional (Source Sans 3, azul institucional con acento naranja, íconos de línea en círculos, acuarelas y red de nodos). Portada con mapa de Uruguay en matriz de puntos animado; debajo, resultados, cobertura, ODS y metodología. */
 :root{
@@ -22,20 +22,7 @@
   --f-mono:"Source Code Pro",Consolas,monospace;
   --r:10px;
 }
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --paper:#0B1622; --paper-2:#122233; --surface:#0F1E2E; --mist:#16293E;
-  --navy:#A9C2DD; --blue:#7FA2CF; --sky:#3E5F86; --orange:#E3A36A; --gray:#9AA3AD;
-  --ink:#E6ECF2; --head:#D4E2F1; --muted:#9AA6B2; --line:#23384E; --hair:#2E4560;
-  --accent:#A9C2DD; --accent-soft:#16304A; --gold:#E3A36A; --gold-soft:#3A2816;
-  --a1:#A9C2DD; --a2:#7FA2CF; --a3:#E3A36A; --a4:#A9C2DD; --a5:#7FA2CF; --a6:#E3A36A; --a7:#A9C2DD; --a8:#7FA2CF;
-  --ok:#7ACDA4; --ok-bg:#12302A; --warn:#E9C063; --warn-bg:#352B12; --ind:#F0A36A; --ind-bg:#3A2414; --bad:#F08A80; --bad-bg:#3D1D1B; color-scheme:dark}}
-:root[data-theme="dark"]{
-  --paper:#0B1622; --paper-2:#122233; --surface:#0F1E2E; --mist:#16293E;
-  --navy:#A9C2DD; --blue:#7FA2CF; --sky:#3E5F86; --orange:#E3A36A; --gray:#9AA3AD;
-  --ink:#E6ECF2; --head:#D4E2F1; --muted:#9AA6B2; --line:#23384E; --hair:#2E4560;
-  --accent:#A9C2DD; --accent-soft:#16304A; --gold:#E3A36A; --gold-soft:#3A2816;
-  --a1:#A9C2DD; --a2:#7FA2CF; --a3:#E3A36A; --a4:#A9C2DD; --a5:#7FA2CF; --a6:#E3A36A; --a7:#A9C2DD; --a8:#7FA2CF;
-  --ok:#7ACDA4; --ok-bg:#12302A; --warn:#E9C063; --warn-bg:#352B12; --ind:#F0A36A; --ind-bg:#3A2414; --bad:#F08A80; --bad-bg:#3D1D1B; color-scheme:dark}
+:root,:root[data-theme="dark"]{color-scheme:light}
 
 *{box-sizing:border-box}
 body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.55}
@@ -72,7 +59,20 @@ h1,h2,h3{text-wrap:balance;margin:0;color:var(--head)}
 .wc3{width:320px;height:320px;left:-130px;top:30%;background:radial-gradient(circle,var(--orange) 0%,color-mix(in srgb,var(--orange) 30%,transparent) 40%,transparent 70%);opacity:.28;animation-duration:32s}
 .wc4{width:300px;height:300px;right:6%;top:46%;background:radial-gradient(circle,var(--blue) 0%,color-mix(in srgb,var(--blue) 35%,transparent) 42%,transparent 70%);opacity:.3;animation-duration:26s}
 @keyframes drift{from{transform:translate(0,0) scale(1) rotate(0)}to{transform:translate(-30px,24px) scale(1.08) rotate(12deg)}}
-.hero h1 em{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-weight:600;font-size:1.12em;letter-spacing:-.01em}
+/* lupa */
+.lensbg{fill:var(--surface)}
+.lensring{fill:none;stroke:var(--navy);stroke-width:3}
+.lensring2{fill:none;stroke:var(--sky);stroke-width:1.2;stroke-dasharray:2 5;transform-box:fill-box;transform-origin:center;animation:spinr 18s linear infinite}
+@keyframes spinr{to{transform:rotate(360deg)}}
+.lenshandle{stroke:var(--navy);stroke-width:11;stroke-linecap:round}
+.lensui{pointer-events:none;filter:drop-shadow(0 6px 10px color-mix(in srgb,var(--navy) 22%,transparent))}
+.lensview{pointer-events:none}
+.lnode{fill:var(--navy);stroke:var(--surface);stroke-width:1}
+.ltxt{font:700 9px var(--f-body);fill:var(--head);paint-order:stroke;stroke:var(--surface);stroke-width:3px}
+.lcnt{font:600 7px var(--f-body);fill:var(--orange);paint-order:stroke;stroke:var(--surface);stroke-width:2.5px}
+.lenslbl{font:700 14px var(--f-body);fill:var(--head);paint-order:stroke;stroke:var(--paper);stroke-width:5px}
+.lli{font-size:12px;font-weight:600} .lli.ok{fill:var(--orange)} .lli.gap{fill:var(--muted)}
+.art-hint{position:absolute;right:4%;bottom:2%;font-size:13px;color:var(--muted);display:flex;gap:6px;align-items:center}
 /* ilustración */
 .wash{filter:url(#paint);transform-box:fill-box;transform-origin:center;animation:breathe 14s ease-in-out infinite alternate}
 .wash.sky{fill:var(--sky);opacity:.75} .wash.org{fill:var(--orange);opacity:.6;animation-duration:17s} .wash.org.s{opacity:.45} .wash.blu{fill:var(--blue);opacity:.35;animation-duration:19s}
@@ -378,10 +378,9 @@ footer .wrap{padding-block:26px;display:flex;flex-wrap:wrap;gap:10px 30px;justif
       
       <ol class="howto"><li><b>Buscá un tema</b> o tocá uno en el mapa de cobertura.</li><li><b>Mirá las referencias principales</b>, ordenadas por prioridad.</li><li><b>Revisá los vacíos</b> en el mapa de cobertura.</li></ol>
     </div>
-    <div class="art" aria-label="Ilustración: científica con microscopio, ADN, placa de Petri, mapa de Uruguay en puntos, busto clásico con red neuronal y gráficos"><svg id="artSvg" viewBox="0 0 600 560"></svg></div>
+    <div class="art" aria-label="Mapa de Uruguay en puntos con la red de datos, una lupa que revela la concentración de recursos y las ocho áreas temáticas"><svg id="artSvg" viewBox="0 0 600 560"></svg><div class="art-hint"><svg width="16" height="16" viewBox="0 0 120 120" aria-hidden="true"><circle cx="52" cy="52" r="30" fill="none" stroke="currentColor" stroke-width="10"/><path d="M74 74L104 104" stroke="currentColor" stroke-width="10" stroke-linecap="round"/></svg>Pasá el cursor por el mapa</div></div>
   </div>
   <div class="wrap"><div class="prompts-h"><h2>Probá una búsqueda</h2><span>// atlas.buscar()</span></div><div class="prompts" id="prompts"></div></div>
-  <div class="wrap temas"><h2>Grandes temas</h2><div class="temas-row" id="temasRow"></div></div>
   <div class="wrap"><div class="kpis">
     <div class="kpi"><span class="ci" data-ico="DB"></span><div><b class="cu" data-k="nac">0</b><span>recursos nacionales y departamentales</span></div></div>
     <div class="kpi"><span class="ci" data-ico="GL"></span><div><b class="cu" data-k="int">0</b><span>referencias internacionales para comparar</span></div></div>
@@ -499,127 +498,85 @@ const areaStat = {};
 AK.forEach(k=>{ const rs = R.filter(r=>!isInt(r)&&r.area===A[k]); const ts = Object.keys(T).filter(c=>T[c].area===k);
   areaStat[k] = {n:rs.length, an:rs.filter(r=>r.nivel===4).length, int:R.filter(r=>isInt(r)&&r.area===A[k]).length, gaps:ts.filter(c=>cov[c].st==="bad").length, temas:ts.length}; });
 
-/* ---------- portada: ilustración científica con texturas de acuarela ---------- */
+/* ---------- portada: mapa de Uruguay en matriz de puntos con red de datos ---------- */
 (function art(){
   const svg = $("#artSvg");
-  const f = n => n.toFixed(1);
-  let seed = 11; const rnd = () => (seed = (seed*16807)%2147483647)/2147483647;
-
-  // capa 0: acuarelas
-  const wash = `<g class="lay" data-depth="6">
-    <circle class="wash sky" cx="392" cy="318" r="178"/>
-    <circle class="wash org" cx="520" cy="128" r="92"/>
-    <circle class="wash org s" cx="96" cy="470" r="62"/>
-    <circle class="wash blu" cx="150" cy="150" r="70"/></g>`;
-
-  // capa 1: constelación
-  const pts = []; for (let i=0;i<26;i++) pts.push([20+rnd()*560, 16+rnd()*520]);
-  let con = "";
-  pts.forEach((a,i) => pts.forEach((b,j) => { if (j>i) { const d = Math.hypot(a[0]-b[0],a[1]-b[1]); if (d<118) con += `<path class="cline" pathLength="1" d="M${f(a[0])} ${f(a[1])}L${f(b[0])} ${f(b[1])}" style="--i:${(i+j)%14}"/>`; } }));
-  con += pts.map((p,i)=>`<circle class="cdot${i%4===0?" o":""}" cx="${f(p[0])}" cy="${f(p[1])}" r="${i%4===0?2.8:2}" style="--k:${i}"/>`).join("");
-  const constel = `<g class="lay" data-depth="3">${con}</g>`;
-
-  // capa 2: mapa de Uruguay en puntos
+  // contorno aproximado de Uruguay (lon, lat)
   const UY = [[-57.61,-30.18],[-57.1,-30.11],[-56.83,-30.1],[-56.4,-30.4],[-56.0,-30.8],[-55.6,-30.85],[-55.2,-31.27],[-54.6,-31.48],[-54.1,-31.9],[-53.7,-32.1],[-53.37,-32.56],[-53.1,-32.9],[-53.4,-33.16],[-53.52,-33.69],[-53.75,-34.05],[-54.2,-34.55],[-54.6,-34.82],[-54.95,-34.97],[-55.5,-34.8],[-56.2,-34.92],[-56.8,-34.62],[-57.4,-34.45],[-57.85,-34.47],[-58.3,-34.0],[-58.43,-33.55],[-58.35,-33.08],[-58.15,-32.6],[-58.1,-32.2],[-58.0,-31.6],[-57.85,-31.1],[-57.7,-30.6]];
-  const lon0=-58.6, lon1=-52.95, lat0=-29.95, lat1=-35.15, W=164, H=176, X0=70, Y0=34;
+  const lon0=-58.6, lon1=-52.95, lat0=-29.95, lat1=-35.15, W=300, H=318, X0=150, Y0=112;
   const pr = ([lo,la]) => [X0 + (lo-lon0)/(lon1-lon0)*W, Y0 + (lat0-la)/(lat0-lat1)*H];
   const poly = UY.map(pr);
   const inside = (x,y) => { let c=false; for(let i=0,j=poly.length-1;i<poly.length;j=i++){ const [xi,yi]=poly[i],[xj,yj]=poly[j]; if(((yi>y)!==(yj>y)) && (x < (xj-xi)*(y-yi)/(yj-yi)+xi)) c=!c; } return c; };
-  let dots = "";
-  for (let y=Y0; y<=Y0+H; y+=5.4) for (let x=X0; x<=X0+W; x+=5.4) if (inside(x,y)) { const edge = !inside(x+6,y)||!inside(x-6,y)||!inside(x,y+6)||!inside(x,y-6); dots += `<circle class="mapdot" cx="${f(x)}" cy="${f(y)}" r="${edge?1.2:1.75}" style="--x:${(x-X0+(y-Y0)*.4).toFixed(0)}"/>`; }
-  const cities = [[-56.19,-34.88],[-57.96,-31.39],[-55.55,-30.92],[-54.19,-32.37],[-56.52,-33.38],[-54.95,-34.88],[-57.82,-34.45],[-58.06,-32.32]].map(pr);
-  let mnet = ""; cities.slice(1).forEach((c,i)=>{ const d=`M${f(cities[0][0])} ${f(cities[0][1])}L${f(c[0])} ${f(c[1])}`; mnet += `<path class="edge" d="${d}"/>`;
-    if (!reduce) { const bg=(1+i*.4).toFixed(1); mnet += `<circle class="packet" r="1.8" opacity="0"><set attributeName="opacity" to="1" begin="${bg}s"/><animateMotion dur="${(2.6+i*.35).toFixed(1)}s" begin="${bg}s" repeatCount="indefinite" path="${d}"/></circle>`; } });
-  mnet += cities.map((c,k)=>`<circle class="node${k%2?" b":""}" cx="${f(c[0])}" cy="${f(c[1])}" r="${k?2.8:4}" style="--k:${k}"/>`).join("");
-  const map = `<g class="lay" data-depth="9">${dots}${mnet}</g>`;
-
-  // capa 3: placa de Petri con células
-  let cells = ""; [[-22,-14,11],[10,-22,9],[24,6,12],[-4,14,10],[-28,16,8],[2,-4,7],[30,-20,6]].forEach(([dx,dy,r],i)=>{
-    cells += `<g class="cell" style="--d:${i}"><circle cx="${118+dx}" cy="${330+dy}" r="${r}" class="cmem"/><circle cx="${118+dx+r*.25}" cy="${330+dy-r*.2}" r="${r*.35}" class="cnuc"/></g>`; });
-  const petri = `<g class="lay" data-depth="12"><circle cx="118" cy="330" r="60" class="dish"/><circle cx="118" cy="330" r="52" class="dish2"/>${cells}</g>`;
-
-  // capa 4: barras y línea de tendencia
-  let bars = ""; const vals = [26,38,30,52,44,60,48,70,58,82,66,90];
-  vals.forEach((v,i)=> bars += `<rect class="sbar${i%4===3?" o":""}" x="${24+i*16}" y="${548-v}" width="11" height="${v}" style="--i:${i}"/>`);
-  const trend = "M28 520 C70 512 96 500 130 494 S190 478 214 462";
-  const chart = `<g class="lay" data-depth="5">${bars}<path class="trend" pathLength="1" d="${trend}"/><circle class="tnode" cx="214" cy="462" r="4"/></g>`;
-
-  // capa 5: planta
-  const plant = `<g class="lay plant" data-depth="14"><path class="stem" d="M34 548C30 500 36 460 52 420"/>
-    <path class="leaf" d="M40 500C14 492 6 470 10 452C30 456 42 474 40 500Z"/><path class="leaf" d="M44 470C62 452 82 450 92 456C86 474 66 482 44 470Z"/>
-    <path class="leaf" d="M48 440C28 426 26 406 32 392C48 402 54 420 48 440Z"/><path class="leaf" d="M52 420C64 400 80 394 90 396C88 412 72 424 52 420Z"/></g>`;
-
-  // capa 6: hélice de ADN en puntos
-  const dna = `<g class="lay" data-depth="10" id="dna"></g>`;
-
-  // capa 7: busto clásico con red neuronal
-  const bustP = "M470 96C440 64 382 58 352 84C336 97 330 114 332 132L328 152C322 160 316 168 312 180L305 198C311 202 317 204 322 206C319 212 321 216 326 218C322 222 322 228 326 232C324 240 326 250 334 258C344 264 356 264 366 260L380 292C384 322 382 346 372 366L360 382C400 402 470 406 522 386C522 342 506 302 490 282C500 252 510 222 506 192C506 152 496 114 470 96Z";
-  let curls = ""; for (let i=0;i<10;i++){ const a = Math.PI*1.24 + i*Math.PI*0.075, cx = 432+74*Math.cos(a), cy = 168+86*Math.sin(a); curls += `<path class="curl" d="M${f(cx-7)} ${f(cy)}a7 7 0 1 1 7 7"/>`; }
-  for (let i=0;i<5;i++){ const cx = 486+(i%2)*10, cy = 150+i*20; curls += `<path class="curl" d="M${f(cx-6)} ${f(cy)}a6 6 0 1 0 6 -6"/>`; }
-  const NN = [[352,40],[404,14],[462,24],[516,52],[386,72],[438,56],[492,84],[548,96],[552,30]];
-  const NE = [[0,1],[1,2],[2,3],[0,4],[4,5],[5,2],[5,6],[6,3],[3,7],[2,8],[8,3],[1,5],[4,1],[6,7]];
-  let nn = NE.map(([a,b],i)=>`<path class="syn" d="M${NN[a][0]} ${NN[a][1]}L${NN[b][0]} ${NN[b][1]}" style="--i:${i}"/>`).join("");
-  nn += NN.map(([x,y],k)=>`<circle class="neuron${k%3===0?" o":""}" cx="${x}" cy="${y}" r="${k%3===0?6:4.4}" style="--k:${k}"/>`).join("");
-  const bust = `<g class="lay" data-depth="7"><g transform="translate(286 4) scale(.5)"><g class="bust">
-    <path d="${bustP}" class="bfill"/><path d="${bustP}" class="bshade"/><path d="${bustP}" fill="url(#halftone)" clip-path="url(#backhalf)"/>
-    <path d="${bustP}" class="bline"/>${curls}
-    <path class="bdet" d="M338 158C344 154 352 154 358 158M340 162C346 166 352 166 356 162"/>
-    <ellipse class="bdet" cx="444" cy="196" rx="12" ry="20"/><path class="bdet" d="M440 186C446 190 446 202 440 206"/>
-    <path class="bped" d="M352 384H526V398H352ZM344 398H534V412H344Z"/>
-    <g>${nn}</g></g></g></g>`;
-
-  // capa 8: científica con microscopio
-  const sci = `<g class="lay" data-depth="16"><g class="sci">
-    <path class="coat" d="M440 352C418 362 402 392 396 432L390 548H574L568 452C562 398 532 358 502 346C488 354 460 356 440 352Z"/>
-    <path class="coat-w" d="M440 352C418 362 402 392 396 432L390 548H574L568 452C562 398 532 358 502 346C488 354 460 356 440 352Z"/>
-    <path class="shirt" d="M462 352L478 402L494 350C484 354 472 355 462 352Z"/>
-    <path class="sline" d="M462 352L478 402L494 350M478 402V548M512 360C530 392 536 430 534 470"/>
-    <path class="neck" d="M466 326V350C474 354 486 352 490 346L488 326Z"/>
-    <circle class="skin" cx="472" cy="304" r="30"/>
-    <path class="skin" d="M444 300L433 314C432 318 436 320 442 320"/>
-    <path class="sline" d="M446 296C450 294 454 294 458 296"/>
-    <path class="hair" d="M444 290C442 262 470 252 494 264C510 274 512 298 504 318C498 330 490 336 480 336C488 318 486 298 472 290C462 284 452 288 444 290Z"/>
-    <circle class="hair" cx="510" cy="278" r="15"/>
-    <path class="strand-h" d="M462 270C476 266 492 270 500 282M470 262C486 262 500 270 506 286"/>
-    <path class="arm" d="M450 372C432 392 418 410 404 430C398 438 404 446 412 442C428 432 442 418 456 404Z"/>
-    <path class="tube" d="M362 418L432 300"/><path class="tube-h" d="M360 412L428 298"/>
-    <rect class="mic" x="424" y="288" width="18" height="12" rx="3" transform="rotate(30 433 294)"/>
-    <path class="mic" d="M392 522C420 472 418 420 380 382L368 394C398 426 398 470 376 522Z"/>
-    <rect class="mic" x="346" y="414" width="16" height="30" rx="3"/>
-    <rect class="mic" x="314" y="448" width="96" height="9" rx="3"/>
-    <rect class="mic" x="300" y="520" width="124" height="18" rx="6"/>
-    <circle class="knob" cx="396" cy="462" r="9"/>
-    <circle class="lamp" cx="354" cy="452" r="4"/>
-  </g></g>`;
-
-  svg.innerHTML = `<defs>
-      <pattern id="halftone" width="6" height="6" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1.3" style="fill:var(--blue)"/></pattern>
-      <clipPath id="backhalf"><path d="M430 40H560V420H360L420 300Z"/></clipPath></defs>
-    ${wash}${constel}${chart}${map}${petri}${plant}${dna}${bust}${sci}`;
-
-  // ADN de puntos animado
-  const dg = svg.querySelector("#dna"), DX = 282, DY = 64, DL = 330;
-  function helix(t){ let h = ""; for (let i=0;i<=30;i++){ const y = DY + i*DL/30, ph = i*0.42 + t, s = Math.sin(ph), c = Math.cos(ph);
-      const x1 = DX + 26*s, x2 = DX - 26*s;
-      if (i%2===0) h += `<path class="rung" d="M${f(x1)} ${f(y)}L${f(x2)} ${f(y)}"/>`;
-      h += `<circle class="bp a" cx="${f(x1)}" cy="${f(y)}" r="${f(2.6+1.4*c)}"/><circle class="bp b" cx="${f(x2)}" cy="${f(y)}" r="${f(2.6-1.4*c)}"/>`; }
-    dg.innerHTML = h; }
-  helix(0);
-  let vis = true;
-  if (!reduce) { new IntersectionObserver(es=>{vis=es[0].isIntersecting;}).observe(svg);
-    const loop = t => { if (vis) helix(t/1100); requestAnimationFrame(loop); }; requestAnimationFrame(loop); }
-
-  // paralaje con el cursor
-  const lays = [...svg.querySelectorAll(".lay")];
-  const hero = document.getElementById("inicio");
-  if (!reduce && matchMedia("(pointer:fine)").matches) {
-    let tx=0, ty=0, cx=0, cy=0;
-    hero.addEventListener("pointermove", e => { const b = hero.getBoundingClientRect(); tx = (e.clientX-b.left)/b.width - .5; ty = (e.clientY-b.top)/b.height - .5; });
-    hero.addEventListener("pointerleave", () => { tx = 0; ty = 0; });
-    const step = () => { cx += (tx-cx)*.06; cy += (ty-cy)*.06; if (vis) lays.forEach(l => { const d = +l.dataset.depth; l.setAttribute("transform", `translate(${f(-cx*d*1.6)} ${f(-cy*d*1.6)})`); }); requestAnimationFrame(step); };
-    requestAnimationFrame(step);
-  }
+  let dots = ""; const step = 8.4;
+  for (let y=Y0; y<=Y0+H; y+=step) for (let x=X0; x<=X0+W; x+=step) if (inside(x,y)) dots += `<circle class="mapdot" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="2.5" style="--x:${(x-X0+ (y-Y0)*.4).toFixed(0)}"/>`;
+  const C = {Montevideo:[-56.19,-34.88],Salto:[-57.96,-31.39],Paysandú:[-58.06,-32.32],Rivera:[-55.55,-30.92],Artigas:[-56.47,-30.42],Tacuarembó:[-55.98,-31.72],Melo:[-54.19,-32.37],Durazno:[-56.52,-33.38],Maldonado:[-54.95,-34.88],Colonia:[-57.82,-34.45],"Treinta y Tres":[-54.38,-33.23],Mercedes:[-58.0,-33.25],Florida:[-56.21,-34.1],Rocha:[-54.33,-34.48],Minas:[-55.24,-34.37],"San José":[-56.71,-34.34],Trinidad:[-56.9,-33.52],"Fray Bentos":[-58.28,-33.12]};
+  const nodes = Object.entries(C).map(([n,c],k)=>({n, p:pr(c), k}));
+  const mvd = nodes[0];
+  const edges = [];
+  nodes.forEach(a => { const near = nodes.filter(b=>b!==a).sort((b,c)=>Math.hypot(b.p[0]-a.p[0],b.p[1]-a.p[1])-Math.hypot(c.p[0]-a.p[0],c.p[1]-a.p[1])).slice(0,2);
+    near.forEach(b => { if (!edges.some(e=>(e[0]===a&&e[1]===b)||(e[0]===b&&e[1]===a))) edges.push([a,b]); }); });
+  [nodes[1],nodes[3],nodes[6],nodes[7]].forEach(b => edges.push([mvd,b]));
+  let eh = "", pk = "";
+  edges.forEach(([a,b],i) => { const d=`M${a.p[0].toFixed(1)} ${a.p[1].toFixed(1)}L${b.p[0].toFixed(1)} ${b.p[1].toFixed(1)}`; eh += `<path class="edge" id="e${i}" d="${d}"/>`;
+    if (!reduce && i%2===0) { const bg=(1.2+(i%9)*.33).toFixed(2); pk += `<circle class="packet" r="2.6" opacity="0"><set attributeName="opacity" to="1" begin="${bg}s"/><animateMotion dur="${(3+ (i%5)*.7).toFixed(1)}s" begin="${bg}s" repeatCount="indefinite" path="${d}"/></circle>`; } });
+  const nh = nodes.map((n,k)=>`<circle class="node${k%3===1?" b":""}" cx="${n.p[0].toFixed(1)}" cy="${n.p[1].toFixed(1)}" r="${n===mvd?6:4.2}" style="--k:${k}"><title>${n.n}</title></circle>`).join("");
+  // íconos de área alrededor del mapa
+  const LBL = {A1:"Economía",A2:"Trabajo",A3:"Salud",A4:"Educación",A5:"CTI",A6:"Ambiente",A7:"Territorio",A8:"Estado"};
+  let ic = "", sp = "";
+  AK.forEach((k,i) => {
+    const a = i/AK.length*2*Math.PI - Math.PI/2, x = 300 + 252*Math.cos(a), y = 276 + 222*Math.sin(a), s = areaStat[k];
+    const near = nodes.slice().sort((b,c)=>Math.hypot(b.p[0]-x,b.p[1]-y)-Math.hypot(c.p[0]-x,c.p[1]-y))[0];
+    sp += `<path class="spoke" d="M${x.toFixed(1)} ${y.toFixed(1)}L${near.p[0].toFixed(1)} ${near.p[1].toFixed(1)}"/>`;
+    ic += `<g class="aicon" tabindex="0" role="button" data-area="${k}" aria-label="${esc(A[k])}: ${s.n} recursos" style="--d:${i}">
+      <g class="scl"><circle class="ring" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="33"/>
+      <svg class="ic" x="${(x-21).toFixed(1)}" y="${(y-21).toFixed(1)}" width="42" height="42" viewBox="0 0 120 120">${OBJ[k]()}</svg></g>
+      <text x="${x.toFixed(1)}" y="${(y+49).toFixed(1)}" text-anchor="middle">${LBL[k]}</text>
+      <text class="cnt" x="${x.toFixed(1)}" y="${(y+64).toFixed(1)}" text-anchor="middle">${s.n} recursos</text></g>`;
+  });
+  // capa de datos bajo la lupa: puntos coloreados por concentración, nombres y recursos departamentales
+  const DEP = {Montevideo:"Montevideo",Salto:"Salto",Rivera:"Rivera",Maldonado:"Maldonado",Canelones:"Canelones"};
+  const depCount = n => R.filter(r => !isInt(r) && (r.inst.includes(n) || (r.alcance||"").includes(n))).length;
+  const weights = nodes.map(n => ({p:n.p, w: 1 + (DEP[n.n] ? depCount(n.n) : 0) + (n===mvd ? 12 : 0)}));
+  const heat = (x,y) => weights.reduce((a,c)=>a + c.w*Math.exp(-((x-c.p[0])**2+(y-c.p[1])**2)/(2*34*34)), 0);
+  const ramp = h => h > 6 ? "var(--orange)" : h > 2.6 ? "var(--blue)" : h > 1.1 ? "var(--sky)" : "var(--mist)";
+  let ddots = "";
+  for (let y=Y0; y<=Y0+H; y+=step) for (let x=X0; x<=X0+W; x+=step) if (inside(x,y)) { const h = heat(x,y); ddots += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${(2.2+Math.min(1.6,h*.18)).toFixed(2)}" style="fill:${ramp(h)}"/>`; }
+  const labels = nodes.map(n => { const c = DEP[n.n] ? depCount(n.n) : 0;
+    return `<g class="lab"><circle cx="${n.p[0].toFixed(1)}" cy="${n.p[1].toFixed(1)}" r="${n===mvd?6.5:4.5}" class="lnode"/><text x="${(n.p[0]+8).toFixed(1)}" y="${(n.p[1]+4).toFixed(1)}" class="ltxt">${esc(n.n)}</text>${c?`<text x="${(n.p[0]+8).toFixed(1)}" y="${(n.p[1]+16).toFixed(1)}" class="lcnt">${c} recursos departamentales</text>`:""}</g>`; }).join("");
+  const LR = 74, MAG = 1.7;
+  svg.innerHTML = `<defs><clipPath id="lensClip"><circle id="lensCirc" cx="300" cy="276" r="${LR}"/></clipPath></defs>
+    <g>${sp}</g><g>${dots}</g><g>${eh}</g><g>${pk}</g><g>${nh}</g>${ic}
+    <g clip-path="url(#lensClip)" class="lensview"><circle id="lensBg" cx="300" cy="276" r="${LR}" class="lensbg"/>
+      <g id="magG"><g>${eh}</g><g>${ddots}</g>${labels}</g></g>
+    <g id="lensUI" class="lensui"><circle id="lensRing" cx="300" cy="276" r="${LR}" class="lensring"/><circle id="lensRing2" cx="300" cy="276" r="${LR+5}" class="lensring2"/>
+      <path id="lensHandle" class="lenshandle" d=""/></g>
+    <g class="lensui"><text id="lensLbl" class="lenslbl" text-anchor="middle"><tspan id="llName" x="300" dy="0"></tspan><tspan id="llInfo" x="300" dy="15"></tspan></text></g>`;
+  // movimiento de la lupa: recorre el mapa sola y sigue al cursor
+  const lc = svg.querySelector("#lensCirc"), lb = svg.querySelector("#lensBg"), lr = svg.querySelector("#lensRing"), lr2 = svg.querySelector("#lensRing2"), lh = svg.querySelector("#lensHandle"), mg = svg.querySelector("#magG");
+  const ll = svg.querySelector("#lensLbl"), lln = svg.querySelector("#llName"), lli = svg.querySelector("#llInfo");
+  const depOf = {}; nodes.forEach(n => { depOf[n.n] = DEP[n.n] ? depCount(n.n) : 0; });
+  let lastNear = null;
+  let lx = 300, ly = 276, tx = 300, ty = 276, user = false, idleT = 0;
+  const place = () => { [lc,lb,lr,lr2].forEach(c => { c.setAttribute("cx", lx.toFixed(1)); c.setAttribute("cy", ly.toFixed(1)); });
+    const a = Math.PI/4, r1 = LR+5, r2 = LR+46; lh.setAttribute("d", `M${(lx+r1*Math.cos(a)).toFixed(1)} ${(ly+r1*Math.sin(a)).toFixed(1)}L${(lx+r2*Math.cos(a)).toFixed(1)} ${(ly+r2*Math.sin(a)).toFixed(1)}`);
+    mg.setAttribute("transform", `translate(${lx.toFixed(1)} ${ly.toFixed(1)}) scale(${MAG}) translate(${(-lx).toFixed(1)} ${(-ly).toFixed(1)})`);
+    const near = nodes.reduce((a,n)=> Math.hypot(n.p[0]-lx,n.p[1]-ly) < Math.hypot(a.p[0]-lx,a.p[1]-ly) ? n : a, nodes[0]);
+    const ty2 = Math.min(ly + LR + 22, 548); [lln,lli].forEach(t=>t.setAttribute("x", lx.toFixed(1))); lln.setAttribute("y", ty2.toFixed(1)); ll.setAttribute("y", ty2.toFixed(1));
+    if (near !== lastNear) { lastNear = near; const c = depOf[near.n]; lln.textContent = near.n; lli.textContent = c ? `${c} recursos con foco departamental` : "sin observatorios departamentales relevados"; lli.setAttribute("class", c ? "lli ok" : "lli gap"); } };
+  const toSvg = e => { const b = svg.getBoundingClientRect(); return [(e.clientX-b.left)/b.width*600, (e.clientY-b.top)/b.height*560]; };
+  const clampT = () => { tx = Math.max(X0+20, Math.min(X0+W-20, tx)); ty = Math.max(Y0+20, Math.min(Y0+H-20, ty)); };
+  svg.addEventListener("pointermove", e => { [tx,ty] = toSvg(e); clampT(); user = true; idleT = performance.now(); });
+  svg.addEventListener("pointerleave", () => { user = false; });
+  let artVis = true; new IntersectionObserver(es=>{artVis=es[0].isIntersecting;}).observe(svg);
+  const tour = t => { const s = t/1000; return [X0+W/2 + W*0.36*Math.sin(s*0.42), Y0+H/2 + H*0.34*Math.sin(s*0.29+1.2)]; };
+  if (reduce) { lx = mvd.p[0]; ly = mvd.p[1]-20; place(); }
+  else { const loop = t => { if (artVis) { if (!user || t-idleT > 2600) { [tx,ty] = tour(t); user = false; } lx += (tx-lx)*.08; ly += (ty-ly)*.08; place(); } requestAnimationFrame(loop); }; requestAnimationFrame(loop); }
+  svg.querySelectorAll(".aicon").forEach(g => {
+    const go = () => { state.area = new Set([A[g.dataset.area]]); setQ(""); };
+    g.addEventListener("click", go); g.addEventListener("keydown", e => { if (e.key==="Enter"||e.key===" ") { e.preventDefault(); go(); } });
+  });
 })();
+
 
 /* ---------- tarjetas de búsqueda estilo código ---------- */
 function renderPrompts(){
@@ -633,10 +590,6 @@ function renderPrompts(){
       <span class="pres"><span class="pcode">→ ${n} referencias principales</span><span class="pgo">Buscar en el Atlas<svg viewBox="0 0 20 20" width="14" height="14" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></span>
     </button>`; }).join("");
 }
-
-/* ---------- grandes temas ---------- */
-$("#temasRow").innerHTML = AK.map((k,i)=>`<button class="tema" data-area="${k}" style="--d:${i}"><span class="tc2">${glyph(k)}</span><span class="tl">${esc(SHORT[k])}</span><span class="tn2">${areaStat[k].n} recursos</span></button>`).join("");
-$("#temasRow").addEventListener("click", e => { const b = e.target.closest(".tema"); if (!b) return; state.area = new Set([A[b.dataset.area]]); setQ(""); });
 
 /* ---------- cifras ---------- */
 const statv = {nac: R.filter(r=>!isInt(r)).length, int: R.filter(isInt).length, inst: new Set(R.map(r=>r.inst)).size, gap: Object.values(cov).filter(c=>c.st==="bad").length};
