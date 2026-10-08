@@ -107,6 +107,15 @@ section.block{padding-block:64px}
 .sec-head h2{font-family:var(--f-display);font-weight:600;font-size:clamp(32px,4vw,48px);line-height:1;margin-top:8px}
 .sec-head h2 em{font-style:italic;font-weight:500}
 .sec-head p{color:var(--muted);max-width:62ch;margin:10px 0 0}
+.howto{list-style:none;counter-reset:h;display:flex;flex-wrap:wrap;gap:8px 22px;padding:0;margin:20px 0 0;font-size:13px;color:var(--muted)}
+.howto li{counter-increment:h;display:flex;gap:8px;align-items:baseline;max-width:30ch}
+.howto li::before{content:counter(h);font-family:var(--f-display);font-weight:600;font-size:17px;color:var(--gold)}
+.howto b{color:var(--ink);font-weight:600}
+.navbtn{border:1px solid var(--ink);background:transparent;color:var(--ink);border-radius:999px;padding:5px 12px;font:500 13px var(--f-body);cursor:pointer;margin-left:6px}
+.navbtn:hover{background:var(--ink);color:var(--paper)}
+.closebtn{align-self:end;border:1px solid var(--hair);background:var(--surface);color:var(--ink);border-radius:999px;padding:7px 14px;font:500 13px var(--f-body);cursor:pointer}
+.closebtn:hover{border-color:var(--ink)}
+#resultados{scroll-margin-top:60px}
 .roman{font-family:var(--f-display);font-style:italic;color:var(--gold);font-size:20px;margin-right:6px}
 @supports (animation-timeline:view()){
   .sec-head h2{animation:slideIn linear both;animation-timeline:view();animation-range:entry 0% entry 60%}
@@ -253,7 +262,7 @@ footer .wrap{padding-block:26px;display:flex;flex-wrap:wrap;gap:10px 30px;justif
   <div class="wrap">
     <a class="brand" href="#inicio">Atlas <i>de Observatorios</i></a>
     <span class="tag-proto">Prototipo</span>
-    <nav class="nav" aria-label="Secciones"><a href="#cobertura">Cobertura</a><a href="#buscar">Recursos</a><a href="#ods">ODS</a><a href="#metodologia">Metodología</a></nav>
+    <nav class="nav" aria-label="Secciones"><a href="#inicio">Buscar</a><a href="#cobertura">Cobertura</a><a href="#ods">ODS</a><a href="#metodologia">Metodología</a><button class="navbtn" data-act="browse">Ver inventario completo</button></nav>
   </div>
 </header>
 
@@ -271,6 +280,7 @@ footer .wrap{padding-block:26px;display:flex;flex-wrap:wrap;gap:10px 30px;justif
       <div class="chips-try"><span>por ejemplo</span>
         <button data-q="género">género</button><button data-q="pbi">PBI</button><button data-q="empleo">empleo</button><button data-q="cti">CTI</button><button data-q="género universidad">género en universidad</button><button data-q="agua">agua</button>
       </div>
+      <ol class="howto"><li><b>Buscá un tema</b> o tocá uno en el mapa de cobertura.</li><li><b>Mirá las referencias principales</b>, ordenadas por prioridad.</li><li><b>Revisá los vacíos</b> en el mapa y por ODS.</li></ol>
       <div class="ledger">
         <div><b class="cu" data-k="nac">0</b><span>recursos nacionales y departamentales</span></div>
         <div><b class="cu" data-k="int">0</b><span>referencias internacionales</span></div>
@@ -287,11 +297,30 @@ footer .wrap{padding-block:26px;display:flex;flex-wrap:wrap;gap:10px 30px;justif
   </div>
 </section>
 
+<section class="block band" id="resultados" hidden>
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="eyebrow">Resultados</div><h2 id="resTitle">Resultados</h2>
+      <p>Primero aparecen las referencias principales del tema, en orden de prioridad. El resto de los recursos queda plegado más abajo.</p></div>
+      <button class="closebtn" data-act="reset">Cerrar resultados ✕</button>
+    </div>
+    <div class="layout">
+      <aside class="filters" id="filters" aria-label="Filtros"></aside>
+      <div style="min-width:0">
+        <form class="qbar" id="qForm" role="search"><div class="search"><label for="q" hidden>Buscar</label><input id="q" type="search" placeholder="Cambiar búsqueda: tema, institución o palabra clave" autocomplete="off"><button type="submit">Buscar</button></div></form>
+        <div id="interp"></div>
+        <div class="count" id="count" aria-live="polite"></div>
+        <div id="results"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="block" id="cobertura">
   <div class="wrap">
     <div class="sec-head">
-      <div><div class="eyebrow">Análisis ecosistémico</div><h2><span class="roman">I.</span>Mapa de <em>cobertura</em></h2>
-      <p>Cada tema muestra cuántos recursos nacionales lo tienen como tema principal y su estado. Tocá un tema para ver los recursos.</p></div>
+      <div><div class="eyebrow">Análisis del ecosistema</div><h2>Qué temas están cubiertos <em>y dónde hay vacíos</em></h2>
+      <p>Los temas están agrupados en ocho áreas. El número indica cuántos recursos nacionales tienen ese tema como principal, y el color, su estado de cobertura. Tocá un tema para ver sus referencias.</p></div>
       <div class="legend" id="legend"></div>
     </div>
     <div class="areas" id="areas"></div>
@@ -301,28 +330,10 @@ footer .wrap{padding-block:26px;display:flex;flex-wrap:wrap;gap:10px 30px;justif
   </div>
 </section>
 
-<section class="block band" id="buscar">
-  <div class="wrap">
-    <div class="sec-head">
-      <div><div class="eyebrow">Buscador temático</div><h2><span class="roman">II.</span>Quién publica datos <em>sobre un tema</em></h2>
-      <p>Cada tema muestra primero sus referencias principales, en orden de prioridad. El resto de los recursos queda disponible en segundo plano. La búsqueda reconoce sinónimos, y un enfoque como género solo trae recursos que lo incorporan de forma explícita.</p></div>
-    </div>
-    <div class="layout">
-      <aside class="filters" id="filters" aria-label="Filtros"></aside>
-      <div style="min-width:0">
-        <form class="qbar" id="qForm" role="search"><div class="search"><label for="q" hidden>Buscar</label><input id="q" type="search" placeholder="Tema, institución o palabra clave" autocomplete="off"><button type="submit">Buscar</button></div></form>
-        <div id="interp"></div>
-        <div class="count" id="count" aria-live="polite"></div>
-        <div id="results"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="block" id="ods">
   <div class="wrap">
     <div class="sec-head">
-      <div><div class="eyebrow">Agenda 2030</div><h2><span class="roman">III.</span>Cobertura por <em>ODS</em></h2>
+      <div><div class="eyebrow">Agenda 2030</div><h2>Cobertura por <em>Objetivo de Desarrollo Sostenible</em></h2>
       <p>Recursos nacionales agrupados según el ODS principal de su tema. La barra muestra el estado de los temas asociados a cada objetivo.</p></div>
     </div>
     <div class="ods-grid" id="odsGrid"></div>
@@ -331,7 +342,7 @@ footer .wrap{padding-block:26px;display:flex;flex-wrap:wrap;gap:10px 30px;justif
 
 <section class="block band" id="metodologia">
   <div class="wrap">
-    <div class="sec-head"><div><div class="eyebrow">Cómo se construye</div><h2><span class="roman">IV.</span>Metodología</h2></div></div>
+    <div class="sec-head"><div><div class="eyebrow">Cómo se construye</div><h2>Metodología</h2></div></div>
     <div class="meto">
       <div><h3>Taxonomía en facetas</h3><p>Cada recurso tiene un tema principal, temas secundarios y enfoques transversales. Los 53 temas se agrupan en 8 áreas y se vinculan a metas ODS. La taxonomía incluye temas de referencia sin recursos para que los vacíos queden a la vista.</p></div>
       <div><h3>Regla de enfoque explícito</h3><p id="regla"></p></div>
@@ -507,6 +518,7 @@ function run(){
 }
 function renderInterp(concepts, words){
   const el = $("#interp");
+  $("#resTitle").innerHTML = state.q ? `Resultados para <em>«${esc(state.q)}»</em>` : (state.ods ? `Recursos del <em>ODS ${state.ods}</em>` : (state.area.size||state.enf.size ? "Recursos <em>filtrados</em>" : "Inventario <em>completo</em>"));
   if (!concepts.length && !words.length && !state.ods) { el.innerHTML = ""; return; }
   const term = concepts.length ? (concepts[0].k==="t" ? T[concepts[0].code].agesic : E[concepts[0].code].nombre) : state.q;
   let h = `<div class="interp"><span class="lbl">interpretado como</span>`;
@@ -587,7 +599,8 @@ function renderFilters(){
      <label class="check"><input type="checkbox" id="fdl" ${state.dl?"checked":""}> Solo con descarga confirmada</label></div>
      <button class="reset" data-act="reset">Limpiar filtros y búsqueda</button>`;
 }
-const setQ = (q, scroll=true) => { state.q=q; state.limit=24; $("#q").value=q; $("#heroQ").value=q; run(); if (scroll) document.getElementById("buscar").scrollIntoView({behavior: reduce?"auto":"smooth"}); };
+const showRes = () => { const sec = document.getElementById("resultados"); sec.hidden = false; sec.scrollIntoView({behavior: reduce?"auto":"smooth", block:"start"}); };
+const setQ = (q, scroll=true) => { state.q=q; state.limit=24; state.browse = true; $("#q").value=q; $("#heroQ").value=q; run(); if (scroll) showRes(); };
 document.addEventListener("click", e => {
   const b = e.target.closest("button"); if (!b) return;
   if (b.dataset.q !== undefined) { setQ(b.dataset.q); return; }
@@ -599,7 +612,8 @@ document.addEventListener("click", e => {
   const act = b.dataset.act;
   if (act==="more") { state.limit+=24; run(); }
   if (act==="clearods") { state.ods=null; run(); }
-  if (act==="reset") { Object.assign(state,{area:new Set(),amb:new Set(),niv:new Set(),enf:new Set(),ods:null,vig:false,dl:false}); setQ("",false); }
+  if (act==="reset") { Object.assign(state,{area:new Set(),amb:new Set(),niv:new Set(),enf:new Set(),ods:null,vig:false,dl:false}); setQ("",false); state.browse=false; document.getElementById("resultados").hidden = true; document.getElementById("inicio").scrollIntoView({behavior: reduce?"auto":"smooth"}); }
+  if (act==="browse") { setQ(""); }
 });
 document.addEventListener("change", e => { if (e.target.id==="fvig"){state.vig=e.target.checked;run();} if (e.target.id==="fdl"){state.dl=e.target.checked;run();} });
 $("#qForm").addEventListener("submit", e => { e.preventDefault(); setQ($("#q").value,false); });
