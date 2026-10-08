@@ -262,11 +262,6 @@
    "error": ""
   },
   {
-   "id": "UY-053",
-   "status": 200,
-   "error": ""
-  },
-  {
    "id": "UY-054",
    "status": 200,
    "error": ""
@@ -488,8 +483,8 @@
   },
   {
    "id": "UY-098",
-   "status": 0,
-   "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+   "status": 200,
+   "error": ""
   },
   {
    "id": "UY-099",
@@ -850,6 +845,16 @@
    "id": "UY-170",
    "status": 200,
    "error": ""
+  },
+  {
+   "id": "UY-171",
+   "status": 200,
+   "error": ""
+  },
+  {
+   "id": "UY-172",
+   "status": 0,
+   "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>"
   }
  ]
 }
