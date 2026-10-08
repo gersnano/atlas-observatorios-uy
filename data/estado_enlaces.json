@@ -218,8 +218,8 @@
   },
   {
    "id": "UY-046",
-   "status": 200,
-   "error": ""
+   "status": 0,
+   "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
   },
   {
    "id": "UY-047",
@@ -648,8 +648,8 @@
   },
   {
    "id": "UY-156",
-   "status": 200,
-   "error": ""
+   "status": 504,
+   "error": "HTTP Error 504: Gateway Timeout"
   },
   {
    "id": "UY-157",
